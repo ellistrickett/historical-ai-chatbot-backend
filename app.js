@@ -5,13 +5,17 @@ const express = require('express');
 const app = express();
 const PORT = 3000;
 
+const cors = require('cors')
+
+app.use(cors())
+
 app.get('/', (req, res)=>{
     res.status(200);
     res.send("Welcome to root URL of Server");
 });
 app.get('/helloworld', (req, res)=>{
     res.status(200);
-    res.send("Hello World");
+    res.send({ "hello": "Hello World"});
 });
 
 app.listen(PORT, (error) =>{
