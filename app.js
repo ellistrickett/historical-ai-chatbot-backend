@@ -7,6 +7,28 @@ const PORT = 3000;
 
 const cors = require('cors');
 
+const fs = require("fs");
+const path = require("path");
+
+const responses = JSON.parse(
+  fs.readFileSync(path.join(__dirname, "data", "responses.json"), "utf-8")
+);
+
+function findResponse(userMessage) {
+  const lower = userMessage.toLowerCase();
+
+  for (const rule of responses.rules) {
+    for (const keyword of rule.keywords) {
+      if (lower.includes(keyword)) {
+        return rule.response;
+      }
+    }
+  }
+
+  return responses.default_response;
+}
+
+
 //set up correctly
 app.use(cors());
 app.use(express.json()); 
@@ -24,33 +46,17 @@ app.get('/helloworld', (req, res)=>{
     res.send({ "hello": "Hello World"});
 });
 
-app.post('/chat', async (req, res) => {
-  try {
-    // Get the user's prompt from the request body
-    const { prompt } = req.body;
+app.post("/chat", async (req, res) => {
+  const { prompt } = req.body;
 
-    if (!prompt) {
-      return res.status(400).json({ error: 'Prompt is required' });
-    }
-
-    const response = await ai.models.generateContent({
-            model: "gemini-2.5-flash",
-            contents: prompt,
-        });
-    console.log(response.text);
-
-    res.status(200);
-    res.send({ "result": response.text});
-
-    await result.response;
-    const text = response.text();
-
-    res.json({ response: text });
-
-  } catch (error) {
-    console.error('Error calling Gemini API:', error);
-    res.status(500).json({ error: 'Failed to generate response' });
+  if (!prompt) {
+    return res.status(400).json({ error: "Prompt is required" });
   }
+
+  // Rule-based response
+  const reply = findResponse(prompt);
+
+  res.json({ reply });
 });
 
 app.listen(PORT, (error) =>{
