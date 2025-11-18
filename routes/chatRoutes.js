@@ -1,9 +1,8 @@
 import express from "express";
-import { postChatMessage } from "../controllers/chatController";
+import { postChatMessage } from "../controllers/chatController.js";
 
 const router = express.Router();
 
-router.get("/");
 router.post("/chat", postChatMessage);
 
 export default router;

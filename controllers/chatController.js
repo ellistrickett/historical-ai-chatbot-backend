@@ -1,4 +1,4 @@
-import { postResponseMessage } from "../services/chatService";
+import { postResponseMessage } from "../services/chatService.js";
 
 export function postChatMessage(req, res) {
   const { message } = req.body;
@@ -7,8 +7,9 @@ export function postChatMessage(req, res) {
     return res.status(400).json({ error: "message is required" });
   }
 
-  // Rule-based response
-  const reply = postResponseMessage(message);
+  const responseData = req.app.locals.responses;
+
+  const reply = postResponseMessage(message, responseData);
 
   res.json({ reply });
 

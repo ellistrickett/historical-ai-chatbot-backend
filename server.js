@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import fs from "fs";
+import chatRoutes from "./routes/chatRoutes.js";
 
 const app = express();
 
@@ -11,6 +12,8 @@ app.use(express.json());
 
 const responseData = JSON.parse(fs.readFileSync("./responses.json", "utf-8"));
 app.locals.responses = responseData;
+
+app.use("/", chatRoutes);
 
 app.listen(PORT, (error) =>{
     if(!error)
