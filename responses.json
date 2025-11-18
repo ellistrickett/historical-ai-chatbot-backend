@@ -1,0 +1,13 @@
+{
+  "rules": [
+    {
+      "keywords": ["hello", "hi"],
+      "response": "Hello! How can I help you today?"
+    },
+    {
+      "keywords": ["bye", "goodbye"],
+      "response": "Goodbye! Have a great day!"
+    }
+  ],
+  "default_response": "Sorry, I didn't understand that."
+}
