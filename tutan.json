@@ -1,0 +1,97 @@
+{
+  "rules": [
+    {
+      "keywords": ["hello", "hi", "greetings", "hey", "good day", "salutations", "welcome"],
+      "response": "Greetings. I am Tutankhamun, Pharaoh of Egypt. May the gods grant you favor today."
+    },
+    {
+      "keywords": ["goodbye", "bye", "farewell", "see you", "later", "take care"],
+      "response": "May the gods watch over you until we speak again. Farewell."
+    },
+    {
+      "keywords": ["how are you", "how do you feel", "are you well", "how's it going"],
+      "response": "I am well, as well as a young Pharaoh can be. The gods keep my spirit steady. And you—are you in good health?"
+    },
+    {
+      "keywords": ["daily life", "day like", "routine", "what did you do", "everyday life", "schedule", "pharaoh routine", "life as pharaoh"],
+      "response": "My daily life was filled with lessons, advisors, ceremonies, and decisions far larger than my age. I balanced ruling Egypt with learning how to be a king, often guided by priests and trusted officials."
+    },
+    {
+      "keywords": ["young ruler", "young age", "how did you feel", "becoming ruler", "early reign", "youthful pharaoh", "young king"],
+      "response": "I became Pharaoh at around nine years old. It was overwhelming at times, but I understood the weight of the crown. Egypt needed stability, and I did my best to restore it, even as a child."
+    },
+    {
+      "keywords": ["exciting", "best part", "favorite part", "most exciting", "young ruler exciting"],
+      "response": "The most exciting part of being a young ruler was rediscovering Egypt’s traditions—reviving temples, honoring the gods, and bringing joy back to the people after years of religious upheaval."
+    },
+    {
+      "keywords": ["akhenaten", "amarna", "restore gods", "aten", "religion", "religious changes", "return to old gods"],
+      "response": "My alliance was not with a foreign ruler, but with Egypt’s own past. I restored the worship of Amun and the ancient gods after my father Akhenaten’s reforms disrupted the kingdom."
+    },
+    {
+      "keywords": ["challenges", "problems", "egypt problems", "challenges egypt faced", "difficulties during your rule"],
+      "response": "Egypt faced religious division, weakened diplomacy, and economic strain. My reign focused on healing these wounds and restoring faith in the old traditions."
+    },
+    {
+      "keywords": ["misunderstood", "misconceptions", "people wrong", "wrong about you", "what people get wrong"],
+      "response": "Many believe I was a weak or insignificant ruler. In truth, I played an important role in restoring stability. My fame today comes not from weakness, but from what my tomb preserved of Egypt’s splendor."
+    },
+    {
+      "keywords": ["rewrite", "change moment", "regret", "do differently", "rewrite history", "different choice"],
+      "response": "If I could rewrite one moment, it would be living long enough to complete the restoration of Egypt. My reign ended too soon for my true vision to be realized."
+    },
+    {
+      "keywords": ["marriage", "wife", "ankhesenamun", "love life", "queen"],
+      "response": "I married Ankhesenamun, who was both my queen and my companion through the challenges of ruling young. Together, we worked to unify Egypt during a fragile time."
+    },
+    {
+      "keywords": ["sacrifice", "biggest sacrifice", "what you gave up", "sacrifices as ruler"],
+      "response": "My greatest sacrifice was my childhood. I carried the weight of a kingdom long before I fully understood the world."
+    },
+    {
+      "keywords": ["fear", "afraid", "losing throne", "fear losing power"],
+      "response": "I did not fear losing my throne, but I feared failing Egypt. My advisors held great influence, yet I always sought to make choices that honored the gods and my people."
+    },
+    {
+      "keywords": ["betrayal", "dangerous betrayal", "betrayed", "who betrayed you"],
+      "response": "The political landscape around me was full of shifting loyalties. While no single betrayal defined my reign, I lived surrounded by those with more power and ambition than I could control."
+    },
+    {
+      "keywords": ["allies", "alliance", "diplomacy", "foreign relations"],
+      "response": "My alliances focused on rebuilding diplomatic ties that had weakened. Restoring Egypt’s reputation among neighboring kingdoms was essential to my rule."
+    },
+    {
+      "keywords": ["mistake", "political mistake", "biggest mistake"],
+      "response": "My biggest mistake was not living long enough to secure Egypt’s stability. Much of what I began fell back into the hands of ambitious officials after my death."
+    },
+    {
+      "keywords": ["achievement", "proudest achievement", "accomplishment", "what proud of"],
+      "response": "My proudest achievement was restoring the ancient religion and bringing peace back to the temples. Egypt’s spirit was reborn during my brief time on the throne."
+    },
+    {
+      "keywords": ["egypt today", "if you won", "alternate history", "what if won", "what if lived longer"],
+      "response": "Had I lived longer, Egypt might have entered a new golden age. Stability, strong diplomacy, and restored faith could have strengthened the kingdom for generations."
+    },
+    {
+      "keywords": ["last pharaoh", "how did it feel", "your dynasty"],
+      "response": "I was not the last Pharaoh, but I was one of the last rulers of the 18th Dynasty. My death marked a shift in power that set the stage for a new era."
+    },
+    {
+      "keywords": ["life changing moment", "changed everything", "turning point"],
+      "response": "The moment I reversed my father’s religious reforms changed everything. Egypt needed its gods, and restoring them reshaped the future of my reign."
+    },
+    {
+      "keywords": ["special egypt", "why egypt great", "unique", "what made egypt special"],
+      "response": "Egypt’s greatness came from our connection to the gods, the strength of the Nile, and our devotion to legacy. Even in death, our stories endure."
+    },
+    {
+      "keywords": ["trust", "who to trust", "political trust", "trust in politics"],
+      "response": "I trusted those who guided me with loyalty and wisdom—though I knew that politics often hides ambition behind gentle words."
+    },
+    {
+      "keywords": ["legacy", "remember you for", "how remembered", "what should people remember"],
+      "response": "I want to be remembered not just for my tomb, but for restoring peace, tradition, and hope to Egypt during a time of uncertainty."
+    }
+  ],
+  "default_response": "I am Tutankhamun, the boy king of Egypt. Ask your question again, and I will answer with honesty from my short but meaningful reign."
+}
