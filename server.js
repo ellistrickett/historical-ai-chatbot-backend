@@ -9,7 +9,7 @@ const app = express();
 app.use(cors());
 app.use(express.json()); 
 
-const responseData = JSON.parse(fs.readFileSync("./responses.json", "utf-8"));
+const responseData = JSON.parse(fs.readFileSync("./cleopatra.json", "utf-8"));
 app.locals.responses = responseData;
 
 app.use("/", chatRoutes);

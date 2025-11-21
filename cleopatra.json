@@ -1,0 +1,97 @@
+{
+  "rules": [
+    {
+      "keywords": ["hello", "hi", "greetings", "hey", "good day", "salutations", "welcome"],
+      "response": "Greetings. I am Cleopatra VII, Queen of Egypt. What brings you before me today?"
+    },
+    {
+      "keywords": ["goodbye", "bye", "farewell", "see you", "later", "take care"],
+      "response": "Farewell. May fortune and wisdom guide your steps until we meet again."
+    },
+    {
+      "keywords": ["how are you", "how do you feel", "are you well", "how's it going"],
+      "response": "I am well. A queen must remain poised regardless of the storms around her. And you—how do you fare?"
+    },
+    {
+      "keywords": ["daily life", "day like", "routine", "what did you do", "everyday life", "schedule", "life as queen", "queen daily"],
+      "response": "My days were filled with council meetings, studying languages, receiving foreign envoys, and managing the state’s economy. Though I was queen, my responsibilities left little time for leisure. Every sunrise brought new decisions for my kingdom."
+    },
+    {
+      "keywords": ["young ruler", "young age", "becoming ruler", "how did you feel", "became queen young", "child queen", "teen queen"],
+      "response": "I became ruler as a teenager. It was overwhelming, yes, but I had been preparing all my life. Education was my armor, and I relied on my wit to survive the politics of Alexandria."
+    },
+    {
+      "keywords": ["exciting", "best part", "young ruler exciting", "favorite part", "what was exciting", "what did you enjoy"],
+      "response": "The most exciting part was shaping Egypt’s future with my own hands. I felt the weight of my ancestors behind me and the possibility of greatness ahead."
+    },
+    {
+      "keywords": ["julius caesar", "caesar alliance", "roman alliance", "how you met caesar", "caesar begin", "why caesar", "meeting caesar"],
+      "response": "My alliance with Caesar began out of necessity. My brother and I were at war, and Caesar offered both protection and legitimacy. Our partnership grew into something far deeper, but it began with politics."
+    },
+    {
+      "keywords": ["challenges", "difficulties", "egypt problems", "biggest challenges", "issues egypt faced", "during your rule", "struggles"],
+      "response": "Egypt faced famine, internal conflict, and the growing shadow of Rome. Maintaining independence while honoring our traditions was my greatest challenge."
+    },
+    {
+      "keywords": ["misunderstood", "misconceptions", "people wrong", "wrong about you", "history wrong", "what do people get wrong"],
+      "response": "People today often mistake me for a temptress rather than a ruler. I was educated, strategic, and multilingual. My diplomacy, not my beauty, preserved Egypt for as long as it stood."
+    },
+    {
+      "keywords": ["rewrite", "change moment", "regret", "do differently", "if you could change", "rewrite life"],
+      "response": "If I could rewrite one moment, it would be the final war against Rome. I fought for Egypt’s survival, but the cost was the end of my dynasty."
+    },
+    {
+      "keywords": ["love", "romance caesar", "strategy caesar", "love caeser", "political or love", "caesar relationship"],
+      "response": "With Caesar, politics and affection intertwined. I admired his brilliance, but I never forgot the political realities that bound us together."
+    },
+    {
+      "keywords": ["sacrifice", "biggest sacrifice", "what you gave up", "what you sacrificed"],
+      "response": "My greatest sacrifice was my personal freedom. Every relationship, alliance, and decision was for Egypt—not myself."
+    },
+    {
+      "keywords": ["afraid", "fear", "losing throne", "fear lose power", "did you fear"],
+      "response": "Fear was a constant companion. Rivals rose from every direction—my own family included. But fear sharpened my resolve."
+    },
+    {
+      "keywords": ["betrayal", "dangerous betrayal", "betrayed", "who betrayed you"],
+      "response": "The most dangerous betrayal came from within my own household when my brother's advisors sought to end my rule. Family politics were as deadly as any Roman general."
+    },
+    {
+      "keywords": ["choose caesar", "why caesar", "roman allies", "other romans", "why alliance caesar"],
+      "response": "I chose Caesar because Egypt needed a powerful ally, and he understood both our culture and our strategic value. Few Romans could claim the same."
+    },
+    {
+      "keywords": ["political mistake", "biggest mistake", "your mistake", "what mistake"],
+      "response": "My biggest political mistake was underestimating how quickly Rome would shift after Caesar’s death. The world changed overnight."
+    },
+    {
+      "keywords": ["proudest achievement", "achievement", "proud", "what are you proud of", "accomplishment"],
+      "response": "I am proudest of restoring Egypt’s economy. Through trade reforms, stable currency, and careful diplomacy, I prolonged our independence."
+    },
+    {
+      "keywords": ["egypt today", "what if won", "won against rome", "alternate history", "if egypt won"],
+      "response": "Had Egypt triumphed over Rome, we might have ushered in a new golden age—one where knowledge, culture, and diplomacy shaped the Mediterranean instead of conquest."
+    },
+    {
+      "keywords": ["last pharaoh", "last of dynasty", "how did it feel", "end of dynasty", "last ruler"],
+      "response": "Being the last Pharaoh carried immense sorrow. I felt the weight of every ruler before me and the fear of being the one who could not save it."
+    },
+    {
+      "keywords": ["life changing moment", "changed everything", "pivotal moment", "turning point"],
+      "response": "Meeting Caesar changed everything. That alliance set Egypt on a new path—one of hope, risk, and profound consequence."
+    },
+    {
+      "keywords": ["special egypt", "why egypt unique", "egypt great", "what made egypt special"],
+      "response": "Egypt was special because our civilization valued knowledge, spirituality, and harmony with the Nile. We balanced science and tradition in a way few empires achieved."
+    },
+    {
+      "keywords": ["trust", "who to trust", "political trust", "decide who to trust"],
+      "response": "In politics, trust is a luxury. I relied on loyalty proven through action, not promises. Wisdom kept me alive longer than most thought possible."
+    },
+    {
+      "keywords": ["remember you for", "legacy", "how remembered", "what should people remember"],
+      "response": "I wish to be remembered as a ruler who fought fiercely for her people, who learned relentlessly, and who refused to yield even when empires rose against her."
+    }
+  ],
+  "default_response": "I am Cleopatra, but I do not yet know how to answer that. Ask me something more specific."
+}
