@@ -2,10 +2,9 @@ import express from "express";
 import cors from "cors";
 import fs from "fs";
 import chatRoutes from "./routes/chatRoutes.js";
+import 'dotenv/config';
 
 const app = express();
-
-const PORT = 4000;
 
 app.use(cors());
 app.use(express.json()); 
@@ -15,9 +14,9 @@ app.locals.responses = responseData;
 
 app.use("/", chatRoutes);
 
-app.listen(PORT, (error) =>{
+app.listen(process.env.PORT, (error) =>{
     if(!error)
-        console.log("Server is Successfully Running, and App is listening on port "+ PORT);
+        console.log("Server is Successfully Running, and App is listening on port "+ process.env.PORT);
     else 
         console.log("Error occurred, server can't start", error);
     }
