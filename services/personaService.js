@@ -1,0 +1,34 @@
+import fs from 'fs';
+import path from 'path';
+
+const rootPath = process.cwd(); 
+
+const TARGET_FILES = [
+  { name: "Cleopatra", filename: 'cleopatra.json' },
+  { name: "Tutankhamun",     filename: 'tutankhamun.json' },
+  { name: "Ramesses II",  filename: 'ramesses-II.json' }
+];
+
+const personaCache = {};
+
+const loadPersonas = () => {
+  TARGET_FILES.forEach(file => {
+    try {
+      const fullPath = path.join(rootPath, file.filename);
+
+      if (fs.existsSync(fullPath)) {
+        const content = fs.readFileSync(fullPath, 'utf-8');
+        personaCache[file.name] = JSON.parse(content);
+        console.log(`✅ Loaded: ${file.name}`);
+      } else {
+        console.warn(`⚠️ File not found: ${fullPath}`);
+      }
+    } catch (error) {
+      console.error(`❌ Error loading ${file.name}:`, error);
+    }
+  });
+};
+
+loadPersonas();
+
+export const getPersona = (personaName) => personaCache[personaName];

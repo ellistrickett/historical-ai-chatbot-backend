@@ -1,16 +1,12 @@
 import express from "express";
 import cors from "cors";
-import fs from "fs";
-import chatRoutes from "./routes/chatRoutes.js";
 import 'dotenv/config';
+import chatRoutes from "./routes/chatRoutes.js";
 
 const app = express();
 
 app.use(cors());
 app.use(express.json()); 
-
-const responseData = JSON.parse(fs.readFileSync("./cleopatra.json", "utf-8"));
-app.locals.responses = responseData;
 
 app.use("/", chatRoutes);
 

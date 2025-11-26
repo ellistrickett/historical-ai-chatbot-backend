@@ -7,21 +7,28 @@ const __dirname = path.dirname(__filename);
 
 const chatsFilePath = path.resolve(__dirname, '..', "previous-chats.json");
 
-export function postResponseMessage(message, responseData) {
+export function postResponseMessage(userMessage, personaData) {
   
-  const lower = message.toLowerCase();
-
-  if (responseData && responseData.rules) {
-    for (const rule of responseData.rules) {
-      for (const keyword of rule.keywords) {
-        if (lower.includes(keyword)) {
-          return rule.response;
-        }
-      }
-    }
+  if (!personaData || !personaData.rules) {
+    return "I am currently lost for words.";
   }
 
-  return responseData?.default_response || "I don't understand.";
+  const normalizedMessage = userMessage.toLowerCase().trim();
+
+  const matchedRule = personaData.rules.find(rule => {
+
+    return rule.keywords.some(keyword => {
+      const normalizedKeyword = keyword.toLowerCase();
+
+      return normalizedMessage.includes(normalizedKeyword);
+    });
+  });
+
+  if (matchedRule) {
+    return matchedRule.response;
+  }
+
+  return personaData.default_response || "I do not understand.";
 }
 
 export function saveChat(newChatData) {

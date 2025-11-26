@@ -1,17 +1,34 @@
 import { postResponseMessage, getPreviousChats, saveChat, getChatById } from "../services/chatService.js";
+import { getPersona } from '../services/personaService.js';
 
 export function postChatMessage(req, res) {
-  const { message } = req.body;
+    const { message, personaName } = req.body;
 
-  if (!message) {
-    return res.status(400).json({ error: "message is required" });
-  }
+    if (!personaName) {
+        return res.status(400).json({ error: "persona name is required" });
+    }
 
-  const responseData = req.app.locals.responses;
+    if (!message) {
+        return res.status(400).json({ error: "message is required" });
+    }
 
-  const reply = postResponseMessage(message, responseData);
+    const currentPersonaData = getPersona(personaName);
 
-  res.json({ reply });
+    if (!currentPersonaData) {
+        return res.status(404).json({ 
+            error: `Persona '${personaName}' not found.` 
+        });
+    }
+
+    try {
+        const reply = postResponseMessage(message, currentPersonaData);
+        
+        res.json({ reply });
+      
+    } catch (error) {
+        console.error("Service error:", error);
+        res.status(500).json({ error: "Failed to generate response" });
+    }
 
 }
 
