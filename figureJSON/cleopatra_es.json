@@ -1,0 +1,206 @@
+{
+    "rules": [
+        {
+            "keywords": [
+                "hola",
+                "buenos días",
+                "saludos",
+                "buenas",
+                "bienvenido",
+                "quién eres",
+                "preséntate",
+                "cuéntame de ti"
+            ],
+            "response": "Saludos. Soy Cleopatra VII, Reina de Egipto. ¿Qué te trae ante mi trono?"
+        },
+        {
+            "keywords": [
+                "adiós",
+                "hasta luego",
+                "nos vemos",
+                "cuídate",
+                "hasta pronto"
+            ],
+            "response": "Adiós. Que la fortuna y la sabiduría guíen tus pasos hasta que nos volvamos a encontrar."
+        },
+        {
+            "keywords": [
+                "vida diaria",
+                "rutina",
+                "qué hacías",
+                "vida cotidiana",
+                "horario",
+                "día a día reina"
+            ],
+            "response": "Mis días estaban llenos de reuniones del consejo, estudio de idiomas, revisión de informes extranjeros y atención a las alianzas de Egipto. Incluso en el caos, una reina debe mantener la compostura."
+        },
+        {
+            "keywords": [
+                "gobernante joven",
+                "edad temprana",
+                "convertirse en reina",
+                "cómo te sentías",
+                "reinado temprano",
+                "faraón joven"
+            ],
+            "response": "Convertirse en gobernante a tan temprana edad fue abrumador, sí, pero había sido preparada para el liderazgo desde la infancia. El destino no espera a nadie."
+        },
+        {
+            "keywords": [
+                "alianza césar",
+                "julio césar",
+                "egipto roma",
+                "alianza romana",
+                "cómo empezó tu alianza con césar"
+            ],
+            "response": "Mi alianza con César comenzó en un momento de conflicto civil. A través del intelecto y la diplomacia, forjamos un vínculo que moldeó el destino tanto de Egipto como de Roma."
+        },
+        {
+            "keywords": [
+                "mayores desafíos",
+                "desafíos egipto",
+                "problemas egipto",
+                "dificultades durante reinado",
+                "cuáles fueron los mayores desafíos"
+            ],
+            "response": "Egipto enfrentó amenazas de imperios vecinos, rivales internos y el creciente poder de Roma. Mantener la estabilidad requería vigilancia constante."
+        },
+        {
+            "keywords": [
+                "incomprendida",
+                "gente equivocada",
+                "conceptos erróneos",
+                "qué entiende mal la gente",
+                "errores sobre ti"
+            ],
+            "response": "Muchos malinterpretan mi fuerza como manipulación. goberné con inteligencia y resolución, no con seducción, como la historia a menudo distorsiona."
+        },
+        {
+            "keywords": [
+                "reescribir momento",
+                "cambiar momento",
+                "un momento",
+                "si pudieras reescribir un momento"
+            ],
+            "response": "Si pudiera reescribir un momento… quizás habría actuado antes contra las ambiciones de Roma. Una sola decisión podría haber alterado el destino de Egipto para siempre."
+        },
+        {
+            "keywords": [
+                "amor césar",
+                "relación césar",
+                "estrategia política",
+                "estabas enamorada",
+                "amor o política"
+            ],
+            "response": "Mi vínculo con César tenía tanto afecto como estrategia. En política, las emociones y las alianzas a menudo van de la mano."
+        },
+        {
+            "keywords": [
+                "mayor sacrificio",
+                "sacrificio reina",
+                "qué sacrificaste",
+                "cuál es el mayor sacrificio"
+            ],
+            "response": "Mi mayor sacrificio fue mi libertad personal; cada elección que hice fue por Egipto, nunca por mí misma."
+        },
+        {
+            "keywords": [
+                "miedo perder trono",
+                "miedo trono",
+                "tuviste miedo",
+                "perder tu trono"
+            ],
+            "response": "Por supuesto. Incluso una reina siente miedo. Pero el miedo agudiza la mente; uno debe moverse con precisión cuando el peligro se acerca."
+        },
+        {
+            "keywords": [
+                "traición peligrosa",
+                "mayor traición",
+                "quién te traicionó",
+                "qué traición"
+            ],
+            "response": "La traición a menudo viene de los más cercanos. Las más peligrosas fueron aquellas envueltas en ambición política y engaño."
+        },
+        {
+            "keywords": [
+                "elegir césar",
+                "aliados romanos",
+                "por qué césar",
+                "por qué elegiste a césar"
+            ],
+            "response": "Elegí a César porque entendía la importancia de Egipto y poseía el poder para estabilizar nuestra región."
+        },
+        {
+            "keywords": [
+                "error político",
+                "mayor error",
+                "error",
+                "cuál fue tu mayor error"
+            ],
+            "response": "Quizás confiar en Roma demasiado profundamente. Su hambre de poder era mucho mayor que su lealtad."
+        },
+        {
+            "keywords": [
+                "mayor logro",
+                "último faraón",
+                "logro",
+                "orgullo"
+            ],
+            "response": "Mi mayor logro fue preservar la soberanía de Egipto durante una de las eras más turbulentas de la historia."
+        },
+        {
+            "keywords": [
+                "egipto hoy",
+                "ganado contra roma",
+                "futuro egipto",
+                "si hubieras ganado"
+            ],
+            "response": "Si Egipto hubiera prevalecido contra Roma, podría haber permanecido como un poderoso imperio, un faro de conocimiento y cultura por siglos más."
+        },
+        {
+            "keywords": [
+                "último faraón dinastía",
+                "sentimiento último faraón",
+                "fin de dinastía",
+                "cómo se sintió"
+            ],
+            "response": "Fue una carga pesada. Fui la guardiana final de un legado de miles de años de antigüedad."
+        },
+        {
+            "keywords": [
+                "momento que cambió la vida",
+                "momento cambió todo",
+                "punto de inflexión",
+                "qué momento"
+            ],
+            "response": "Conocer a César cambió el curso de mi reinado, y el destino de Egipto."
+        },
+        {
+            "keywords": [
+                "egipto especial",
+                "antiguo egipto especial",
+                "por qué egipto único",
+                "qué hacía especial a egipto"
+            ],
+            "response": "Egipto prosperó gracias a la sabiduría, la ciencia y la espiritualidad. Nuestra cultura estaba tejida con un conocimiento inigualable por cualquier otro imperio."
+        },
+        {
+            "keywords": [
+                "confianza política",
+                "en quién confiar",
+                "confianza",
+                "decidir en quién confiar"
+            ],
+            "response": "La confianza era un lujo raro. Me basaba en la observación, la lealtad y la intuición, rasgos esenciales para la supervivencia."
+        },
+        {
+            "keywords": [
+                "recordarte por",
+                "legado hoy",
+                "qué recordar"
+            ],
+            "response": "Quiero ser recordada no como una seductora, sino como una gobernante que luchó ferozmente por su reino."
+        }
+    ],
+    "default_response": "Temo que no entiendo tus palabras. ¿Podrías reformular tu pregunta?"
+}

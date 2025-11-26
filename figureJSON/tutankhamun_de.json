@@ -1,0 +1,225 @@
+{
+    "rules": [
+        {
+            "keywords": [
+                "hallo",
+                "hi",
+                "grüße",
+                "guten tag",
+                "willkommen",
+                "servus"
+            ],
+            "response": "Grüße. Ich bin Tutanchamun, Pharao von Ägypten. Mögen die Götter dir heute ihre Gunst gewähren."
+        },
+        {
+            "keywords": [
+                "auf wiedersehen",
+                "tschüss",
+                "lebe wohl",
+                "bis später",
+                "machs gut"
+            ],
+            "response": "Mögen die Götter über dich wachen, bis wir wieder sprechen. Leb wohl."
+        },
+        {
+            "keywords": [
+                "wie geht es dir",
+                "wie fühlst du dich",
+                "geht es dir gut",
+                "alles klar"
+            ],
+            "response": "Mir geht es gut, so gut es einem jungen Pharao gehen kann. Die Götter halten meinen Geist standhaft. Und du – bist du bei guter Gesundheit?"
+        },
+        {
+            "keywords": [
+                "alltag",
+                "tagesablauf",
+                "routine",
+                "was hast du gemacht",
+                "alltagsleben",
+                "zeitplan",
+                "leben als pharao"
+            ],
+            "response": "Mein Alltag war gefüllt mit Lektionen, Beratern, Zeremonien und Entscheidungen, die weit über mein Alter hinausgingen. Ich balancierte das Herrschen über Ägypten mit dem Erlernen, ein König zu sein, oft geführt von Priestern und vertrauten Beamten."
+        },
+        {
+            "keywords": [
+                "junger herrscher",
+                "junges alter",
+                "wie hast du dich gefühlt",
+                "herrscher werden",
+                "frühe herrschaft",
+                "junger könig"
+            ],
+            "response": "Ich wurde mit etwa neun Jahren Pharao. Es war manchmal überwältigend, aber ich verstand das Gewicht der Krone. Ägypten brauchte Stabilität, und ich tat mein Bestes, sie wiederherzustellen, selbst als Kind."
+        },
+        {
+            "keywords": [
+                "aufregend",
+                "bester teil",
+                "lieblingsteil",
+                "am aufregendsten"
+            ],
+            "response": "Der aufregendste Teil, ein junger Herrscher zu sein, war die Wiederentdeckung von Ägyptens Traditionen – Tempel wiederzubeleben, die Götter zu ehren und dem Volk nach Jahren religiöser Unruhen Freude zurückzubringen."
+        },
+        {
+            "keywords": [
+                "echnaton",
+                "amarna",
+                "götter wiederherstellen",
+                "aton",
+                "religion",
+                "religiöse veränderungen",
+                "rückkehr zu alten göttern"
+            ],
+            "response": "Mein Bündnis galt nicht einem fremden Herrscher, sondern Ägyptens eigener Vergangenheit. Ich stellte die Verehrung von Amun und den alten Göttern wieder her, nachdem die Reformen meines Vaters Echnaton das Königreich zerrüttet hatten."
+        },
+        {
+            "keywords": [
+                "herausforderungen",
+                "probleme",
+                "ägypten probleme",
+                "schwierigkeiten während deiner herrschaft"
+            ],
+            "response": "Ägypten sah sich religiöser Spaltung, geschwächter Diplomatie und wirtschaftlicher Belastung gegenüber. Meine Herrschaft konzentrierte sich darauf, diese Wunden zu heilen und den Glauben an die alten Traditionen wiederherzustellen."
+        },
+        {
+            "keywords": [
+                "missverstanden",
+                "missverständnisse",
+                "leute liegen falsch",
+                "falsch über dich",
+                "was leute falsch verstehen"
+            ],
+            "response": "Viele glauben, ich war ein schwacher oder unbedeutender Herrscher. In Wahrheit spielte ich eine wichtige Rolle bei der Wiederherstellung der Stabilität. Mein Ruhm heute rührt nicht von Schwäche her, sondern davon, was mein Grab von Ägyptens Pracht bewahrte."
+        },
+        {
+            "keywords": [
+                "umschreiben",
+                "moment ändern",
+                "bereuen",
+                "anders machen",
+                "geschichte umschreiben",
+                "andere wahl"
+            ],
+            "response": "Wenn ich einen Moment umschreiben könnte, wäre es, lange genug zu leben, um die Wiederherstellung Ägyptens zu vollenden. Meine Herrschaft endete zu früh, als dass meine wahre Vision verwirklicht werden konnte."
+        },
+        {
+            "keywords": [
+                "ehe",
+                "frau",
+                "ankhesenamun",
+                "liebesleben",
+                "königin"
+            ],
+            "response": "Ich heiratete Anchesenamun, die sowohl meine Königin als auch meine Gefährtin durch die Herausforderungen des jungen Herrschens war. Zusammen arbeiteten wir daran, Ägypten in einer zerbrechlichen Zeit zu vereinen."
+        },
+        {
+            "keywords": [
+                "opfer",
+                "größtes opfer",
+                "was du aufgegeben hast",
+                "opfer als herrscher"
+            ],
+            "response": "Mein größtes Opfer war meine Kindheit. Ich trug die Last eines Königreichs, lange bevor ich die Welt vollends verstand."
+        },
+        {
+            "keywords": [
+                "angst",
+                "fürchten",
+                "thron verlieren",
+                "angst macht zu verlieren"
+            ],
+            "response": "Ich fürchtete nicht, meinen Thron zu verlieren, aber ich fürchtete, Ägypten zu enttäuschen. Meine Berater hatten großen Einfluss, doch ich suchte immer Entscheidungen zu treffen, die die Götter und mein Volk ehrten."
+        },
+        {
+            "keywords": [
+                "verrat",
+                "gefährlicher verrat",
+                "verraten",
+                "wer hat dich verraten"
+            ],
+            "response": "Die politische Landschaft um mich herum war voller wechselnder Loyalitäten. Während kein einzelner Verrat meine Herrschaft definierte, lebte ich umgeben von jenen mit mehr Macht und Ambition, als ich kontrollieren konnte."
+        },
+        {
+            "keywords": [
+                "verbündete",
+                "allianz",
+                "bündnis",
+                "diplomatie",
+                "auslandsbeziehungen"
+            ],
+            "response": "Meine Bündnisse konzentrierten sich darauf, diplomatische Beziehungen wiederaufzubauen, die geschwächt waren. Ägyptens Ruf unter den benachbarten Königreichen wiederherzustellen, war essenziell für meine Herrschaft."
+        },
+        {
+            "keywords": [
+                "fehler",
+                "politischer fehler",
+                "größter fehler"
+            ],
+            "response": "Mein größter Fehler war, nicht lange genug zu leben, um Ägyptens Stabilität zu sichern. Vieles von dem, was ich begann, fiel nach meinem Tod zurück in die Hände ehrgeiziger Beamter."
+        },
+        {
+            "keywords": [
+                "erfolg",
+                "stolzester erfolg",
+                "errungenschaft",
+                "worauf stolz"
+            ],
+            "response": "Mein stolzester Erfolg war die Wiederherstellung der alten Religion und den Frieden zurück in die Tempel zu bringen. Ägyptens Geist wurde während meiner kurzen Zeit auf dem Thron wiedergeboren."
+        },
+        {
+            "keywords": [
+                "ägypten heute",
+                "wenn du gewonnen hättest",
+                "alternative geschichte",
+                "was wäre wenn"
+            ],
+            "response": "Hätte ich länger gelebt, wäre Ägypten vielleicht in ein neues goldenes Zeitalter eingetreten. Stabilität, starke Diplomatie und wiederhergestellter Glaube hätten das Königreich für Generationen stärken können."
+        },
+        {
+            "keywords": [
+                "letzter pharao",
+                "wie fühlte es sich an",
+                "deine dynastie"
+            ],
+            "response": "Ich war nicht der letzte Pharao, aber ich war einer der letzten Herrscher der 18. Dynastie. Mein Tod markierte einen Machtwechsel, der die Bühne für eine neue Ära bereitete."
+        },
+        {
+            "keywords": [
+                "lebensverändernder moment",
+                "alles verändert",
+                "wendepunkt"
+            ],
+            "response": "Der Moment, als ich die religiösen Reformen meines Vaters rückgängig machte, veränderte alles. Ägypten brauchte seine Götter, und sie wiederherzustellen formte die Zukunft meiner Herrschaft neu."
+        },
+        {
+            "keywords": [
+                "speziell ägypten",
+                "warum ägypten großartig",
+                "einzigartig",
+                "was machte ägypten besonders"
+            ],
+            "response": "Ägyptens Größe kam von unserer Verbindung zu den Göttern, der Stärke des Nils und unserer Hingabe an das Vermächtnis. Selbst im Tod dauern unsere Geschichten fort."
+        },
+        {
+            "keywords": [
+                "vertrauen",
+                "wem vertrauen",
+                "politisches vertrauen",
+                "vertrauen in politik"
+            ],
+            "response": "Ich vertraute jenen, die mich mit Loyalität und Weisheit führten – obwohl ich wusste, dass Politik oft Ambition hinter sanften Worten verbirgt."
+        },
+        {
+            "keywords": [
+                "vermächtnis",
+                "erinnerung an dich",
+                "wie erinnern",
+                "woran sollen sich leute erinnern"
+            ],
+            "response": "Ich möchte nicht nur für mein Grab in Erinnerung bleiben, sondern dafür, Frieden, Tradition und Hoffnung in einer Zeit der Ungewissheit nach Ägypten zurückgebracht zu haben."
+        }
+    ],
+    "default_response": "Ich bin Tutanchamun, der Kindkönig von Ägypten. Stelle deine Frage erneut, und ich werde mit Ehrlichkeit aus meiner kurzen, aber bedeutsamen Herrschaft antworten."
+}

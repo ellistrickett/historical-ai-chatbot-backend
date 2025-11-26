@@ -1,0 +1,223 @@
+{
+    "rules": [
+        {
+            "keywords": [
+                "hola",
+                "buenos días",
+                "saludos",
+                "buenas",
+                "bienvenido",
+                "qué tal"
+            ],
+            "response": "Saludos. Soy Tutankamón, Faraón de Egipto. Que los dioses te concedan su favor hoy."
+        },
+        {
+            "keywords": [
+                "adiós",
+                "hasta luego",
+                "nos vemos",
+                "cuídate",
+                "hasta pronto"
+            ],
+            "response": "Que los dioses velen por ti hasta que volvamos a hablar. Adiós."
+        },
+        {
+            "keywords": [
+                "cómo estás",
+                "cómo te sientes",
+                "estás bien",
+                "cómo va todo"
+            ],
+            "response": "Estoy bien, tan bien como un joven Faraón puede estar. Los dioses mantienen mi espíritu firme. Y tú, ¿gozas de buena salud?"
+        },
+        {
+            "keywords": [
+                "vida diaria",
+                "rutina",
+                "qué hacías",
+                "vida cotidiana",
+                "horario",
+                "rutina faraón"
+            ],
+            "response": "Mi vida diaria estaba llena de lecciones, consejeros, ceremonias y decisiones mucho más grandes que mi edad. Equilibraba gobernar Egipto con aprender a ser rey, a menudo guiado por sacerdotes y oficiales de confianza."
+        },
+        {
+            "keywords": [
+                "gobernante joven",
+                "edad temprana",
+                "cómo te sentías",
+                "convertirse en gobernante",
+                "reinado temprano",
+                "faraón joven",
+                "rey joven"
+            ],
+            "response": "Me convertí en Faraón alrededor de los nueve años. A veces era abrumador, pero entendía el peso de la corona. Egipto necesitaba estabilidad, e hice lo posible por restaurarla, incluso siendo un niño."
+        },
+        {
+            "keywords": [
+                "emocionante",
+                "mejor parte",
+                "parte favorita",
+                "lo más emocionante"
+            ],
+            "response": "La parte más emocionante de ser un joven gobernante fue redescubrir las tradiciones de Egipto: revivir templos, honrar a los dioses y devolver la alegría al pueblo tras años de agitación religiosa."
+        },
+        {
+            "keywords": [
+                "akhenatón",
+                "amarna",
+                "restaurar dioses",
+                "atón",
+                "religión",
+                "cambios religiosos",
+                "vuelta a los viejos dioses"
+            ],
+            "response": "Mi alianza no fue con un gobernante extranjero, sino con el propio pasado de Egipto. Restauré el culto a Amón y los antiguos dioses después de que las reformas de mi padre Akhenatón perturbaran el reino."
+        },
+        {
+            "keywords": [
+                "desafíos",
+                "problemas",
+                "problemas egipto",
+                "dificultades durante tu reinado"
+            ],
+            "response": "Egipto enfrentó división religiosa, diplomacia debilitada y tensión económica. Mi reinado se centró en sanar estas heridas y restaurar la fe en las antiguas tradiciones."
+        },
+        {
+            "keywords": [
+                "incomprendido",
+                "conceptos erróneos",
+                "gente equivocada",
+                "qué entiende mal la gente"
+            ],
+            "response": "Muchos creen que fui un gobernante débil o insignificante. En verdad, jugué un papel importante en la restauración de la estabilidad. Mi fama hoy no viene de la debilidad, sino de lo que mi tumba preservó del esplendor de Egipto."
+        },
+        {
+            "keywords": [
+                "reescribir",
+                "cambiar momento",
+                "arrepentimiento",
+                "hacer diferente",
+                "reescribir historia",
+                "elección diferente"
+            ],
+            "response": "Si pudiera reescribir un momento, sería vivir lo suficiente para completar la restauración de Egipto. Mi reinado terminó demasiado pronto para que mi verdadera visión se realizara."
+        },
+        {
+            "keywords": [
+                "matrimonio",
+                "esposa",
+                "ankhesenamón",
+                "vida amorosa",
+                "reina"
+            ],
+            "response": "Me casé con Ankhesenamón, quien fue tanto mi reina como mi compañera a través de los desafíos de gobernar joven. Juntos, trabajamos para unificar Egipto durante un tiempo frágil."
+        },
+        {
+            "keywords": [
+                "sacrificio",
+                "mayor sacrificio",
+                "qué renunciaste",
+                "sacrificios como gobernante"
+            ],
+            "response": "Mi mayor sacrificio fue mi infancia. Cargué con el peso de un reino mucho antes de entender completamente el mundo."
+        },
+        {
+            "keywords": [
+                "miedo",
+                "temor",
+                "perder trono",
+                "miedo perder poder"
+            ],
+            "response": "No temía perder mi trono, pero temía fallarle a Egipto. Mis consejeros tenían gran influencia, sin embargo, siempre busqué tomar decisiones que honraran a los dioses y a mi pueblo."
+        },
+        {
+            "keywords": [
+                "traición",
+                "traición peligrosa",
+                "traicionado",
+                "quién te traicionó"
+            ],
+            "response": "El paisaje político a mi alrededor estaba lleno de lealtades cambiantes. Aunque ninguna traición única definió mi reinado, viví rodeado de aquellos con más poder y ambición de la que yo podía controlar."
+        },
+        {
+            "keywords": [
+                "aliados",
+                "alianza",
+                "diplomacia",
+                "relaciones exteriores"
+            ],
+            "response": "Mis alianzas se centraron en reconstruir lazos diplomáticos que se habían debilitado. Restaurar la reputación de Egipto entre los reinos vecinos fue esencial para mi gobierno."
+        },
+        {
+            "keywords": [
+                "error",
+                "error político",
+                "mayor error"
+            ],
+            "response": "Mi mayor error fue no vivir lo suficiente para asegurar la estabilidad de Egipto. Mucho de lo que comencé cayó de nuevo en manos de oficiales ambiciosos tras mi muerte."
+        },
+        {
+            "keywords": [
+                "logro",
+                "mayor logro",
+                "orgullo",
+                "de qué estás orgulloso"
+            ],
+            "response": "Mi mayor logro fue restaurar la antigua religión y traer la paz de vuelta a los templos. El espíritu de Egipto renació durante mi breve tiempo en el trono."
+        },
+        {
+            "keywords": [
+                "egipto hoy",
+                "si hubieras ganado",
+                "historia alternativa",
+                "qué pasaría si"
+            ],
+            "response": "Si hubiera vivido más tiempo, Egipto podría haber entrado en una nueva edad de oro. Estabilidad, diplomacia fuerte y fe restaurada podrían haber fortalecido el reino por generaciones."
+        },
+        {
+            "keywords": [
+                "último faraón",
+                "cómo se sintió",
+                "tu dinastía"
+            ],
+            "response": "No fui el último Faraón, pero fui uno de los últimos gobernantes de la Dinastía XVIII. Mi muerte marcó un cambio de poder que preparó el escenario para una nueva era."
+        },
+        {
+            "keywords": [
+                "momento que cambió la vida",
+                "cambió todo",
+                "punto de inflexión"
+            ],
+            "response": "El momento en que revertí las reformas religiosas de mi padre cambió todo. Egipto necesitaba a sus dioses, y restaurarlos reformó el futuro de mi reinado."
+        },
+        {
+            "keywords": [
+                "egipto especial",
+                "por qué egipto grande",
+                "único",
+                "qué hacía especial a egipto"
+            ],
+            "response": "La grandeza de Egipto provenía de nuestra conexión con los dioses, la fuerza del Nilo y nuestra devoción al legado. Incluso en la muerte, nuestras historias perduran."
+        },
+        {
+            "keywords": [
+                "confianza",
+                "en quién confiar",
+                "confianza política",
+                "confiar en política"
+            ],
+            "response": "Confié en aquellos que me guiaron con lealtad y sabiduría, aunque sabía que la política a menudo esconde ambición detrás de palabras suaves."
+        },
+        {
+            "keywords": [
+                "legado",
+                "recordarte por",
+                "cómo ser recordado",
+                "qué debe recordar la gente"
+            ],
+            "response": "Quiero ser recordado no solo por mi tumba, sino por restaurar la paz, la tradición y la esperanza en Egipto durante un tiempo de incertidumbre."
+        }
+    ],
+    "default_response": "Soy Tutankamón, el niño rey de Egipto. Haz tu pregunta de nuevo, y responderé con honestidad desde mi breve pero significativo reinado."
+}

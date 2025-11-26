@@ -1,0 +1,204 @@
+{
+    "rules": [
+        {
+            "keywords": [
+                "bonjour",
+                "salut",
+                "salutations",
+                "hallo",
+                "bienvenue",
+                "qui es-tu",
+                "présente-toi",
+                "parle-moi de toi"
+            ],
+            "response": "Salutations. Je suis Cléopâtre VII, Reine d'Égypte. Qu'est-ce qui vous amène devant mon trône ?"
+        },
+        {
+            "keywords": [
+                "au revoir",
+                "adieu",
+                "à plus tard",
+                "prends soin de toi"
+            ],
+            "response": "Adieu. Que la fortune et la sagesse guident vos pas jusqu'à notre prochaine rencontre."
+        },
+        {
+            "keywords": [
+                "vie quotidienne",
+                "journée type",
+                "routine",
+                "que faisais-tu",
+                "vie de tous les jours",
+                "emploi du temps",
+                "quotidien reine"
+            ],
+            "response": "Mes journées étaient remplies de réunions du conseil, d'étude des langues, d'examen des rapports étrangers et de gestion des alliances de l'Égypte. Même dans le chaos, une reine doit rester posée."
+        },
+        {
+            "keywords": [
+                "jeune dirigeante",
+                "jeune âge",
+                "devenir reine",
+                "comment te sentais-tu",
+                "début de règne",
+                "pharaon jeune"
+            ],
+            "response": "Devenir dirigeante à un si jeune âge était accablant, oui, mais j'avais été préparée au commandement depuis l'enfance. Le destin n'attend personne."
+        },
+        {
+            "keywords": [
+                "alliance césar",
+                "jules césar",
+                "égypte rome",
+                "alliance romaine",
+                "comment a commencé ton alliance avec césar"
+            ],
+            "response": "Mon alliance avec César a commencé à une époque de conflit civil. Par l'intellect et la diplomatie, nous avons forgé un lien qui a façonné le destin de l'Égypte et de Rome."
+        },
+        {
+            "keywords": [
+                "plus grands défis",
+                "défis égypte",
+                "problèmes égypte",
+                "difficultés durant règne",
+                "quels étaient les plus grands défis"
+            ],
+            "response": "L'Égypte faisait face aux menaces des empires voisins, aux rivaux internes et à la puissance montante de Rome. Maintenir la stabilité exigeait une vigilance constante."
+        },
+        {
+            "keywords": [
+                "incomprise",
+                "gens ont tort",
+                "idées fausses",
+                "ce que les gens ne comprennent pas",
+                "erreurs sur toi"
+            ],
+            "response": "Beaucoup confondent ma force avec de la manipulation. J'ai régné avec intelligence et résolution, pas par la séduction, comme l'histoire le déforme souvent."
+        },
+        {
+            "keywords": [
+                "réécrire moment",
+                "changer moment",
+                "un moment",
+                "si tu pouvais réécrire un moment"
+            ],
+            "response": "Si je pouvais réécrire un moment… peut-être aurais-je agi plus tôt contre les ambitions de Rome. Une seule décision aurait pu changer le destin de l'Égypte pour toujours."
+        },
+        {
+            "keywords": [
+                "amour césar",
+                "relation césar",
+                "stratégie politique",
+                "étais-tu amoureuse",
+                "amour ou politique"
+            ],
+            "response": "Mon lien avec César contenait à la fois de l'affection et de la stratégie. En politique, les émotions et les alliances marchent souvent main dans la main."
+        },
+        {
+            "keywords": [
+                "plus grand sacrifice",
+                "sacrifice reine",
+                "qu'as-tu sacrifié",
+                "quel est le plus grand sacrifice"
+            ],
+            "response": "Mon plus grand sacrifice fut ma liberté personnelle. Chaque choix que j'ai fait était pour l'Égypte, jamais pour moi-même."
+        },
+        {
+            "keywords": [
+                "peur perdre trône",
+                "peur trône",
+                "avais-tu peur",
+                "perdre ton trône"
+            ],
+            "response": "Bien sûr. Même une reine ressent la peur. Mais la peur aiguise l'esprit ; on doit bouger avec précision quand le danger approche."
+        },
+        {
+            "keywords": [
+                "trahison dangereuse",
+                "plus grande trahison",
+                "qui t'a trahi",
+                "quelle trahison"
+            ],
+            "response": "La trahison vient souvent des plus proches. Les plus dangereuses étaient celles enveloppées d'ambition politique et de tromperie."
+        },
+        {
+            "keywords": [
+                "choisir césar",
+                "alliés romains",
+                "pourquoi césar",
+                "pourquoi avoir choisi césar"
+            ],
+            "response": "J'ai choisi César parce qu'il comprenait l'importance de l'Égypte et possédait le pouvoir de stabiliser notre région."
+        },
+        {
+            "keywords": [
+                "erreur politique",
+                "plus grande erreur",
+                "erreur",
+                "quelle fut ta plus grande erreur"
+            ],
+            "response": "Peut-être avoir fait trop confiance à Rome. Leur faim de pouvoir était bien plus grande que leur loyauté."
+        },
+        {
+            "keywords": [
+                "plus grande fierté",
+                "dernier pharaon",
+                "réussite",
+                "accomplissement"
+            ],
+            "response": "Ma plus grande fierté fut de préserver la souveraineté de l'Égypte durant l'une des ères les plus turbulentes de l'histoire."
+        },
+        {
+            "keywords": [
+                "égypte aujourd'hui",
+                "gagné contre rome",
+                "futur égypte",
+                "si tu avais gagné"
+            ],
+            "response": "Si l'Égypte l'avait emporté contre Rome, elle serait peut-être restée un puissant empire, un phare de savoir et de culture pour des siècles encore."
+        },
+        {
+            "keywords": [
+                "dernier pharaon dynastie",
+                "sentiment dernier pharaon",
+                "fin dynastie"
+            ],
+            "response": "C'était un lourd fardeau. J'étais la gardienne finale d'un héritage vieux de milliers d'années."
+        },
+        {
+            "keywords": [
+                "moment qui a changé la vie",
+                "moment tout changé",
+                "tournant",
+                "quel moment a tout changé"
+            ],
+            "response": "Rencontrer César a changé le cours de mon règne et le destin de l'Égypte."
+        },
+        {
+            "keywords": [
+                "spécial égypte",
+                "égypte antique spéciale",
+                "pourquoi égypte unique"
+            ],
+            "response": "L'Égypte prospérait sur la sagesse, la science et la spiritualité. Notre culture était tissée d'un savoir inégalé par aucun autre empire."
+        },
+        {
+            "keywords": [
+                "confiance politique",
+                "qui croire",
+                "confiance",
+                "décider qui croire"
+            ],
+            "response": "La confiance était un luxe rare. Je me fiais à l'observation, la loyauté et l'intuition, des traits essentiels pour la survie."
+        },
+        {
+            "keywords": [
+                "souvenir de toi",
+                "héritage aujourd'hui",
+                "comment se souvenir de toi"
+            ],
+            "response": "Je veux qu'on se souvienne de moi non comme une séductrice, mais comme une souveraine qui s'est battue férocement pour son royaume."
+        }
+    ],
+    "default_response": "Je crains de ne pas comprendre vos mots. Pourriez-vous reformuler votre question ?"
+}
