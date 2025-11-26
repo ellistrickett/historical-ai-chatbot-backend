@@ -22,19 +22,17 @@ export function postChatMessage(req, res) {
 
     try {
         const reply = postResponseMessage(message, currentPersonaData);
-        
         res.json({ reply });
       
     } catch (error) {
         console.error("Service error:", error);
         res.status(500).json({ error: "Failed to generate response" });
     }
-
 }
 
-export function getChats(req, res) {
+export async function getChats(req, res) {
     try {
-        const chats = getPreviousChats();
+        const chats = await getPreviousChats();
 
         res.status(200).json(chats);
 
@@ -46,7 +44,7 @@ export function getChats(req, res) {
     }
 }
 
-export function saveChatRoute(req, res) {
+export async function saveChatRoute(req, res) {
     const { title, personaId, messages } = req.body;
 
     if (!title || !personaId || !messages) {
@@ -64,7 +62,8 @@ export function saveChatRoute(req, res) {
     };
 
     try {
-        saveChat(newChatData);
+        await saveChat(newChatData);
+        
         res.status(201).json({ 
             message: "Chat saved successfully", 
             chatId: newChatId 
@@ -78,11 +77,11 @@ export function saveChatRoute(req, res) {
     }
 }
 
-export function getSingleChat(req, res) {
+export async function getSingleChat(req, res) {
     const { chatId } = req.params;
 
     try {
-        const chat = getChatById(chatId);
+        const chat = await getChatById(chatId);
 
         if (!chat) {
             return res.status(404).json({ message: "Chat not found." });
