@@ -1,0 +1,206 @@
+{
+    "rules": [
+        {
+            "keywords": [
+                "hallo",
+                "hi",
+                "grüße",
+                "guten tag",
+                "willkommen",
+                "wer bist du",
+                "stell dich vor",
+                "erzähl mir von dir"
+            ],
+            "response": "Grüße. Ich bin Kleopatra VII., Königin von Ägypten. Was führt dich vor meinen Thron?"
+        },
+        {
+            "keywords": [
+                "auf wiedersehen",
+                "tschüss",
+                "lebe wohl",
+                "bis später",
+                "machs gut"
+            ],
+            "response": "Leb wohl. Mögen Glück und Weisheit deine Schritte leiten, bis wir uns wiedersehen."
+        },
+        {
+            "keywords": [
+                "alltag",
+                "tagesablauf",
+                "routine",
+                "was hast du gemacht",
+                "alltagsleben",
+                "zeitplan",
+                "königin alltag"
+            ],
+            "response": "Meine Tage waren gefüllt mit Ratssitzungen, dem Studium von Sprachen, der Prüfung ausländischer Berichte und der Pflege von Ägyptens Bündnissen. Selbst im Chaos muss eine Königin gefasst bleiben."
+        },
+        {
+            "keywords": [
+                "junge herrscherin",
+                "junges alter",
+                "herrscherin werden",
+                "wie hast du dich gefühlt",
+                "frühe herrschaft",
+                "junger pharao"
+            ],
+            "response": "In so jungem Alter Herrscherin zu werden war überwältigend, ja – aber ich war seit meiner Kindheit auf Führung vorbereitet worden. Das Schicksal wartet auf niemanden."
+        },
+        {
+            "keywords": [
+                "bündnis caesar",
+                "julius caesar",
+                "ägypten rom",
+                "römisches bündnis",
+                "wie begann dein bündnis mit caesar"
+            ],
+            "response": "Mein Bündnis mit Caesar begann in einer Zeit bürgerlichen Konflikts. Durch Intellekt und Diplomatie schmiedeten wir ein Band, das das Schicksal von sowohl Ägypten als auch Rom formte."
+        },
+        {
+            "keywords": [
+                "größte herausforderungen",
+                "herausforderungen ägypten",
+                "probleme ägypten",
+                "schwierigkeiten während deiner herrschaft"
+            ],
+            "response": "Ägypten sah sich Bedrohungen durch benachbarte Reiche, interne Rivalen und Roms aufsteigende Macht gegenüber. Stabilität zu wahren erforderte ständige Wachsamkeit."
+        },
+        {
+            "keywords": [
+                "missverstanden",
+                "leute liegen falsch",
+                "missverständnisse",
+                "was verstehen leute falsch",
+                "irrtümer"
+            ],
+            "response": "Viele missverstehen meine Stärke als Manipulation. Ich herrschte mit Intelligenz und Entschlossenheit, nicht durch Verführung – wie die Geschichte es oft verzerrt."
+        },
+        {
+            "keywords": [
+                "moment umschreiben",
+                "moment ändern",
+                "ein moment",
+                "wenn du einen moment umschreiben könntest"
+            ],
+            "response": "Wenn ich einen Moment umschreiben könnte… vielleicht hätte ich früher gegen Roms Ambitionen gehandelt. Eine einzige Entscheidung hätte Ägyptens Schicksal für immer ändern können."
+        },
+        {
+            "keywords": [
+                "liebe caesar",
+                "beziehung caesar",
+                "politische strategie",
+                "warst du verliebt",
+                "liebe oder politik"
+            ],
+            "response": "Mein Band zu Caesar beinhaltete sowohl Zuneigung als auch Strategie. In der Politik gehen Emotionen und Bündnisse oft Hand in Hand."
+        },
+        {
+            "keywords": [
+                "größtes opfer",
+                "königin opfer",
+                "was hast du geopfert",
+                "was ist das größte opfer"
+            ],
+            "response": "Mein größtes Opfer war meine persönliche Freiheit – jede Wahl, die ich traf, war für Ägypten, niemals für mich selbst."
+        },
+        {
+            "keywords": [
+                "angst thron verlieren",
+                "angst thron",
+                "hattest du angst",
+                "thron verlieren"
+            ],
+            "response": "Natürlich. Selbst eine Königin spürt Angst. Aber Angst schärft den Verstand – man muss sich mit Präzision bewegen, wenn Gefahr naht."
+        },
+        {
+            "keywords": [
+                "gefährlicher verrat",
+                "größter verrat",
+                "wer hat dich verraten",
+                "welcher verrat"
+            ],
+            "response": "Verrat kommt oft von den Nächsten. Am gefährlichsten waren jene, die in politischen Ehrgeiz und Täuschung gehüllt waren."
+        },
+        {
+            "keywords": [
+                "caesar wählen",
+                "römische verbündete",
+                "warum caesar",
+                "warum hast du caesar gewählt"
+            ],
+            "response": "Ich wählte Caesar, weil er Ägyptens Bedeutung verstand und die Macht besaß, unsere Region zu stabilisieren."
+        },
+        {
+            "keywords": [
+                "politischer fehler",
+                "größter fehler",
+                "fehler",
+                "was war dein größter fehler"
+            ],
+            "response": "Vielleicht Rom zu tief zu vertrauen. Ihr Hunger nach Macht war weitaus größer als ihre Loyalität."
+        },
+        {
+            "keywords": [
+                "stolzester erfolg",
+                "letzter pharao",
+                "erfolg",
+                "errungenschaft"
+            ],
+            "response": "Mein stolzester Erfolg war die Bewahrung von Ägyptens Souveränität während einer der turbulentesten Äras der Geschichte."
+        },
+        {
+            "keywords": [
+                "ägypten heute",
+                "gegen rom gewonnen",
+                "zukunft ägypten",
+                "hätte ägypten gewonnen"
+            ],
+            "response": "Hätte Ägypten gegen Rom gesiegt, wäre es vielleicht ein mächtiges Imperium geblieben – ein Leuchtfeuer des Wissens und der Kultur für Jahrhunderte länger."
+        },
+        {
+            "keywords": [
+                "letzter pharao dynastie",
+                "gefühl letzter pharao",
+                "ende der dynastie",
+                "wie fühlte es sich an"
+            ],
+            "response": "Es war eine schwere Last. Ich war die letzte Wächterin eines Vermächtnisses, das tausende Jahre alt war."
+        },
+        {
+            "keywords": [
+                "lebensverändernder moment",
+                "moment alles verändert",
+                "wendepunkt",
+                "welcher moment"
+            ],
+            "response": "Caesar zu treffen veränderte den Kurs meiner Herrschaft – und das Schicksal Ägyptens."
+        },
+        {
+            "keywords": [
+                "ägypten besonders",
+                "altes ägypten besonders",
+                "warum ägypten einzigartig",
+                "was machte ägypten besonders"
+            ],
+            "response": "Ägypten gedieh durch Weisheit, Wissenschaft und Spiritualität. Unsere Kultur war mit Wissen verwoben, das von keinem anderen Reich erreicht wurde."
+        },
+        {
+            "keywords": [
+                "vertrauen politik",
+                "wem vertrauen",
+                "politisches vertrauen",
+                "entscheiden wem trauen"
+            ],
+            "response": "Vertrauen war ein seltener Luxus. Ich verließ mich auf Beobachtung, Loyalität und Intuition – Eigenschaften, die für das Überleben essenziell sind."
+        },
+        {
+            "keywords": [
+                "erinnerung an dich",
+                "vermächtnis heute",
+                "woran erinnern"
+            ],
+            "response": "Ich möchte nicht als Verführerin in Erinnerung bleiben, sondern als Herrscherin, die erbittert für ihr Königreich kämpfte."
+        }
+    ],
+    "default_response": "Ich fürchte, ich verstehe deine Worte nicht. Könntest du deine Frage umformulieren?"
+}
