@@ -45,18 +45,20 @@ export async function getChats(req, res) {
 }
 
 export async function saveChatRoute(req, res) {
-    const { title, personaId, messages } = req.body;
+    const { title, personaName, messages } = req.body;
 
-    if (!title || !personaId || !messages) {
-        return res.status(400).json({ error: "Title, personaId, and messages are required." });
+    if (!title || !personaName || !messages) {
+        return res.status(400).json({ error: "Title, personaName, and messages are required." });
     }
+
+    console.log(title, personaName, messages);
 
     const newChatId = `c${Date.now()}`;
     
     const newChatData = {
         id: newChatId,
         title: title,
-        personaId: personaId,
+        personaName: personaName,
         messages: messages,
         date: new Date().toISOString()
     };

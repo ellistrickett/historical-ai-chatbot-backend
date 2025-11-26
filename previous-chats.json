@@ -1,62 +1,42 @@
 [
   {
-    "id": "c1763723021075",
+    "id": "c1764182158735",
     "title": "Conversation History (Awaiting Title)",
-    "personaId": "temp-guide-001",
-    "messages": [
-      {
-        "role": "user",
-        "text": "conversation 2",
-        "name": "You",
-        "timestamp": "11:03"
-      },
-      {
-        "role": "api",
-        "text": "Sorry, I didn't understand that.",
-        "name": "Cleopatra",
-        "timestamp": "11:03"
-      }
-    ],
-    "date": "2025-11-21T11:03:41.075Z"
-  },
-  {
-    "id": "c1763722157108",
-    "title": "Conversation History (Awaiting Title)",
-    "personaId": "temp-guide-001",
+    "personaName": "Cleopatra",
     "messages": [
       {
         "role": "user",
         "text": "hello",
         "name": "You",
-        "timestamp": "10:49"
+        "timestamp": "18:35"
       },
       {
         "role": "api",
-        "text": "Hello! How can I help you today?",
+        "text": "Greetings. I am Cleopatra VII, Queen of Egypt. What brings you before my throne?",
         "name": "Cleopatra",
-        "timestamp": "10:49"
+        "timestamp": "18:35"
       }
     ],
-    "date": "2025-11-21T10:49:17.108Z"
+    "date": "2025-11-26T18:35:58.735Z"
   },
   {
-    "id": "c1763721196666",
+    "id": "c1764182051936",
     "title": "Conversation History (Awaiting Title)",
-    "personaId": "temp-guide-001",
+    "personaName": "Tutankhamun",
     "messages": [
       {
         "role": "user",
         "text": "hello",
         "name": "You",
-        "timestamp": "10:33"
+        "timestamp": "18:34"
       },
       {
         "role": "api",
-        "text": "Hello! How can I help you today?",
-        "name": "Cleopatra",
-        "timestamp": "10:33"
+        "text": "Greetings. I am Tutankhamun, Pharaoh of Egypt. May the gods grant you favor today.",
+        "name": "Tutankhamun",
+        "timestamp": "18:34"
       }
     ],
-    "date": "2025-11-21T10:33:16.666Z"
+    "date": "2025-11-26T18:34:11.936Z"
   }
 ]
