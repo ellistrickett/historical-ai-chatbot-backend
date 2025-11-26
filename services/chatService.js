@@ -1,14 +1,9 @@
-import fs from "fs";
+import fs from "fs/promises";
 import path from "path";
-import { fileURLToPath } from "url";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-const chatsFilePath = path.resolve(__dirname, '..', "previous-chats.json");
+const chatsFilePath = path.join(process.cwd(), "previous-chats.json");
 
 export function postResponseMessage(userMessage, personaData) {
-  
   if (!personaData || !personaData.rules) {
     return "I am currently lost for words.";
   }
@@ -16,58 +11,42 @@ export function postResponseMessage(userMessage, personaData) {
   const normalizedMessage = userMessage.toLowerCase().trim();
 
   const matchedRule = personaData.rules.find(rule => {
-
     return rule.keywords.some(keyword => {
-      const normalizedKeyword = keyword.toLowerCase();
-
-      return normalizedMessage.includes(normalizedKeyword);
+      return normalizedMessage.includes(keyword.toLowerCase());
     });
   });
 
-  if (matchedRule) {
-    return matchedRule.response;
-  }
-
-  return personaData.default_response || "I do not understand.";
+  return matchedRule ? matchedRule.response : (personaData.default_response || "I do not understand.");
 }
 
-export function saveChat(newChatData) {
+export async function getPreviousChats() {
     try {
-        let chats = [];
-        if (fs.existsSync(chatsFilePath)) {
-            const data = fs.readFileSync(chatsFilePath, "utf-8");
-            chats = JSON.parse(data);
-        }
+        await fs.access(chatsFilePath);
+        const data = await fs.readFile(chatsFilePath, "utf-8");
+        return JSON.parse(data);
+    } catch (error) {
+        if (error.code === 'ENOENT') return [];
+        
+        console.error("Error reading chats file:", error);
+        throw new Error("Could not retrieve chat history.");
+    }
+}
 
+export async function saveChat(newChatData) {
+    try {
+        const chats = await getPreviousChats();
+        
         chats.unshift(newChatData);
 
-        fs.writeFileSync(chatsFilePath, JSON.stringify(chats, null, 2), "utf-8");
-
+        await fs.writeFile(chatsFilePath, JSON.stringify(chats, null, 2), "utf-8");
+        return true;
     } catch (error) {
-        console.error("Error saving chat to file:", error);
+        console.error("Error saving chat:", error);
         throw new Error("Failed to save chat data.");
     }
 }
 
-export function getPreviousChats() {
-    try {
-        const data = fs.readFileSync(chatsFilePath, "utf-8");
-        const chats = JSON.parse(data);
-        return chats;
-    } catch (error) {
-        if (error.code === 'ENOENT') return [];
-        console.error("Error reading or parsing chats.json:", error);
-        return [];
-    }
-}
-
-export function getChatById(chatId) {
-    try {
-        const chats = getPreviousChats(); 
-        return chats.find(chat => chat.id === chatId);
-
-    } catch (error) {
-        console.error("Error finding chat by ID:", error);
-        return undefined;
-    }
+export async function getChatById(chatId) {
+    const chats = await getPreviousChats();
+    return chats.find(chat => chat.id === chatId);
 }
