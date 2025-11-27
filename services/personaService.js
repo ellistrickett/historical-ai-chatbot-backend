@@ -4,9 +4,9 @@ import path from 'path';
 const rootPath = process.cwd(); 
 
 const TARGET_FILES = [
-  { name: "Cleopatra", filename: 'cleopatra.json' },
-  { name: "Tutankhamun",     filename: 'tutankhamun.json' },
-  { name: "Ramesses II",  filename: 'ramesses-II.json' }
+  { name: "Cleopatra", filename: 'persona-responses/cleopatra.json' },
+  { name: "Tutankhamun",     filename: 'persona-responses/tutankhamun.json' },
+  { name: "Ramesses II",  filename: 'persona-responses/ramesses-ii.json' }
 ];
 
 const personaCache = {};
