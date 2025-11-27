@@ -51,8 +51,6 @@ export async function saveChatRoute(req, res) {
         return res.status(400).json({ error: "Title, personaName, and messages are required." });
     }
 
-    console.log(title, personaName, messages);
-
     const newChatId = `c${Date.now()}`;
 
     const newChatData = {
