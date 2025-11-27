@@ -1,7 +1,7 @@
 import { postResponseMessage, getPreviousChats, saveChat, getChatById } from "../services/chatService.js";
 import { getPersona } from '../services/personaService.js';
 
-export function postChatMessage(req, res) {
+export async function postChatMessage(req, res) {
     const { message, personaName } = req.body;
 
     if (!personaName) {
@@ -15,15 +15,15 @@ export function postChatMessage(req, res) {
     const currentPersonaData = getPersona(personaName);
 
     if (!currentPersonaData) {
-        return res.status(404).json({ 
-            error: `Persona '${personaName}' not found.` 
+        return res.status(404).json({
+            error: `Persona '${personaName}' not found.`
         });
     }
 
     try {
-        const reply = postResponseMessage(message, currentPersonaData);
+        const reply = await postResponseMessage(message, currentPersonaData, personaName);
         res.json({ reply });
-      
+
     } catch (error) {
         console.error("Service error:", error);
         res.status(500).json({ error: "Failed to generate response" });
@@ -38,8 +38,8 @@ export async function getChats(req, res) {
 
     } catch (error) {
         console.error('Error in getChats controller:', error);
-        res.status(500).json({ 
-            message: 'An internal server error occurred while retrieving chats.' 
+        res.status(500).json({
+            message: 'An internal server error occurred while retrieving chats.'
         });
     }
 }
@@ -54,7 +54,7 @@ export async function saveChatRoute(req, res) {
     console.log(title, personaName, messages);
 
     const newChatId = `c${Date.now()}`;
-    
+
     const newChatData = {
         id: newChatId,
         title: title,
@@ -65,16 +65,16 @@ export async function saveChatRoute(req, res) {
 
     try {
         await saveChat(newChatData);
-        
-        res.status(201).json({ 
-            message: "Chat saved successfully", 
-            chatId: newChatId 
+
+        res.status(201).json({
+            message: "Chat saved successfully",
+            chatId: newChatId
         });
 
     } catch (error) {
         console.error('Error saving chat:', error);
-        res.status(500).json({ 
-            message: 'An internal server error occurred while saving the chat.' 
+        res.status(500).json({
+            message: 'An internal server error occurred while saving the chat.'
         });
     }
 }
@@ -93,8 +93,8 @@ export async function getSingleChat(req, res) {
 
     } catch (error) {
         console.error(`Error in getSingleChat controller for ID ${chatId}:`, error);
-        res.status(500).json({ 
-            message: 'An internal server error occurred while retrieving the chat.' 
+        res.status(500).json({
+            message: 'An internal server error occurred while retrieving the chat.'
         });
     }
 }
