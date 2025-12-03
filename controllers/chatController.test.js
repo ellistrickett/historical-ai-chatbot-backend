@@ -78,6 +78,27 @@ describe('Chat Controller', () => {
         });
     });
 
+    describe('getSingleChat', () => {
+        it('returns chat if found', async () => {
+            req.params = { chatId: '123' };
+            const mockChat = { id: '123', title: 'Test' };
+            getChatById.mockResolvedValue(mockChat);
+
+            await getSingleChat(req, res);
+            expect(res.status).toHaveBeenCalledWith(200);
+            expect(res.json).toHaveBeenCalledWith(mockChat);
+        });
+
+        it('returns 404 if chat not found', async () => {
+            req.params = { chatId: '999' };
+            getChatById.mockResolvedValue(null);
+
+            await getSingleChat(req, res);
+            expect(res.status).toHaveBeenCalledWith(404);
+            expect(res.json).toHaveBeenCalledWith({ message: 'Chat not found.' });
+        });
+    });
+
     describe('deleteChatRoute', () => {
         it('deletes chat successfully', async () => {
             req.params = { chatId: '123' };
