@@ -1,5 +1,6 @@
 import { postResponseMessage, getPreviousChats, saveChat, getChatById, deleteChatById } from "../services/chatService.js";
 import { getPersona } from '../services/personaService.js';
+import { v4 as uuidv4 } from 'uuid';
 
 export async function postChatMessage(req, res) {
     const { message, personaName } = req.body;
@@ -51,7 +52,7 @@ export async function saveChatRoute(req, res) {
         return res.status(400).json({ error: "Title, personaName, and messages are required." });
     }
 
-    const newChatId = `c${Date.now()}`;
+    const newChatId = uuidv4();
 
     const newChatData = {
         id: newChatId,
