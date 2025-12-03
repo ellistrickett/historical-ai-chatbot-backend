@@ -1,17 +1,17 @@
 import fs from 'fs';
 import path from 'path';
 
-const rootPath = process.cwd(); 
+const rootPath = process.cwd();
 
 const TARGET_FILES = [
   { name: "Cleopatra", filename: 'persona-responses/cleopatra.json' },
-  { name: "Tutankhamun",     filename: 'persona-responses/tutankhamun.json' },
-  { name: "Ramesses II",  filename: 'persona-responses/ramesses-ii.json' }
+  { name: "Tutankhamun", filename: 'persona-responses/tutankhamun.json' },
+  { name: "Ramesses II", filename: 'persona-responses/ramesses-ii.json' }
 ];
 
 const personaCache = {};
 
-const loadPersonas = () => {
+export const loadPersonas = () => {
   TARGET_FILES.forEach(file => {
     try {
       const fullPath = path.join(rootPath, file.filename);
@@ -28,7 +28,5 @@ const loadPersonas = () => {
     }
   });
 };
-
-loadPersonas();
 
 export const getPersona = (personaName) => personaCache[personaName];

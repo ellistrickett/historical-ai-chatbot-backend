@@ -2,11 +2,15 @@ import express from "express";
 import cors from "cors";
 import 'dotenv/config';
 import chatRoutes from "./routes/chatRoutes.js";
+import { loadPersonas } from "./services/personaService.js";
 
 export const app = express();
 
 app.use(cors());
 app.use(express.json());
+
+// Initialize personas
+loadPersonas();
 
 app.use("/api", chatRoutes);
 
