@@ -7,7 +7,7 @@ export async function postResponseMessage(userMessage, personaData, personaName)
 
   const normalizedMessage = userMessage.toLowerCase().trim();
 
-  const matchedRule = personaData.rules.find(rule => 
+  const matchedRule = personaData.rules.find(rule =>
     rule.keywords.some(keyword => normalizedMessage.includes(keyword.toLowerCase()))
   );
 
@@ -29,8 +29,8 @@ export async function saveChat(newChatData) {
     const chats = await readChatsFile();
 
     if (newChatData.messages?.length > 0) {
-        const aiTitle = await generateSummaryTitle(newChatData.messages);
-        if (aiTitle) newChatData.title = aiTitle;
+      const aiTitle = await generateSummaryTitle(newChatData.messages);
+      if (aiTitle) newChatData.title = aiTitle;
     }
 
     chats.unshift(newChatData);
@@ -45,4 +45,18 @@ export async function saveChat(newChatData) {
 export async function getChatById(chatId) {
   const chats = await readChatsFile();
   return chats.find(chat => chat.id === chatId);
+}
+
+export async function deleteChatById(chatId) {
+  try {
+    const chats = await readChatsFile();
+    const updatedChats = chats.filter(chat => chat.id !== chatId);
+    if (chats.length === updatedChats.length) return false;
+    await writeChatsFile(updatedChats);
+
+    return true;
+  } catch (error) {
+    console.error("Service Error deleting chat:", error);
+    throw error;
+  }
 }

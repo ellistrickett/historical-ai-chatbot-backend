@@ -1,11 +1,11 @@
 import express from "express";
-import { postChatMessage, getChats, saveChatRoute, getSingleChat } from "../controllers/chatController.js";
+import { postChatMessage, getChats, saveChatRoute, getSingleChat, deleteChatRoute } from "../controllers/chatController.js";
 
 const router = express.Router();
 
 router.post("/chat", postChatMessage);
 router.get("/previous-chat", getChats);
 router.post("/chat/save", saveChatRoute);
-router.get("/chat/:chatId", getSingleChat); 
-
+router.get("/chat/:chatId", getSingleChat);
+router.delete("/chat/:chatId", deleteChatRoute);
 export default router;
