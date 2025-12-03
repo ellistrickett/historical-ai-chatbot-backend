@@ -1,7 +1,7 @@
 import { jest } from '@jest/globals';
 
 // Mock dependencies
-jest.unstable_mockModule('../services/chatService.js', () => ({
+jest.unstable_mockModule('../../../services/chatService.js', () => ({
     postResponseMessage: jest.fn(),
     getPreviousChats: jest.fn(),
     saveChat: jest.fn(),
@@ -9,14 +9,14 @@ jest.unstable_mockModule('../services/chatService.js', () => ({
     deleteChatById: jest.fn(),
 }));
 
-jest.unstable_mockModule('../services/personaService.js', () => ({
+jest.unstable_mockModule('../../../services/personaService.js', () => ({
     getPersona: jest.fn(),
 }));
 
 // Dynamic imports
-const { postResponseMessage, getPreviousChats, saveChat, getChatById, deleteChatById } = await import('../services/chatService.js');
-const { getPersona } = await import('../services/personaService.js');
-const { postChatMessage, getChats, saveChatRoute, getSingleChat, deleteChatRoute } = await import('./chatController.js');
+const { postResponseMessage, getPreviousChats, saveChat, deleteChatById, getChatById } = await import('../../../services/chatService.js');
+const { getPersona } = await import('../../../services/personaService.js');
+const { postChatMessage, getChats, saveChatRoute, getSingleChat, deleteChatRoute } = await import('../../../controllers/chatController.js');
 
 describe('Chat Controller', () => {
     let req, res;

@@ -14,20 +14,16 @@ jest.unstable_mockModule('path', () => ({
     default: {
         join: jest.fn(),
     },
-    join: jest.fn(),
 }));
 
 // Dynamic imports
 const fs = await import('fs');
 const path = await import('path');
-const { loadPersonas, getPersona } = await import('./personaService.js');
+const { loadPersonas, getPersona } = await import('../../../services/personaService.js');
 
 describe('Persona Service', () => {
     beforeEach(() => {
         jest.clearAllMocks();
-        jest.spyOn(console, 'log').mockImplementation(() => { });
-        jest.spyOn(console, 'warn').mockImplementation(() => { });
-        jest.spyOn(console, 'error').mockImplementation(() => { });
     });
 
     afterEach(() => {

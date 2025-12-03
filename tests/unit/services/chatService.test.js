@@ -1,22 +1,24 @@
 import { jest } from '@jest/globals';
 
 // Mock dependencies
-jest.unstable_mockModule('../config/geminiClient.js', () => ({
+jest.unstable_mockModule('../../../config/geminiClient.js', () => ({
     generateAIContent: jest.fn(),
 }));
-jest.unstable_mockModule('../repositories/chatRepository.js', () => ({
+
+jest.unstable_mockModule('../../../repositories/chatRepository.js', () => ({
     readChatsFile: jest.fn(),
     writeChatsFile: jest.fn(),
 }));
-jest.unstable_mockModule('./aiService.js', () => ({
+
+jest.unstable_mockModule('../../../services/aiService.js', () => ({
     generateSummaryTitle: jest.fn(),
     generatePersonaResponse: jest.fn(),
 }));
 
 // Dynamic imports
-const { readChatsFile, writeChatsFile } = await import('../repositories/chatRepository.js');
-const { generatePersonaResponse, generateSummaryTitle } = await import('./aiService.js');
-const { postResponseMessage, saveChat, deleteChatById } = await import('./chatService.js');
+const { readChatsFile, writeChatsFile } = await import('../../../repositories/chatRepository.js');
+const { generatePersonaResponse, generateSummaryTitle } = await import('../../../services/aiService.js');
+const { postResponseMessage, saveChat, deleteChatById } = await import('../../../services/chatService.js');
 
 describe('Chat Service', () => {
     beforeEach(() => {

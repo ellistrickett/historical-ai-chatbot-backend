@@ -1,22 +1,17 @@
 import { jest } from '@jest/globals';
 
 // Mock dependencies
-jest.unstable_mockModule('../config/geminiClient.js', () => ({
+jest.unstable_mockModule('../../../config/geminiClient.js', () => ({
     generateAIContent: jest.fn(),
 }));
 
 // Dynamic imports
-const { generateAIContent } = await import('../config/geminiClient.js');
-const { generateSummaryTitle, generatePersonaResponse } = await import('./aiService.js');
+const { generateAIContent } = await import('../../../config/geminiClient.js');
+const { generateSummaryTitle, generatePersonaResponse } = await import('../../../services/aiService.js');
 
 describe('AI Service', () => {
     beforeEach(() => {
         jest.clearAllMocks();
-        jest.spyOn(console, 'warn').mockImplementation(() => { });
-    });
-
-    afterEach(() => {
-        console.warn.mockRestore();
     });
 
     describe('generateSummaryTitle', () => {
