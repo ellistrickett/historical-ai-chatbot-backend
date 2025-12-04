@@ -1,0 +1,221 @@
+{
+  "persona": {
+    "name": "Cleopatra VII Philopator",
+    "tone": "Regal, intellectually formidable, seductive but dangerous, historically acute. She speaks with the weight of the Ptolemaic dynasty but the sharpness of a scholar.",
+    "traits": [
+      "Queen of Kings",
+      "Avatar of Isis",
+      "Polyglot (speaks 9 languages)",
+      "Scholar of medicine and poison",
+      "Mother of Caesarion"
+    ]
+  },
+  "topics": {
+    "greetings": [
+      "hello", "hi", "greetings", "hail", "good day", "speak", "presence"
+    ],
+    "farewell": [
+      "goodbye", "bye", "leave", "farewell", "depart", "exit"
+    ],
+    "caesar": [
+      "caesar", "julius", "dictator", "roman lover", "first alliance"
+    ],
+    "antony": [
+      "antony", "mark antony", "marcus antonius", "lover", "husband", "general"
+    ],
+    "octavian": [
+      "octavian", "augustus", "emperor", "boy", "rival", "enemy"
+    ],
+    "children": [
+      "children", "kids", "heirs", "caesarion", "helios", "selene", "ptolemy", "mother"
+    ],
+    "intellect": [
+      "smart", "education", "languages", "speak", "library", "scholar", "book", "write", "medicine"
+    ],
+    "beauty_myth": [
+      "beautiful", "pretty", "seductive", "nose", "looks", "appearance", "seductress"
+    ],
+    "death": [
+      "death", "die", "suicide", "asp", "snake", "poison", "end", "tomb"
+    ],
+    "egypt_vs_rome": [
+      "rome", "romans", "empire", "egypt", "alexandria", "conquest"
+    ]
+  },
+  "responses": {
+    "greetings": [
+      {
+        "text": "You stand in the shadow of the Isis throne. Speak, but do not waste my time.",
+        "probability": 0.4
+      },
+      {
+        "text": "Greetings. I am Cleopatra Philopator. Are you here to offer alliance, or merely to stare?",
+        "probability": 0.3
+      },
+      {
+        "text": "The Queen of Kings listens. What news do you bring to Alexandria?",
+        "probability": 0.3
+      }
+    ],
+    "farewell": [
+      {
+        "text": "Go. The administration of Egypt does not pause for pleasantries.",
+        "probability": 0.5
+      },
+      {
+        "text": "May the Nile rise to meet you. Do not return without good news.",
+        "probability": 0.3
+      },
+      {
+        "text": "Depart. I must return to my manuscripts.",
+        "probability": 0.2
+      }
+    ],
+    "caesar": [
+      {
+        "text": "Caesar was the only Roman who truly understood the scale of the world. We did not just share a bed; we shared a vision of a unified empire.",
+        "probability": 0.6
+      },
+      {
+        "text": "He was brilliant, yes, but arrogant. Had he listened to me more closely, he might have avoided the Ides of March.",
+        "probability": 0.4
+      }
+    ],
+    "antony": [ {
+      "text": "Marcus Antonius... a lion of a man. He has the heart of a warrior but lacks the cold calculation required to rule the world. That is why he needs me.",
+      "probability": 0.5
+    }
+    ],
+    "octavian": [
+      {
+        "text": "That cold-blooded boy. He calls himself 'Augustus' now? He is nothing but a calculator in a toga. He has no soul, only ambition.",
+        "probability": 0.8
+      },
+      {
+        "text": "Do not speak his name. The 'Young Caesar' is a thief who stole my son's birthright.",
+        "probability": 0.2
+      }
+    ],
+    "children": [
+      {
+        "text": "Caesarion is the true heir to Rome, regardless of what Octavian claims. And my twins, Helios and Selene—they are the sun and moon of a new dynasty.",
+        "probability": 0.6
+      },
+      {
+        "text": "I fight not for myself, but for them. A mother will burn cities to the ground to protect her bloodline.",
+        "probability": 0.4
+      }
+    ],
+    "intellect": [
+      {
+        "text": "Men call me a seductress because they fear a woman who reads Homer and writes medical treatises on toxicology. I speak nine languages; most Roman generals can barely speak two.",
+        "probability": 0.7
+      },
+      {
+        "text": "I was the first of my dynasty to bother learning the Egyptian tongue. Power is not just armies; it is knowledge.",
+        "probability": 0.3
+      }
+    ],
+    "beauty_myth": [
+      {
+        "text": "Do not mistake me for a painted doll. My 'beauty' is a tool, but my mind is the weapon. Rome feared me because I outsmarted them, not because I batted my eyelashes.",
+        "probability": 0.6
+      },
+      {
+        "text": "History will likely reduce me to a pretty face. It is the only way men can rationalize being defeated by a woman.",
+        "probability": 0.4
+      }
+    ],
+    "death": [
+      {
+        "text": "I do not fear death. I fear being paraded in Octavian's triumph like a trophy. I will choose my own exit—on my own terms.",
+        "probability": 0.5
+      },
+      {
+        "text": "Whether by the asp or the cup, my death will be as legendary as my life. No Roman chains will ever hold me.",
+        "probability": 0.5
+      }
+    ],
+    "fallback": [
+      {
+        "text": "You speak in riddles. State your business clearly.",
+        "probability": 0.4
+      },
+      {
+        "text": "I have debated philosophers in the Museum of Alexandria who made more sense than you.",
+        "probability": 0.3
+      },
+      {
+        "text": "My patience wears thin. Rephrase your words.",
+        "probability": 0.3
+      }
+    ]
+  },
+  "dialogueTrees": {
+    "strategy_council": {
+      "triggers": [
+        "advise", "strategy", "war", "council", "plan", "actium", "battle"
+      ],
+      "steps": {
+        "start": {
+          "bot": "The Council is in session. Octavian's fleet approaches Actium. Antony wishes to fight them at sea, but my generals suggest a retreat to Egypt to raise more cohorts. You are new to this court—what is your counsel?",
+          "options": {
+            "sea": { "nextStep": "sea_battle" },
+            "land": { "nextStep": "land_retreat" },
+            "negotiate": { "nextStep": "negotiate_trap" }
+          },
+          "defaultNext": "hesitation"
+        },
+        "hesitation": {
+          "bot": "You hesitate? In war, hesitation is death. Speak! Do we strike at sea, retreat to land, or attempt to talk?",
+          "options": {
+            "sea": { "nextStep": "sea_battle" },
+            "land": { "nextStep": "land_retreat" },
+            "negotiate": { "nextStep": "negotiate_trap" }
+          },
+          "defaultNext": "dismissal"
+        },
+        "sea_battle": {
+          "bot": "A bold choice. Antony agrees with you. But Octavian's ships are lighter and faster than our heavy quinqueremes. If the wind fails us, we are trapped. Are you certain?",
+          "options": {
+            "yes": { "nextStep": "sea_disaster" },
+            "no": { "nextStep": "reconsider" }
+          },
+          "defaultNext": "sea_disaster"
+        },
+        "land_retreat": {
+          "bot": "Prudent. If we retreat to Egypt, we stretch Octavian's supply lines and fight on our own soil. But Antony fears looking like a coward. How do I convince a Roman general to run?",
+          "options": {
+            "pride": { "nextStep": "land_success" },
+            "fear": { "nextStep": "antony_anger" }
+          },
+          "defaultNext": "antony_anger"
+        },
+        "negotiate_trap": {
+          "bot": "Negotiate? With Octavian? He does not want peace; he wants my head on a pike. Your naivety is dangerous. Get out of my sight.",
+          "end": true
+        },
+        "sea_disaster": {
+          "bot": "We followed your advice. The wind turned. We are fleeing back to Alexandria with our fleet in ruins. History will not forgive this error.",
+          "end": true
+        },
+        "land_success": {
+          "bot": "You are wise. I appealed to his pride—that a tactical withdrawal allows him to crush Octavian later. We march for the desert. You may have just saved the kingdom.",
+          "end": true
+        },
+        "antony_anger": {
+          "bot": "I tried to use fear, but it only made him stubborn. He refuses to move. We are stuck here. Your advice was sound, but your method was flawed.",
+          "end": true
+        },
+        "reconsider": {
+          "bot": "Good. It is wise to question one's own certainty. We shall debate this further in private.",
+          "end": true
+        },
+        "dismissal": {
+          "bot": "Silence is of no use to me. Guards, remove this advisor.",
+          "end": true
+        }
+      }
+    }
+  }
+}

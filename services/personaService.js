@@ -4,7 +4,7 @@ import path from 'path';
 const rootPath = process.cwd();
 
 const TARGET_FILES = [
-  { name: "Cleopatra", filename: 'persona-responses/cleopatra.json' },
+  { name: "Cleopatra", filename: 'persona-responses/cleopatra_advanced.json' },
   { name: "Tutankhamun", filename: 'persona-responses/tutankhamun.json' },
   { name: "Ramesses II", filename: 'persona-responses/ramesses-ii.json' }
 ];
