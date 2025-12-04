@@ -31,7 +31,7 @@ export async function generateBotReply(userMessage, personaData, currentTreeStat
     }
 
     try {
-        const aiReply = await generatePersonaResponse(personaData.persona.name, userMessage);
+        const aiReply = await generatePersonaResponse(personaData.persona, userMessage);
         return {
             reply: aiReply,
             treeState: null,

@@ -23,8 +23,23 @@ export async function generateSummaryTitle(messages) {
   }
 }
 
-export async function generatePersonaResponse(personaName, userMessage) {
-    const prompt = `You are ${personaName}. Respond to the following message in character: "${userMessage}". Keep your response concise and consistent with your historical persona.`;
-    
-    return await generateAIContent(prompt);
+export async function generatePersonaResponse(persona, userMessage) {
+  const traits = persona.traits ? persona.traits.join(", ") : "None";
+
+  const prompt = `
+      You are roleplaying as ${persona.name}.
+      
+      Your Character Profile:
+      - Tone: ${persona.tone}
+      - Key Traits: ${traits}
+      
+      Task:
+      Respond to the user's message below. 
+      Stay strictly in character. Do not break the fourth wall. 
+      Keep your response concise (under 3 sentences unless asked for a story).
+      
+      User Message: ${userMessage}
+    `;
+
+  return await generateAIContent(prompt);
 }

@@ -39,9 +39,15 @@ describe('AI Service', () => {
         it('generates a response successfully', async () => {
             generateAIContent.mockResolvedValue('I am Cleopatra.');
 
-            const response = await generatePersonaResponse('Cleopatra', 'Who are you?');
+            const mockPersona = {
+                name: 'Cleopatra',
+                tone: 'Regal',
+                traits: ['Queen']
+            };
 
-            expect(generateAIContent).toHaveBeenCalledWith(expect.stringContaining('You are Cleopatra'));
+            const response = await generatePersonaResponse(mockPersona, 'Who are you?');
+
+            expect(generateAIContent).toHaveBeenCalledWith(expect.stringContaining('You are roleplaying as Cleopatra'));
             expect(response).toBe('I am Cleopatra.');
         });
     });
