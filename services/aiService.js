@@ -18,7 +18,7 @@ export async function generateSummaryTitle(messages) {
     const text = await generateAIContent(prompt);
     return text.trim().replace(/^"|"$/g, '');
   } catch (error) {
-    console.warn("Could not generate AI title, using default.");
+    console.warn("Could not generate AI title");
     return null;
   }
 }

@@ -1,8 +1,8 @@
-import { 
-    getPreviousChats, 
-    saveChat, 
-    getChatById, 
-    deleteChatById 
+import {
+    getPreviousChats,
+    saveChat,
+    getChatById,
+    deleteChatById
 } from "../services/chatHistoryService.js";
 import { v4 as uuidv4 } from 'uuid';
 
@@ -45,7 +45,7 @@ export async function createChat(req, res) {
 
     const newChatData = {
         id: newChatId,
-        title: title || "New Conversation",
+        title: title,
         personaName: personaName,
         messages: messages,
         date: new Date().toISOString()

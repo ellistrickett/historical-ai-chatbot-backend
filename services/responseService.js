@@ -23,11 +23,13 @@ export async function generateBotReply(userMessage, personaData, currentTreeStat
         const possibleResponses = personaData.responses[detectedTopic];
         const selected = chooseWeighted(possibleResponses);
 
-        return {
-            reply: selected.text,
-            treeState: null,
-            mode: "topic_match"
-        };
+        if (selected) {
+            return {
+                reply: selected.text,
+                treeState: null,
+                mode: "topic_match"
+            };
+        }
     }
 
     try {

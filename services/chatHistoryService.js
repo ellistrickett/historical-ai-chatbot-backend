@@ -16,7 +16,11 @@ export async function saveChat(newChatData) {
 
     if (newChatData.messages?.length > 0 && !newChatData.title) {
       const aiTitle = await generateSummaryTitle(newChatData.messages);
-      if (aiTitle) newChatData.title = aiTitle;
+      if (aiTitle) {
+        newChatData.title = aiTitle;
+      } else {
+        newChatData.title = "Server Error: Could not generate AI title";
+      }
     }
 
     const existingIndex = chats.findIndex(c => c.id === newChatData.id);
