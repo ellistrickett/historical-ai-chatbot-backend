@@ -3,12 +3,7 @@ import LoginForm from './LoginForm';
 import SignupForm from './SignupForm';
 import { Sparkles } from 'lucide-react';
 
-interface AuthPageProps {
-  onLogin: (email: string, password: string) => void;
-  onSignup: (name: string, email: string, password: string) => void;
-}
-
-function AuthPage({ onLogin, onSignup }: AuthPageProps) {
+function AuthPage({ onLogin, onSignup }) {
   const [isLogin, setIsLogin] = useState(true);
 
   return (

@@ -1,11 +1,7 @@
-import { useState, FormEvent } from 'react';
+import { useState } from 'react';
 import { Mail, Lock, User, ArrowRight } from 'lucide-react';
 
-interface SignupFormProps {
-  onSignup: (name: string, email: string, password: string) => void;
-}
-
-function SignupForm({ onSignup }: SignupFormProps) {
+function SignupForm({ onSignup }) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -13,7 +9,7 @@ function SignupForm({ onSignup }: SignupFormProps) {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
 
-  const handleSubmit = async (e: FormEvent) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
 

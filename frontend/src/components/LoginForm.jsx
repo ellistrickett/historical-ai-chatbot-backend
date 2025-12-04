@@ -1,16 +1,12 @@
-import { useState, FormEvent } from 'react';
+import { useState } from 'react';
 import { Mail, Lock, ArrowRight } from 'lucide-react';
 
-interface LoginFormProps {
-  onLogin: (email: string, password: string) => void;
-}
-
-function LoginForm({ onLogin }: LoginFormProps) {
+function LoginForm({ onLogin }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = async (e: FormEvent) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
 

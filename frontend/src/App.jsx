@@ -3,14 +3,14 @@ import AuthPage from './components/AuthPage';
 import Dashboard from './components/Dashboard';
 
 function App() {
-  const [user, setUser] = useState<{ email: string; name: string } | null>(null);
+  const [user, setUser] = useState(null);
 
-  const handleLogin = (email: string, password: string) => {
+  const handleLogin = (email, password) => {
     const mockUser = { email, name: email.split('@')[0] };
     setUser(mockUser);
   };
 
-  const handleSignup = (name: string, email: string, password: string) => {
+  const handleSignup = (name, email, password) => {
     const mockUser = { email, name };
     setUser(mockUser);
   };

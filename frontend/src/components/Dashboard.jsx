@@ -1,11 +1,6 @@
 import { LogOut, Sparkles, TrendingUp, Users, Activity } from 'lucide-react';
 
-interface DashboardProps {
-  user: { email: string; name: string };
-  onLogout: () => void;
-}
-
-function Dashboard({ user, onLogout }: DashboardProps) {
+function Dashboard({ user, onLogout }) {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-cyan-50">
       <nav className="bg-white border-b border-gray-200 shadow-sm">
