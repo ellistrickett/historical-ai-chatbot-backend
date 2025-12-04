@@ -1,4 +1,4 @@
-import { readChatsFile, writeChatsFile } from "../repositories/chatRepository.js";
+import { readChatsFile, writeChatsFile } from "../repositories/chatHistoryRepository.js";
 import { generateSummaryTitle } from "./aiService.js";
 
 export async function getPreviousChats() {
@@ -22,9 +22,9 @@ export async function saveChat(newChatData) {
     const existingIndex = chats.findIndex(c => c.id === newChatData.id);
 
     if (existingIndex >= 0) {
-        chats[existingIndex] = newChatData;
+      chats[existingIndex] = newChatData;
     } else {
-        chats.unshift(newChatData);
+      chats.unshift(newChatData);
     }
 
     await writeChatsFile(chats);
@@ -40,9 +40,9 @@ export async function deleteChatById(chatId) {
   try {
     const chats = await readChatsFile();
     const updatedChats = chats.filter(chat => chat.id !== chatId);
-    
+
     if (chats.length === updatedChats.length) return false;
-    
+
     await writeChatsFile(updatedChats);
     return true;
   } catch (error) {

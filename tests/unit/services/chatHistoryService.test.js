@@ -1,7 +1,7 @@
 import { jest } from '@jest/globals';
 
 // Mock dependencies
-jest.unstable_mockModule('../../../repositories/chatRepository.js', () => ({
+jest.unstable_mockModule('../../../repositories/chatHistoryRepository.js', () => ({
     readChatsFile: jest.fn(),
     writeChatsFile: jest.fn(),
 }));
@@ -11,7 +11,7 @@ jest.unstable_mockModule('../../../services/aiService.js', () => ({
 }));
 
 // Dynamic imports
-const { readChatsFile, writeChatsFile } = await import('../../../repositories/chatRepository.js');
+const { readChatsFile, writeChatsFile } = await import('../../../repositories/chatHistoryRepository.js');
 const { generateSummaryTitle } = await import('../../../services/aiService.js');
 const { saveChat, deleteChatById } = await import('../../../services/chatHistoryService.js');
 
