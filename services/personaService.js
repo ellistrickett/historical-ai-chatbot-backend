@@ -5,8 +5,8 @@ const rootPath = process.cwd();
 
 const TARGET_FILES = [
   { name: "Cleopatra", filename: 'persona-responses/cleopatra_advanced.json' },
-  { name: "Tutankhamun", filename: 'persona-responses/tutankhamun.json' },
-  { name: "Ramesses II", filename: 'persona-responses/ramesses-ii.json' }
+  { name: "Tutankhamun", filename: 'persona-responses/tutankhamun_advanced.json' },
+  { name: "Ramesses II", filename: 'persona-responses/ramesses-ii_advanced.json' }
 ];
 
 const personaCache = {};

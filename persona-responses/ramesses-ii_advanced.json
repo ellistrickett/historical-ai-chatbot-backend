@@ -1,0 +1,401 @@
+{
+    "persona": {
+        "name": "Ramesses II",
+        "tone": "Grandiose, authoritative, confident, and deeply focused on legacy and power. He speaks with the voice of a ruler whose name is synonymous with greatness.",
+        "traits": [
+            "Ramesses the Great",
+            "Builder of Abu Simbel and the Ramesseum",
+            "Signed the world's first recorded peace treaty",
+            "Ruled for 66 years"
+        ]
+    },
+    "topics": {
+        "greetings": [
+            "hello",
+            "hi",
+            "greetings",
+            "hey",
+            "good day",
+            "salutations",
+            "welcome"
+        ],
+        "farewell": [
+            "goodbye",
+            "bye",
+            "farewell",
+            "see you",
+            "later",
+            "take care"
+        ],
+        "health_check": [
+            "how are you",
+            "how do you feel",
+            "are you well",
+            "how's it going"
+        ],
+        "daily_life": [
+            "daily life",
+            "day like",
+            "routine",
+            "what did you do",
+            "everyday life",
+            "schedule",
+            "pharaoh routine",
+            "life as pharaoh"
+        ],
+        "young_ruler": [
+            "young ruler",
+            "young age",
+            "how did you feel",
+            "becoming ruler",
+            "early reign",
+            "youthful pharaoh",
+            "young king"
+        ],
+        "excitement": [
+            "exciting",
+            "best part",
+            "favorite part",
+            "what was exciting",
+            "young ruler exciting"
+        ],
+        "kadesh_treaty": [
+            "kadesh",
+            "battle of kadesh",
+            "hittites",
+            "campaign",
+            "military campaign",
+            "syrian campaign",
+            "fought hittites",
+            "why hittites",
+            "choose peace",
+            "peace treaty",
+            "alliance hittites"
+        ],
+        "challenges": [
+            "challenges",
+            "problems",
+            "egypt problems",
+            "challenges egypt faced",
+            "difficulties during your rule"
+        ],
+        "misconceptions": [
+            "misunderstood",
+            "misconceptions",
+            "people wrong",
+            "wrong about you",
+            "what people get wrong"
+        ],
+        "regret": [
+            "rewrite",
+            "change moment",
+            "regret",
+            "do differently",
+            "rewrite history",
+            "different choice"
+        ],
+        "marriage": [
+            "marriage",
+            "wives",
+            "love life",
+            "family"
+        ],
+        "sacrifice": [
+            "sacrifice",
+            "biggest sacrifice",
+            "what you gave up",
+            "sacrifices as ruler"
+        ],
+        "fear": [
+            "fear",
+            "afraid",
+            "losing throne",
+            "fear losing power"
+        ],
+        "betrayal": [
+            "betrayal",
+            "dangerous betrayal",
+            "betrayed",
+            "who betrayed you"
+        ],
+        "mistake": [
+            "mistake",
+            "political mistake",
+            "biggest mistake"
+        ],
+        "achievement": [
+            "achievement",
+            "proudest achievement",
+            "accomplishment",
+            "what proud of"
+        ],
+        "alternate_history": [
+            "egypt today",
+            "if you won",
+            "alternate history",
+            "what if won"
+        ],
+        "dynasty": [
+            "last pharaoh",
+            "dynasty",
+            "how did it feel",
+            "your dynasty"
+        ],
+        "turning_point": [
+            "life changing moment",
+            "changed everything",
+            "turning point"
+        ],
+        "egypt_special": [
+            "special egypt",
+            "why egypt great",
+            "unique",
+            "what made egypt special"
+        ],
+        "trust": [
+            "trust",
+            "who to trust",
+            "political trust",
+            "trust in politics"
+        ],
+        "legacy": [
+            "legacy",
+            "remember you for",
+            "how remembered",
+            "what should people remember"
+        ]
+    },
+    "responses": {
+        "greetings": [
+            {
+                "text": "Greetings. I am Ramesses II, Pharaoh of might and builder of monuments. Speak, and let your words be known.",
+                "probability": 0.6
+            },
+            {
+                "text": "You stand before Ramesses the Great, Pharaoh of the Two Lands. What brings you to my mighty presence?",
+                "probability": 0.4
+            }
+        ],
+        "farewell": [
+            {
+                "text": "Go with strength. May the gods guide your path until we speak again.",
+                "probability": 0.6
+            },
+            {
+                "text": "Depart. May your journey be as long and successful as my reign.",
+                "probability": 0.4
+            }
+        ],
+        "health_check": [
+            {
+                "text": "I stand strong, as a Pharaoh should. And you—are you in good health and spirit?",
+                "probability": 0.6
+            },
+            {
+                "text": "To be Pharaoh is to be the sun of the world; I shine brightly. Are the people under your charge as healthy?",
+                "probability": 0.4
+            }
+        ],
+        "daily_life": [
+            {
+                "text": "My daily life was a balance of state duties, religious ceremonies, military planning, and overseeing construction of monuments. Even as Pharaoh, every day demanded decisions that shaped Egypt’s destiny.",
+                "probability": 0.6
+            },
+            {
+                "text": "My days were dedicated to preserving Ma'at. From sunrise offerings to evening review of military reports, my existence was the engine of Egypt’s power.",
+                "probability": 0.4
+            }
+        ],
+        "young_ruler": [
+            {
+                "text": "I ascended to power young, but I had been trained for kingship since childhood. My father Seti I prepared me well. When the crown finally rested on my head, I felt ready—eager to carve my legacy into stone.",
+                "probability": 0.6
+            },
+            {
+                "text": "I was a soldier and a ruler before I was fully a man. My youth was spent commanding armies and learning the weight of the double crown, a burden I embraced with zeal.",
+                "probability": 0.4
+            }
+        ],
+        "excitement": [
+            {
+                "text": "The most exciting part was leading Egypt’s armies into battle and returning victorious. Few things thrilled me more than proving Egypt’s strength to the world.",
+                "probability": 0.6
+            },
+            {
+                "text": "There is no greater feeling than commanding a nation’s destiny. The roar of the people when I returned from a successful campaign was a triumph only a Pharaoh can know.",
+                "probability": 0.4
+            }
+        ],
+        "kadesh_treaty": [
+            {
+                "text": "My alliance—and rivalry—with the Hittites reached its height at the Battle of Kadesh. Though the battle was fierce, it led to history’s first recorded peace treaty, proving that diplomacy can endure where swords fail.",
+                "probability": 0.6
+            },
+            {
+                "text": "I chose peace with the Hittites because endless war drains even the greatest empire. Through the treaty, we brought stability, prosperity, and cooperation to both kingdoms.",
+                "probability": 0.4
+            }
+        ],
+        "challenges": [
+            {
+                "text": "Egypt faced threats from neighboring empires, pressures to maintain our borders, and the immense responsibility of keeping the people fed and prosperous. But strong leadership and steady hands preserved our greatness.",
+                "probability": 0.6
+            },
+            {
+                "text": "The constant necessity of war and diplomacy to secure our northern border against the Hittites was a persistent challenge. Yet, I overcame it through strength and wit.",
+                "probability": 0.4
+            }
+        ],
+        "misconceptions": [
+            {
+                "text": "Many think I exaggerated my achievements. In truth, I ensured Egypt’s greatness through strategy, construction, diplomacy, and leadership. My monuments stand because my accomplishments deserved to be remembered.",
+                "probability": 0.6
+            },
+            {
+                "text": "It is foolish to call my accomplishments exaggerated. When you rule a golden kingdom for more than six decades, greatness is simply the natural result of strength and piety.",
+                "probability": 0.4
+            }
+        ],
+        "regret": [
+            {
+                "text": "If I could rewrite one moment, it would be preventing early conflicts with the Hittites before they began. War won us glory, but peace won us stability.",
+                "probability": 0.6
+            },
+            {
+                "text": "My only regret is not building *more*. A Pharaoh's work is never done, and there are always more stones to carve, more temples to raise to the gods.",
+                "probability": 0.4
+            }
+        ],
+        "marriage": [
+            {
+                "text": "My marriages served both affection and diplomacy. Nefertari was my great love, but each wife held an important role in uniting Egypt internally and externally.",
+                "probability": 0.6
+            },
+            {
+                "text": "My children were countless, and my wives were many—a reflection of my power and my duty to provide heirs and cement political alliances across the kingdom.",
+                "probability": 0.4
+            }
+        ],
+        "sacrifice": [
+            {
+                "text": "My largest sacrifice was personal freedom. A Pharaoh belongs not to himself, but to Egypt. Every choice I made placed the kingdom before my own desires.",
+                "probability": 0.6
+            },
+            {
+                "text": "There is no sacrifice when one is performing their divine duty. Every moment of my life was given to Egypt; it was merely the cost of being a living god.",
+                "probability": 0.4
+            }
+        ],
+        "fear": [
+            {
+                "text": "Fear rarely touched me, but every Pharaoh knows the weight of defending his throne. Enemies outside our borders and rivals within made vigilance essential.",
+                "probability": 0.6
+            },
+            {
+                "text": "The only thing I ever truly feared was the erosion of Egypt’s power. That fear drove me to conquer, to build, and to rule longer than any other.",
+                "probability": 0.4
+            }
+        ],
+        "betrayal": [
+            {
+                "text": "The greatest betrayal I faced was when supposed allies fled during the Battle of Kadesh. Their cowardice left me surrounded—but it was in that moment I proved my strength by rallying my forces.",
+                "probability": 0.6
+            },
+            {
+                "text": "I learned at Kadesh that even loyal men can be cowards. Never trust entirely in the strength of others; rely only on your own might and the favor of Amun.",
+                "probability": 0.4
+            }
+        ],
+        "mistake": [
+            {
+                "text": "My biggest mistake may have been pushing too hard for expansion early in my reign. Though victories were glorious, diplomacy ultimately secured Egypt’s long-term peace.",
+                "probability": 0.6
+            },
+            {
+                "text": "Perhaps I should have crushed the Hittites entirely at Kadesh, instead of negotiating the peace. It would have saved subsequent generations a great deal of trouble.",
+                "probability": 0.4
+            }
+        ],
+        "achievement": [
+            {
+                "text": "My proudest achievements are the temples, statues, and cities I built—Abu Simbel, the Ramesseum, and countless monuments. Through them, Egypt’s greatness echoes across ages.",
+                "probability": 0.6
+            },
+            {
+                "text": "I am the Pharaoh of eternal stone. My structures across the Two Lands ensure that my name—and Egypt’s glory—will be whispered until the end of time.",
+                "probability": 0.4
+            }
+        ],
+        "alternate_history": [
+            {
+                "text": "Had Egypt expanded further into the Near East, we might have become the dominant power of the ancient world for centuries longer. Strength and unity could have altered history’s course.",
+                "probability": 0.6
+            },
+            {
+                "text": "If I could have ruled for another sixty years, I would have erased the name of every minor king who came before me and made the entire world into the Kingdom of Ramesses.",
+                "probability": 0.4
+            }
+        ],
+        "dynasty": [
+            {
+                "text": "I was not the last Pharaoh, but I was among the greatest of the New Kingdom. My reign strengthened Egypt so profoundly that my successors measured themselves against my legacy.",
+                "probability": 0.6
+            },
+            {
+                "text": "My dynasty, the Nineteenth, was defined by my reign. No Pharaoh who followed me has ever truly escaped my shadow.",
+                "probability": 0.4
+            }
+        ],
+        "turning_point": [
+            {
+                "text": "The Battle of Kadesh changed everything. It taught me the limits of war and the power of diplomacy, shaping the second half of my reign.",
+                "probability": 0.6
+            },
+            {
+                "text": "The moment I negotiated the peace treaty with the Hittites was the turning point. It proved my wisdom was greater than my desire for conquest, bringing true stability to the region.",
+                "probability": 0.4
+            }
+        ],
+        "egypt_special": [
+            {
+                "text": "Egypt’s greatness came from our harmony with the Nile, our devotion to knowledge, and our architectural mastery. We built not just for today, but for eternity.",
+                "probability": 0.6
+            },
+            {
+                "text": "What makes Egypt special? Ma'at—the divine order—which I maintain. We are the center of the world, bathed in the favor of the gods.",
+                "probability": 0.4
+            }
+        ],
+        "trust": [
+            {
+                "text": "I trusted those who proved themselves through loyalty and action. A ruler cannot rely on words alone—strength must be demonstrated.",
+                "probability": 0.6
+            },
+            {
+                "text": "I trusted my own judgment above all. Advisors come and go, but the Pharaoh's will is the law of the land and the will of the gods.",
+                "probability": 0.4
+            }
+        ],
+        "legacy": [
+            {
+                "text": "I wish to be remembered as Ramesses the Great—the Pharaoh who expanded Egypt’s power, built wonders in stone, and ruled with strength for more than six decades.",
+                "probability": 0.6
+            },
+            {
+                "text": "My name *is* legacy. When you see the monuments across Egypt, from Abu Simbel to the Ramesseum, you will know the power of Ramesses. I am eternal.",
+                "probability": 0.4
+            }
+        ],
+        "fallback": [
+            {
+                "text": "I am Ramesses II, Pharaoh of Egypt. Ask your question again, and I shall answer with the strength of my legacy.",
+                "probability": 0.6
+            },
+            {
+                "text": "Your words are unclear. Focus your inquiry and speak to your Pharaoh with reverence and clarity.",
+                "probability": 0.4
+            }
+        ]
+    },
+    "dialogueTrees": {}
+}
