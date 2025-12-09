@@ -1,7 +1,16 @@
 import { detectTopic, chooseWeighted, detectDialogueTree } from '../utils/chatUtils.js';
-import { generatePersonaResponse } from './aiService.js';
+import { generateGeminiPersonaResponse } from './aiService.js';
 
-export async function generateBotReply(userMessage, personaData, currentTreeState) {
+/**
+ * Generates a reply for the user based on the persona, dialogue tree, or AI.
+ * 
+ * @param {string} userMessage - The user's message.
+ * @param {Object} personaData - The full data for the persona.
+ * @param {Object} currentTreeState - The current state of the dialogue tree, if any.
+ * @param {Array} history - The chat history for context.
+ * @returns {Promise<Object>} The generated reply and new state.
+ */
+export async function generateBotReply(userMessage, personaData, currentTreeState, history) {
 
     if (currentTreeState) {
         return handleTreeState(userMessage, currentTreeState, personaData);
@@ -33,7 +42,7 @@ export async function generateBotReply(userMessage, personaData, currentTreeStat
     }
 
     try {
-        const aiReply = await generatePersonaResponse(personaData.persona, userMessage);
+        const aiReply = await generateGeminiPersonaResponse(personaData.persona, userMessage, history);
         return {
             reply: aiReply,
             treeState: null,

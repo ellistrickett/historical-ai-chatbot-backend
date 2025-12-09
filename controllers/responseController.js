@@ -3,7 +3,7 @@ import { getPersona } from '../services/personaService.js';
 
 // POST /api/chat
 export async function handleChatRequest(req, res) {
-    const { message, personaName, treeState } = req.body;
+    const { message, personaName, treeState, history } = req.body;
 
     if (!personaName) return res.status(400).json({ error: "Persona name is required" });
     if (!message) return res.status(400).json({ error: "Message is required" });
@@ -14,7 +14,7 @@ export async function handleChatRequest(req, res) {
     }
 
     try {
-        const botResult = await generateBotReply(message, currentPersonaData, treeState);
+        const botResult = await generateBotReply(message, currentPersonaData, treeState, history);
 
         res.json({
             reply: botResult.reply,

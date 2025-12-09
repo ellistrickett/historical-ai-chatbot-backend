@@ -8,12 +8,12 @@ jest.unstable_mockModule('../../../utils/chatUtils.js', () => ({
 }));
 
 jest.unstable_mockModule('../../../services/aiService.js', () => ({
-    generatePersonaResponse: jest.fn(),
+    generateGeminiPersonaResponse: jest.fn(),
 }));
 
-// Dynamic imports
+// Dynamic imports      
 const { detectTopic, chooseWeighted, detectDialogueTree } = await import('../../../utils/chatUtils.js');
-const { generatePersonaResponse } = await import('../../../services/aiService.js');
+const { generateGeminiPersonaResponse } = await import('../../../services/aiService.js');
 const { generateBotReply } = await import('../../../services/responseService.js');
 
 describe('Response Service', () => {
@@ -47,7 +47,7 @@ describe('Response Service', () => {
 
             detectDialogueTree.mockReturnValue(null);
             detectTopic.mockReturnValue(null);
-            generatePersonaResponse.mockResolvedValue('AI Response');
+            generateGeminiPersonaResponse.mockResolvedValue('AI Response');
 
             const response = await generateBotReply('How are you?', personaData, null);
 
@@ -64,7 +64,7 @@ describe('Response Service', () => {
 
             detectDialogueTree.mockReturnValue(null);
             detectTopic.mockReturnValue(null);
-            generatePersonaResponse.mockRejectedValue(new Error('AI Error'));
+            generateGeminiPersonaResponse.mockRejectedValue(new Error('AI Error'));
             chooseWeighted.mockReturnValue({ text: 'Default' });
 
             const response = await generateBotReply('Error', personaData, null);

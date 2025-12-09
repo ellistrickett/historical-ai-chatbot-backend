@@ -23,7 +23,15 @@ export async function generateSummaryTitle(messages) {
   }
 }
 
-export async function generatePersonaResponse(persona, userMessage) {
+/**
+ * Generates a response from the AI persona.
+ * 
+ * @param {Object} persona - The persona object.
+ * @param {string} userMessage - The user's message.
+ * @param {Array} [history] - The chat history.
+ * @returns {Promise<string>} The AI generated response.
+ */
+export async function generateGeminiPersonaResponse(persona, userMessage, history = []) {
   const traits = persona.traits ? persona.traits.join(", ") : "None";
 
   const prompt = `
@@ -32,6 +40,7 @@ export async function generatePersonaResponse(persona, userMessage) {
       Your Character Profile:
       - Tone: ${persona.tone}
       - Key Traits: ${traits}
+      ${history.length > 0 ? "\nRecent Conversation:\n" + history.map(msg => `${msg.name}: ${msg.text}`).join("\n") : ""}
       
       Task:
       Respond to the user's message below. 

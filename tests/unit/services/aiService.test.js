@@ -7,7 +7,7 @@ jest.unstable_mockModule('../../../config/geminiClient.js', () => ({
 
 // Dynamic imports
 const { generateAIContent } = await import('../../../config/geminiClient.js');
-const { generateSummaryTitle, generatePersonaResponse } = await import('../../../services/aiService.js');
+const { generateSummaryTitle, generateGeminiPersonaResponse } = await import('../../../services/aiService.js');
 
 describe('AI Service', () => {
     beforeEach(() => {
@@ -35,7 +35,7 @@ describe('AI Service', () => {
         });
     });
 
-    describe('generatePersonaResponse', () => {
+    describe('generateGeminiPersonaResponse', () => {
         it('generates a response successfully', async () => {
             generateAIContent.mockResolvedValue('I am Cleopatra.');
 
@@ -45,7 +45,7 @@ describe('AI Service', () => {
                 traits: ['Queen']
             };
 
-            const response = await generatePersonaResponse(mockPersona, 'Who are you?');
+            const response = await generateGeminiPersonaResponse(mockPersona, 'Who are you?');
 
             expect(generateAIContent).toHaveBeenCalledWith(expect.stringContaining('You are roleplaying as Cleopatra'));
             expect(response).toBe('I am Cleopatra.');
