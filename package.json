@@ -1,8 +1,18 @@
 {
   "name": "historical-ai-chatbot-backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "Backend service for the Historical AI Chatbot",
   "main": "index.js",
+  "engines": {
+    "node": ">=18.17.0"
+  },
+  "keywords": [
+    "ai",
+    "chatbot",
+    "history",
+    "backend",
+    "express"
+  ],
   "scripts": {
     "test": "node --no-warnings --experimental-vm-modules node_modules/jest/bin/jest.js --verbose",
     "format": "prettier --write ."
