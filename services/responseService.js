@@ -29,7 +29,7 @@ export async function generateBotReply(
     const firstStep = personaData.dialogueTrees[newTree.name].steps.start;
     return {
       reply: firstStep.bot,
-      options: firstStep.options ? Object.keys(firstStep.options) : null,
+      options: capitaliseOptions(firstStep.options),
       treeState: newTree,
       mode: 'tree_start',
     };
@@ -112,7 +112,7 @@ function handleTreeState(userText, currentTreeState, personaData) {
 
     return {
       reply: nextStepData.bot,
-      options: nextStepData.options ? Object.keys(nextStepData.options) : null,
+      options: capitaliseOptions(nextStepData.options),
       treeState: { name: name, step: nextStepKey },
       mode: 'tree_active',
     };
@@ -120,8 +120,15 @@ function handleTreeState(userText, currentTreeState, personaData) {
 
   return {
     reply: 'I did not understand. ' + currentStepData.bot,
-    options: currentStepData.options ? Object.keys(currentStepData.options) : null,
+    options: capitaliseOptions(currentStepData.options),
     treeState: currentTreeState,
     mode: 'tree_retry',
   };
+}
+
+function capitaliseOptions(options) {
+  if (!options) return null;
+  return Object.keys(options).map(
+    (opt) => opt.charAt(0).toUpperCase() + opt.slice(1)
+  );
 }
