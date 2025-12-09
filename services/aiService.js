@@ -1,5 +1,10 @@
 import { generateAIContent } from '../config/geminiClient.js';
 
+/**
+ * Generates a short summary title for a conversation using AI.
+ * @param {Array} messages - The array of chat messages.
+ * @returns {Promise<string|null>} The generated title or null if generation fails.
+ */
 export async function generateSummaryTitle(messages) {
   try {
     const conversationHistory = messages

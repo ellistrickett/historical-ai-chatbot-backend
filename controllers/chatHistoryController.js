@@ -6,7 +6,11 @@ import {
 } from '../services/chatHistoryService.js';
 import { v4 as uuidv4 } from 'uuid';
 
-// GET /api/history
+/**
+ * Retrieves all chat sessions.
+ * @param {express.Request} req - The request object.
+ * @param {express.Response} res - The response object.
+ */
 export async function getChats(req, res) {
   try {
     const chats = await getPreviousChats();
@@ -17,7 +21,11 @@ export async function getChats(req, res) {
   }
 }
 
-// GET /api/history/:chatId
+/**
+ * Retrieves a specific chat session by ID.
+ * @param {express.Request} req - The request object.
+ * @param {express.Response} res - The response object.
+ */
 export async function getSingleChat(req, res) {
   const { chatId } = req.params;
 
@@ -33,7 +41,11 @@ export async function getSingleChat(req, res) {
   }
 }
 
-// POST /api/history
+/**
+ * Creates a new chat session.
+ * @param {express.Request} req - The request object.
+ * @param {express.Response} res - The response object.
+ */
 export async function createChat(req, res) {
   const { title, personaName, messages } = req.body;
 
@@ -65,7 +77,11 @@ export async function createChat(req, res) {
   }
 }
 
-// DELETE /api/history/:chatId
+/**
+ * Deletes a chat session by ID.
+ * @param {express.Request} req - The request object.
+ * @param {express.Response} res - The response object.
+ */
 export async function deleteChat(req, res) {
   const { chatId } = req.params;
 

@@ -77,6 +77,13 @@ export async function generateBotReply(
   }
 }
 
+/**
+ * Handles the state of a dialogue tree.
+ * @param {string} userText - The user's input text.
+ * @param {Object} currentTreeState - The current state of the dialogue tree.
+ * @param {Object} personaData - The full data for the persona.
+ * @returns {Object} The response object containing the reply, options, and new tree state.
+ */
 function handleTreeState(userText, currentTreeState, personaData) {
   const { name, step } = currentTreeState;
   const tree = personaData.dialogueTrees[name];
@@ -126,6 +133,11 @@ function handleTreeState(userText, currentTreeState, personaData) {
   };
 }
 
+/**
+ * Capitalizes the first letter of each option key.
+ * @param {Object} options - The options object where keys are the option text.
+ * @returns {Array<string>|null} An array of capitalized option strings, or null if no options.
+ */
 function capitaliseOptions(options) {
   if (!options) return null;
   return Object.keys(options).map(

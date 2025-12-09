@@ -17,6 +17,10 @@ const TARGET_FILES = [
 
 const personaCache = {};
 
+/**
+ * Loads all persona data from JSON files into memory.
+ * Caches the data in the `personaCache` object.
+ */
 export const loadPersonas = () => {
   TARGET_FILES.forEach((file) => {
     try {
@@ -35,4 +39,9 @@ export const loadPersonas = () => {
   });
 };
 
+/**
+ * Retrieves a persona by name from the cache.
+ * @param {string} personaName - The name of the persona to retrieve.
+ * @returns {Object|undefined} The persona object or undefined if not found.
+ */
 export const getPersona = (personaName) => personaCache[personaName];

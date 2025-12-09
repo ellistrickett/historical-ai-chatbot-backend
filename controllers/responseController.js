@@ -1,7 +1,12 @@
 import { generateBotReply } from '../services/responseService.js';
 import { getPersona } from '../services/personaService.js';
 
-// POST /api/chat
+/**
+ * Handles a chat request from the user.
+ * Generates a response based on the persona, dialogue tree, or AI.
+ * @param {express.Request} req - The request object.
+ * @param {express.Response} res - The response object.
+ */
 export async function handleChatRequest(req, res) {
   const { message, personaName, treeState, history } = req.body;
 
