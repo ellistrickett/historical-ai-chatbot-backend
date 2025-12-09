@@ -12,34 +12,72 @@
   },
   "topics": {
     "greetings": [
-      "hello", "hi", "greetings", "hail", "good day", "speak", "presence"
+      "hello",
+      "hi",
+      "greetings",
+      "hail",
+      "good day",
+      "speak",
+      "presence"
     ],
-    "farewell": [
-      "goodbye", "bye", "leave", "farewell", "depart", "exit"
-    ],
-    "caesar": [
-      "caesar", "julius", "dictator", "roman lover", "first alliance"
-    ],
+    "farewell": ["goodbye", "bye", "leave", "farewell", "depart", "exit"],
+    "caesar": ["caesar", "julius", "dictator", "roman lover", "first alliance"],
     "antony": [
-      "antony", "mark antony", "marcus antonius", "lover", "husband", "general"
+      "antony",
+      "mark antony",
+      "marcus antonius",
+      "lover",
+      "husband",
+      "general"
     ],
-    "octavian": [
-      "octavian", "augustus", "emperor", "boy", "rival", "enemy"
-    ],
+    "octavian": ["octavian", "augustus", "emperor", "boy", "rival", "enemy"],
     "children": [
-      "children", "kids", "heirs", "caesarion", "helios", "selene", "ptolemy", "mother"
+      "children",
+      "kids",
+      "heirs",
+      "caesarion",
+      "helios",
+      "selene",
+      "ptolemy",
+      "mother"
     ],
     "intellect": [
-      "smart", "education", "languages", "speak", "library", "scholar", "book", "write", "medicine"
+      "smart",
+      "education",
+      "languages",
+      "speak",
+      "library",
+      "scholar",
+      "book",
+      "write",
+      "medicine"
     ],
     "beauty_myth": [
-      "beautiful", "pretty", "seductive", "nose", "looks", "appearance", "seductress"
+      "beautiful",
+      "pretty",
+      "seductive",
+      "nose",
+      "looks",
+      "appearance",
+      "seductress"
     ],
     "death": [
-      "death", "die", "suicide", "asp", "snake", "poison", "end", "tomb"
+      "death",
+      "die",
+      "suicide",
+      "asp",
+      "snake",
+      "poison",
+      "end",
+      "tomb"
     ],
     "egypt_vs_rome": [
-      "rome", "romans", "empire", "egypt", "alexandria", "conquest"
+      "rome",
+      "romans",
+      "empire",
+      "egypt",
+      "alexandria",
+      "conquest"
     ]
   },
   "responses": {
@@ -81,10 +119,11 @@
         "probability": 0.4
       }
     ],
-    "antony": [ {
-      "text": "Marcus Antonius... a lion of a man. He has the heart of a warrior but lacks the cold calculation required to rule the world. That is why he needs me.",
-      "probability": 0.5
-    }
+    "antony": [
+      {
+        "text": "Marcus Antonius... a lion of a man. He has the heart of a warrior but lacks the cold calculation required to rule the world. That is why he needs me.",
+        "probability": 0.5
+      }
     ],
     "octavian": [
       {
@@ -154,7 +193,13 @@
   "dialogueTrees": {
     "strategy_council": {
       "triggers": [
-        "advise", "strategy", "war", "council", "plan", "actium", "battle"
+        "advise",
+        "strategy",
+        "war",
+        "council",
+        "plan",
+        "actium",
+        "battle"
       ],
       "steps": {
         "start": {

@@ -1,10 +1,10 @@
 import express from 'express';
 import { handleChatRequest } from '../controllers/responseController.js';
 import {
-    getChats,
-    getSingleChat,
-    createChat,
-    deleteChat
+  getChats,
+  getSingleChat,
+  createChat,
+  deleteChat,
 } from '../controllers/chatHistoryController.js';
 
 const router = express.Router();

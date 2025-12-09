@@ -4,15 +4,21 @@ import path from 'path';
 const rootPath = process.cwd();
 
 const TARGET_FILES = [
-  { name: "Cleopatra", filename: 'persona-responses/cleopatra_advanced.json' },
-  { name: "Tutankhamun", filename: 'persona-responses/tutankhamun_advanced.json' },
-  { name: "Ramesses II", filename: 'persona-responses/ramesses-ii_advanced.json' }
+  { name: 'Cleopatra', filename: 'persona-responses/cleopatra_advanced.json' },
+  {
+    name: 'Tutankhamun',
+    filename: 'persona-responses/tutankhamun_advanced.json',
+  },
+  {
+    name: 'Ramesses II',
+    filename: 'persona-responses/ramesses-ii_advanced.json',
+  },
 ];
 
 const personaCache = {};
 
 export const loadPersonas = () => {
-  TARGET_FILES.forEach(file => {
+  TARGET_FILES.forEach((file) => {
     try {
       const fullPath = path.join(rootPath, file.filename);
 

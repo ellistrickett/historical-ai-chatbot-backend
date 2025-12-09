@@ -1,56 +1,65 @@
 import { jest } from '@jest/globals';
 
 // Mock dependencies
-jest.unstable_mockModule('../../../repositories/chatHistoryRepository.js', () => ({
+jest.unstable_mockModule(
+  '../../../repositories/chatHistoryRepository.js',
+  () => ({
     readChatsFile: jest.fn(),
     writeChatsFile: jest.fn(),
-}));
+  })
+);
 
 jest.unstable_mockModule('../../../services/aiService.js', () => ({
-    generateSummaryTitle: jest.fn(),
+  generateSummaryTitle: jest.fn(),
 }));
 
 // Dynamic imports
-const { readChatsFile, writeChatsFile } = await import('../../../repositories/chatHistoryRepository.js');
+const { readChatsFile, writeChatsFile } = await import(
+  '../../../repositories/chatHistoryRepository.js'
+);
 const { generateSummaryTitle } = await import('../../../services/aiService.js');
-const { saveChat, deleteChatById } = await import('../../../services/chatHistoryService.js');
+const { saveChat, deleteChatById } = await import(
+  '../../../services/chatHistoryService.js'
+);
 
 describe('Chat History Service', () => {
-    beforeEach(() => {
-        jest.clearAllMocks();
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
+
+  describe('saveChat', () => {
+    it('saves a new chat with generated title', async () => {
+      readChatsFile.mockResolvedValue([]);
+      generateSummaryTitle.mockResolvedValue('New Title');
+
+      const newChat = { messages: [{ text: 'Hi' }] };
+      await saveChat(newChat);
+
+      expect(writeChatsFile).toHaveBeenCalledWith(
+        expect.arrayContaining([
+          expect.objectContaining({ title: 'New Title' }),
+        ])
+      );
+    });
+  });
+
+  describe('deleteChatById', () => {
+    it('deletes a chat successfully', async () => {
+      readChatsFile.mockResolvedValue([{ id: '1' }, { id: '2' }]);
+
+      const result = await deleteChatById('1');
+
+      expect(result).toBe(true);
+      expect(writeChatsFile).toHaveBeenCalledWith([{ id: '2' }]);
     });
 
-    describe('saveChat', () => {
-        it('saves a new chat with generated title', async () => {
-            readChatsFile.mockResolvedValue([]);
-            generateSummaryTitle.mockResolvedValue('New Title');
+    it('returns false if chat not found', async () => {
+      readChatsFile.mockResolvedValue([{ id: '1' }]);
 
-            const newChat = { messages: [{ text: 'Hi' }] };
-            await saveChat(newChat);
+      const result = await deleteChatById('999');
 
-            expect(writeChatsFile).toHaveBeenCalledWith(expect.arrayContaining([
-                expect.objectContaining({ title: 'New Title' })
-            ]));
-        });
+      expect(result).toBe(false);
+      expect(writeChatsFile).not.toHaveBeenCalled();
     });
-
-    describe('deleteChatById', () => {
-        it('deletes a chat successfully', async () => {
-            readChatsFile.mockResolvedValue([{ id: '1' }, { id: '2' }]);
-
-            const result = await deleteChatById('1');
-
-            expect(result).toBe(true);
-            expect(writeChatsFile).toHaveBeenCalledWith([{ id: '2' }]);
-        });
-
-        it('returns false if chat not found', async () => {
-            readChatsFile.mockResolvedValue([{ id: '1' }]);
-
-            const result = await deleteChatById('999');
-
-            expect(result).toBe(false);
-            expect(writeChatsFile).not.toHaveBeenCalled();
-        });
-    });
+  });
 });

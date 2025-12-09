@@ -1,10 +1,10 @@
-import { generateAIContent } from "../config/geminiClient.js";
+import { generateAIContent } from '../config/geminiClient.js';
 
 export async function generateSummaryTitle(messages) {
   try {
     const conversationHistory = messages
-      .map(msg => `${msg.name || msg.role}: ${msg.text}`)
-      .join("\n");
+      .map((msg) => `${msg.name || msg.role}: ${msg.text}`)
+      .join('\n');
 
     const prompt = `
       Analyze the following conversation and generate a short, descriptive title (max 6 words).
@@ -18,21 +18,25 @@ export async function generateSummaryTitle(messages) {
     const text = await generateAIContent(prompt);
     return text.trim().replace(/^"|"$/g, '');
   } catch (error) {
-    console.warn("Could not generate AI title");
+    console.warn('Could not generate AI title');
     return null;
   }
 }
 
 /**
  * Generates a response from the AI persona.
- * 
+ *
  * @param {Object} persona - The persona object.
  * @param {string} userMessage - The user's message.
  * @param {Array} [history] - The chat history.
  * @returns {Promise<string>} The AI generated response.
  */
-export async function generateGeminiPersonaResponse(persona, userMessage, history = []) {
-  const traits = persona.traits ? persona.traits.join(", ") : "None";
+export async function generateGeminiPersonaResponse(
+  persona,
+  userMessage,
+  history = []
+) {
+  const traits = persona.traits ? persona.traits.join(', ') : 'None';
 
   const prompt = `
       You are roleplaying as ${persona.name}.
@@ -40,7 +44,7 @@ export async function generateGeminiPersonaResponse(persona, userMessage, histor
       Your Character Profile:
       - Tone: ${persona.tone}
       - Key Traits: ${traits}
-      ${history.length > 0 ? "\nRecent Conversation:\n" + history.map(msg => `${msg.name}: ${msg.text}`).join("\n") : ""}
+      ${history.length > 0 ? '\nRecent Conversation:\n' + history.map((msg) => `${msg.name}: ${msg.text}`).join('\n') : ''}
       
       Task:
       Respond to the user's message below. 
