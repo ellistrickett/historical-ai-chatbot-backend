@@ -29,6 +29,7 @@ export async function generateBotReply(
     const firstStep = personaData.dialogueTrees[newTree.name].steps.start;
     return {
       reply: firstStep.bot,
+      options: firstStep.options ? Object.keys(firstStep.options) : null,
       treeState: newTree,
       mode: 'tree_start',
     };
@@ -103,6 +104,7 @@ function handleTreeState(userText, currentTreeState, personaData) {
     if (nextStepData.end) {
       return {
         reply: nextStepData.bot,
+        options: null,
         treeState: null,
         mode: 'tree_end',
       };
@@ -110,6 +112,7 @@ function handleTreeState(userText, currentTreeState, personaData) {
 
     return {
       reply: nextStepData.bot,
+      options: nextStepData.options ? Object.keys(nextStepData.options) : null,
       treeState: { name: name, step: nextStepKey },
       mode: 'tree_active',
     };
@@ -117,6 +120,7 @@ function handleTreeState(userText, currentTreeState, personaData) {
 
   return {
     reply: 'I did not understand. ' + currentStepData.bot,
+    options: currentStepData.options ? Object.keys(currentStepData.options) : null,
     treeState: currentTreeState,
     mode: 'tree_retry',
   };

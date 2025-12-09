@@ -28,6 +28,7 @@ export async function handleChatRequest(req, res) {
       reply: botResult.reply,
       treeState: botResult.treeState,
       mode: botResult.mode,
+      options: botResult.options,
     });
   } catch (error) {
     console.error('Response Controller Error:', error);
