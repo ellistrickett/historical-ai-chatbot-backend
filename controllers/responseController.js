@@ -34,6 +34,7 @@ export async function handleChatRequest(req, res) {
       treeState: botResult.treeState,
       mode: botResult.mode,
       options: botResult.options,
+      timestamp: botResult.timestamp,
     });
   } catch (error) {
     console.error('Response Controller Error:', error);

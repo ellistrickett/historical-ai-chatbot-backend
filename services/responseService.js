@@ -2,6 +2,7 @@ import {
   detectTopic,
   chooseWeighted,
   detectDialogueTree,
+  getCurrentTime,
 } from '../utils/chatUtils.js';
 import { generateGeminiPersonaResponse } from './aiService.js';
 
@@ -32,6 +33,7 @@ export async function generateBotReply(
       options: capitaliseOptions(firstStep.options),
       treeState: newTree,
       mode: 'tree_start',
+      timestamp: getCurrentTime(),
     };
   }
 
@@ -46,6 +48,7 @@ export async function generateBotReply(
         reply: selected.text,
         treeState: null,
         mode: 'topic_match',
+        timestamp: getCurrentTime(),
       };
     }
   }
@@ -60,6 +63,7 @@ export async function generateBotReply(
       reply: aiReply,
       treeState: null,
       mode: 'ai_fallback',
+      timestamp: getCurrentTime(),
     };
   } catch (error) {
     console.error('AI Generation failed:', error);
@@ -73,6 +77,7 @@ export async function generateBotReply(
       reply: finalFallback.text,
       treeState: null,
       mode: 'error_fallback',
+      timestamp: getCurrentTime(),
     };
   }
 }
@@ -114,6 +119,7 @@ function handleTreeState(userText, currentTreeState, personaData) {
         options: null,
         treeState: null,
         mode: 'tree_end',
+        timestamp: getCurrentTime(),
       };
     }
 
@@ -122,6 +128,7 @@ function handleTreeState(userText, currentTreeState, personaData) {
       options: capitaliseOptions(nextStepData.options),
       treeState: { name: name, step: nextStepKey },
       mode: 'tree_active',
+      timestamp: getCurrentTime(),
     };
   }
 
@@ -130,6 +137,7 @@ function handleTreeState(userText, currentTreeState, personaData) {
     options: capitaliseOptions(currentStepData.options),
     treeState: currentTreeState,
     mode: 'tree_retry',
+    timestamp: getCurrentTime(),
   };
 }
 
