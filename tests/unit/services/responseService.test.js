@@ -5,6 +5,7 @@ jest.unstable_mockModule('../../../utils/chatUtils.js', () => ({
   detectTopic: jest.fn(),
   chooseWeighted: jest.fn(),
   detectDialogueTree: jest.fn(),
+  getCurrentTime: jest.fn().mockReturnValue('10 Dec 12:00'),
 }));
 
 jest.unstable_mockModule('../../../services/aiService.js', () => ({
@@ -42,6 +43,7 @@ describe('Response Service', () => {
 
       expect(response.reply).toBe('Hi there!');
       expect(response.mode).toBe('topic_match');
+      expect(response.timestamp).toBe('10 Dec 12:00');
     });
 
     it('generates AI response if no topic matches', async () => {
@@ -63,6 +65,7 @@ describe('Response Service', () => {
 
       expect(response.reply).toBe('AI Response');
       expect(response.mode).toBe('ai_fallback');
+      expect(response.timestamp).toBe('10 Dec 12:00');
     });
 
     it('returns fallback response on AI error', async () => {
@@ -81,6 +84,7 @@ describe('Response Service', () => {
 
       expect(response.reply).toBe('Default');
       expect(response.mode).toBe('error_fallback');
+      expect(response.timestamp).toBe('10 Dec 12:00');
     });
   });
 });
