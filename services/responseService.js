@@ -13,7 +13,7 @@ import { generateGeminiPersonaResponse } from './aiService.js';
  * @param {Object} personaData - The full data for the persona.
  * @param {Object} currentTreeState - The current state of the dialogue tree, if any.
  * @param {Array} history - The chat history for context.
- * @returns {Promise<Object>} The generated reply and new state.
+ * @returns {Promise<Object>} The generated reply, new state, mode, and timestamp.
  */
 export async function generateBotReply(
   userMessage,

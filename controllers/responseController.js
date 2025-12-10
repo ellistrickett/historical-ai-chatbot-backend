@@ -5,6 +5,11 @@ import { getPersona } from '../services/personaService.js';
  * Handles a chat request from the user.
  * Generates a response based on the persona, dialogue tree, or AI.
  * @param {express.Request} req - The request object.
+ * @param {Object} req.body - The request body.
+ * @param {string} req.body.message - The user's message text.
+ * @param {string} req.body.personaName - The name of the persona.
+ * @param {Object} [req.body.treeState] - The current dialogue tree state.
+ * @param {Array} [req.body.history] - The chat history.
  * @param {express.Response} res - The response object.
  */
 export async function handleChatRequest(req, res) {

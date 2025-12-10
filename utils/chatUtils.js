@@ -62,9 +62,9 @@ export function detectDialogueTree(userText, dialogueTrees) {
 }
 
 /**
- * Gets the current time formatted as a string (HH:MM).
+ * Gets the current time formatted as a string (DD Mon HH:MM).
  *
- * @returns {string} The current time in 'en-UK' format (24-hour clock).
+ * @returns {string} The current time in 'en-UK' format (e.g., "10 Dec 16:44").
  */
 export const getCurrentTime = () => {
   const now = new Date();
