@@ -5,11 +5,17 @@ import {
 import { generateSummaryTitle } from './aiService.js';
 
 /**
- * Retrieves all previous chat sessions.
- * @returns {Promise<Array>} A promise that resolves to an array of chat objects.
+ * Retrieves chat summaries (id, title, personaName, date).
+ * @returns {Promise<Array>} A promise that resolves to an array of chat summary objects.
  */
-export async function getPreviousChats() {
-  return await readChatsFile();
+export async function getChatSummaries() {
+  const chats = await readChatsFile();
+  return chats.map((chat) => ({
+    id: chat.id,
+    title: chat.title,
+    personaName: chat.personaName,
+    date: chat.date,
+  }));
 }
 
 /**

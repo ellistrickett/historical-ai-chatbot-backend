@@ -1,5 +1,5 @@
 import {
-  getPreviousChats,
+  getChatSummaries,
   saveChat,
   getChatById,
   deleteChatById,
@@ -13,8 +13,8 @@ import { v4 as uuidv4 } from 'uuid';
  */
 export async function getChats(req, res) {
   try {
-    const chats = await getPreviousChats();
-    res.status(200).json(chats);
+    const chatSummaries = await getChatSummaries();
+    res.status(200).json(chatSummaries);
   } catch (error) {
     console.error('History Controller Error (getChats):', error);
     res.status(500).json({ message: 'Failed to retrieve chats.' });

@@ -2,14 +2,14 @@ import { jest } from '@jest/globals';
 
 // Mock dependencies
 jest.unstable_mockModule('../../../services/chatHistoryService.js', () => ({
-  getPreviousChats: jest.fn(),
+  getChatSummaries: jest.fn(),
   saveChat: jest.fn(),
   getChatById: jest.fn(),
   deleteChatById: jest.fn(),
 }));
 
 // Dynamic imports
-const { getPreviousChats, saveChat, deleteChatById, getChatById } =
+const { getChatSummaries, saveChat, deleteChatById, getChatById } =
   await import('../../../services/chatHistoryService.js');
 const { getChats, createChat, getSingleChat, deleteChat } = await import(
   '../../../controllers/chatHistoryController.js'
@@ -30,7 +30,7 @@ describe('Chat History Controller', () => {
   describe('getChats', () => {
     it('returns chats successfully', async () => {
       const mockChats = [{ id: 1 }];
-      getPreviousChats.mockResolvedValue(mockChats);
+      getChatSummaries.mockResolvedValue(mockChats);
 
       await getChats(req, res);
       expect(res.status).toHaveBeenCalledWith(200);

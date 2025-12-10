@@ -18,7 +18,7 @@ const { readChatsFile, writeChatsFile } = await import(
   '../../../repositories/chatHistoryRepository.js'
 );
 const { generateSummaryTitle } = await import('../../../services/aiService.js');
-const { saveChat, deleteChatById } = await import(
+const { saveChat, deleteChatById, getChatSummaries } = await import(
   '../../../services/chatHistoryService.js'
 );
 
@@ -60,6 +60,46 @@ describe('Chat History Service', () => {
 
       expect(result).toBe(false);
       expect(writeChatsFile).not.toHaveBeenCalled();
+    });
+  });
+
+  describe('getChatSummaries', () => {
+    it('returns chat summaries correctly', async () => {
+      const mockChats = [
+        {
+          id: '1',
+          title: 'Title 1',
+          personaName: 'Persona 1',
+          date: '2023-01-01',
+          messages: ['msg1'],
+        },
+        {
+          id: '2',
+          title: 'Title 2',
+          personaName: 'Persona 2',
+          date: '2023-01-02',
+          messages: ['msg2'],
+        },
+      ];
+      readChatsFile.mockResolvedValue(mockChats);
+
+      const summaries = await getChatSummaries();
+
+      expect(summaries).toEqual([
+        {
+          id: '1',
+          title: 'Title 1',
+          personaName: 'Persona 1',
+          date: '2023-01-01',
+        },
+        {
+          id: '2',
+          title: 'Title 2',
+          personaName: 'Persona 2',
+          date: '2023-01-02',
+        },
+      ]);
+      expect(summaries[0]).not.toHaveProperty('messages');
     });
   });
 });
