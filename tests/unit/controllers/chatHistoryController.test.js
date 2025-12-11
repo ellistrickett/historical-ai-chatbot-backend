@@ -16,15 +16,16 @@ const { getChats, createChat, getSingleChat, deleteChat } = await import(
 );
 
 describe('Chat History Controller', () => {
-  let req, res;
+  let req, res, next;
 
   beforeEach(() => {
     jest.clearAllMocks();
-    req = { body: {}, params: {} };
+    req = { body: {}, params: {}, query: {} };
     res = {
       status: jest.fn().mockReturnThis(),
       json: jest.fn(),
     };
+    next = jest.fn();
   });
 
   describe('getChats', () => {
@@ -32,7 +33,7 @@ describe('Chat History Controller', () => {
       const mockChats = [{ id: 1 }];
       getChatSummaries.mockResolvedValue(mockChats);
 
-      await getChats(req, res);
+      await getChats(req, res, next);
       expect(res.status).toHaveBeenCalledWith(200);
       expect(res.json).toHaveBeenCalledWith(mockChats);
     });
@@ -41,9 +42,9 @@ describe('Chat History Controller', () => {
   describe('createChat', () => {
     it('saves chat successfully', async () => {
       req.body = { title: 'T', personaName: 'P', messages: [] };
-      saveChat.mockResolvedValue(true);
+      saveChat.mockResolvedValue('new-chat-id');
 
-      await createChat(req, res);
+      await createChat(req, res, next);
       expect(res.status).toHaveBeenCalledWith(201);
       expect(res.json).toHaveBeenCalledWith(
         expect.objectContaining({ message: 'Chat saved successfully' })
@@ -57,18 +58,19 @@ describe('Chat History Controller', () => {
       const mockChat = { id: '123', title: 'Test' };
       getChatById.mockResolvedValue(mockChat);
 
-      await getSingleChat(req, res);
+      await getSingleChat(req, res, next);
       expect(res.status).toHaveBeenCalledWith(200);
       expect(res.json).toHaveBeenCalledWith(mockChat);
     });
 
-    it('returns 404 if chat not found', async () => {
+    it('calls next with error if chat not found', async () => {
       req.params = { chatId: '999' };
-      getChatById.mockResolvedValue(null);
+      const error = new Error('Chat not found');
+      error.statusCode = 404;
+      getChatById.mockRejectedValue(error);
 
-      await getSingleChat(req, res);
-      expect(res.status).toHaveBeenCalledWith(404);
-      expect(res.json).toHaveBeenCalledWith({ message: 'Chat not found.' });
+      await getSingleChat(req, res, next);
+      expect(next).toHaveBeenCalledWith(expect.objectContaining({ statusCode: 404 }));
     });
   });
 
@@ -77,7 +79,7 @@ describe('Chat History Controller', () => {
       req.params = { chatId: '123' };
       deleteChatById.mockResolvedValue(true);
 
-      await deleteChat(req, res);
+      await deleteChat(req, res, next);
       expect(res.status).toHaveBeenCalledWith(200);
       expect(res.json).toHaveBeenCalledWith({
         message: 'Chat deleted successfully',
@@ -88,7 +90,7 @@ describe('Chat History Controller', () => {
       req.params = { chatId: '999' };
       deleteChatById.mockResolvedValue(false);
 
-      await deleteChat(req, res);
+      await deleteChat(req, res, next);
       expect(res.status).toHaveBeenCalledWith(404);
       expect(res.json).toHaveBeenCalledWith({ message: 'Chat not found' });
     });
