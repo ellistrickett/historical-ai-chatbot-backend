@@ -1,5 +1,6 @@
 import { generateBotReply } from '../services/chatResponseService.js';
 import { getPersona } from '../services/personaService.js';
+import { Message } from '../models/Chat.js';
 
 /**
  * Handles a chat request from the user.
@@ -30,8 +31,11 @@ export async function handleChatRequest(req, res, next) {
       throw error;
     }
 
-    if (message.length > 2000) {
-      const error = new Error('Message exceeds 2000 characters.');
+    // Validate using Mongoose Model
+    const msgInstance = new Message({ sender: 'user', text: message });
+    const validationError = msgInstance.validateSync();
+    if (validationError) {
+      const error = new Error(validationError.message);
       error.statusCode = 400;
       throw error;
     }

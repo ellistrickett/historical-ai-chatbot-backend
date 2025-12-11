@@ -18,13 +18,21 @@ const messageSchema = new mongoose.Schema({
   text: {
     type: String,
     required: true,
-    maxlength: 2000,
+    maxlength: [2000, 'Message exceeds 2000 characters'],
   },
   timestamp: {
     type: Date,
     default: Date.now,
   },
 });
+
+/**
+ * Message Model
+ * Useful for validating individual messages (e.g. in controllers)
+ * without creating a full Chat document.
+ * @type {mongoose.Model}
+ */
+export const Message = mongoose.model('Message', messageSchema);
 
 /**
  * Schema for a chat session.

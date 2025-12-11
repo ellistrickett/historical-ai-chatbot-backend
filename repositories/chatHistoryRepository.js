@@ -1,5 +1,6 @@
 import fs from 'fs/promises';
 import path from 'path';
+import { Chat } from '../models/Chat.js';
 
 const chatsFilePath = path.join(process.cwd(), 'previous-chats.json');
 
@@ -35,20 +36,30 @@ export const readChatsFile = async () => {
 
 /**
  * Writes the chat history to the JSON file atomically.
+ * Validates each chat against the Chat model before writing.
  * Writes to a temporary file first, then renames it to ensure data integrity.
  * 
  * @param {Array} chats - The array of chat sessions to write.
  * @returns {Promise<boolean>} A promise that resolves to true if successful.
- * @throws {Error} If writing to the file fails.
+ * @throws {Error} If validation fails or writing to the file fails.
  */
 export const writeChatsFile = async (chats) => {
   const tempPath = `${chatsFilePath}.tmp`;
 
   try {
-    // 1. Write to a temporary file first
+    // 1. Validate all chats against Schema
+    chats.forEach((chatData, index) => {
+      const chat = new Chat(chatData);
+      const validationError = chat.validateSync();
+      if (validationError) {
+        throw new Error(`Validation failed for chat at index ${index}: ${validationError.message}`);
+      }
+    });
+
+    // 2. Write to a temporary file first
     await fs.writeFile(tempPath, JSON.stringify(chats, null, 2), 'utf-8');
 
-    // 2. Rename temp file to actual file (Atomic operation)
+    // 3. Rename temp file to actual file (Atomic operation)
     await fs.rename(tempPath, chatsFilePath);
     
     return true;
