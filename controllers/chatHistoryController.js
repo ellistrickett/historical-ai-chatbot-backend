@@ -51,7 +51,7 @@ export async function getSingleChat(req, res) {
  * @param {express.Response} res - The response object.
  */
 export async function createChat(req, res) {
-  const { title, personaName, messages } = req.body;
+  const { title, personaName, messages, dialogueTree, mode } = req.body;
 
   if (!personaName || !messages) {
     return res
@@ -66,6 +66,8 @@ export async function createChat(req, res) {
     title: title,
     personaName: personaName,
     messages: messages,
+    dialogueTree: dialogueTree,
+    mode: mode,
     date: new Date().toISOString(),
   };
 
