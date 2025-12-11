@@ -18,6 +18,9 @@ export async function handleChatRequest(req, res) {
   if (!personaName)
     return res.status(400).json({ error: 'Persona name is required' });
   if (!message) return res.status(400).json({ error: 'Message is required' });
+  if (message.length > 2000) {
+    return res.status(400).json({ error: 'Message exceeds 2000 characters' });
+  }
 
   const currentPersonaData = getPersona(personaName);
   if (!currentPersonaData) {
