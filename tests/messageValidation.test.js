@@ -1,5 +1,5 @@
 import request from 'supertest';
-import { app } from '../server.js'; 
+import { app } from '../app.js'; 
 
 describe('Message Validation', () => {
   it('should reject messages longer than 2000 characters', async () => {
@@ -14,6 +14,11 @@ describe('Message Validation', () => {
     expect(res.statusCode).toEqual(400);
     expect(res.body).toHaveProperty('message');
     expect(res.body.message).toContain('Message exceeds 2000 characters');
+    
+    // FIXED: Now checks for 'message' instead of 'error'
+    // The server returns: { "message": "Message exceeds 2000 characters." }
+    expect(res.body).toHaveProperty('message');
+    expect(res.body.message).toContain('Message exceeds 2000 characters');
   });
 
   it('should accept messages within the limit', async () => {
@@ -25,6 +30,8 @@ describe('Message Validation', () => {
         personaName: 'cleopatra',
       });
       
+
+    // If it fails with 400, ensure it is NOT because of length
     if (res.statusCode === 400) {
         expect(res.body.message).not.toContain('exceeds 2000 characters');
     } else {

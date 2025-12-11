@@ -5,7 +5,7 @@ describe('Server', () => {
   let app;
 
   beforeAll(async () => {
-    const module = await import('../../server.js');
+    const module = await import('../../app.js');
     app = module.app;
   });
 

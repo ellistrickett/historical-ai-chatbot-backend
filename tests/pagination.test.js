@@ -8,7 +8,7 @@ jest.unstable_mockModule('../repositories/chatHistoryRepository.js', () => ({
 }));
 
 // Dynamic import to ensure mocks are applied
-const { app } = await import('../server.js');
+const { app } = await import('../app.js');
 const { readChatsFile } = await import('../repositories/chatHistoryRepository.js');
 
 describe('Pagination API', () => {
