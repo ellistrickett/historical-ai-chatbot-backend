@@ -1,4 +1,4 @@
-import { generateBotReply } from '../services/responseService.js';
+import { generateBotReply } from '../services/chatResponsesService.js';
 import { getPersona } from '../services/personaService.js';
 
 /**
