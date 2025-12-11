@@ -1,6 +1,9 @@
 import express from 'express';
 import cors from 'cors';
+import helmet from 'helmet'; // Recommended for security
+import morgan from 'morgan'; // Recommended for logging
 import 'dotenv/config';
+
 import chatRoutes from './routes/chatRoutes.js';
 import { loadPersonas } from './services/personaService.js';
 
@@ -10,36 +13,67 @@ import { loadPersonas } from './services/personaService.js';
  */
 export const app = express();
 
+const PORT = process.env.PORT || 3000;
+
+// ==========================================
+// MIDDLEWARE
+// ==========================================
+// Helmet helps secure your app by setting various HTTP headers
+app.use(helmet()); 
+
+// CORS configuration (Open to all currently, restrict this in production)
 app.use(cors());
+
+// Request logging (only runs in non-test environments)
+if (process.env.NODE_ENV !== 'test') {
+  app.use(morgan('dev'));
+}
+
 app.use(express.json());
 app.use(express.static('public'));
 
-loadPersonas();
+// ==========================================
+// INITIALIZATION
+// ==========================================
+// Wrap initialization in a try/catch in case loading fails
+try {
+  loadPersonas();
+} catch (error) {
+  console.error("Critical Error: Failed to load personas on startup.", error);
+  process.exit(1); // Exit if essential data fails to load
+}
 
+// ==========================================
+// ROUTES
+// ==========================================
 app.use('/api', chatRoutes);
 
-/**
- * Global error handler middleware.
- * @param {Error} err - The error object.
- * @param {express.Request} req - The request object.
- * @param {express.Response} res - The response object.
- * @param {express.NextFunction} next - The next middleware function.
- */
+// ==========================================
+// GLOBAL ERROR HANDLER
+// ==========================================
 app.use((err, req, res, next) => {
-  console.error('Unhandled Error:', err.stack);
-  res.status(500).json({ error: 'Something went wrong!' });
+  const statusCode = err.statusCode || 500;
+  const message = err.message || 'Internal Server Error';
+
+  if (statusCode === 500) {
+    console.error('Unhandled Error:', err.stack);
+  } else {
+    console.warn(`[${statusCode}] ${message}`);
+  }
+
+  res.status(statusCode).json({ message });
 });
 
+// ==========================================
+// SERVER START
+// ==========================================
 if (process.env.NODE_ENV !== 'test') {
-  /**
-   * Starts the server listening on the configured port.
-   */
-  app.listen(process.env.PORT, (error) => {
-    if (!error)
-      console.log(
-        'Server is Successfully Running, and App is listening on port ' +
-          process.env.PORT
-      );
-    else console.log("Error occurred, server can't start", error);
+  const server = app.listen(PORT, () => {
+    console.log(`Server is successfully running on port ${PORT}`);
+  });
+
+  // Handle server startup errors (e.g., EADDRINUSE)
+  server.on('error', (error) => {
+    console.error("Error occurred, server can't start", error);
   });
 }
