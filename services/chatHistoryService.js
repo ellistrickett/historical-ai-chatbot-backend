@@ -5,17 +5,29 @@ import {
 import { generateSummaryTitle } from './aiService.js';
 
 /**
- * Retrieves chat summaries (id, title, personaName, date).
- * @returns {Promise<Array>} A promise that resolves to an array of chat summary objects.
+ * Retrieves chat summaries (id, title, personaName, date) with pagination.
+ * @param {number} [page=1] - The page number to retrieve.
+ * @param {number} [limit=8] - The number of items per page.
+ * @returns {Promise<{chats: Array, hasMore: boolean, total: number}>} A promise that resolves to an object containing chat summaries and pagination metadata.
  */
-export async function getChatSummaries() {
+export async function getChatSummaries(page = 1, limit = 8) {
   const chats = await readChatsFile();
-  return chats.map((chat) => ({
+  
+  const startIndex = (page - 1) * limit;
+  const endIndex = page * limit;
+  
+  const paginatedChats = chats.slice(startIndex, endIndex).map((chat) => ({
     id: chat.id,
     title: chat.title,
     personaName: chat.personaName,
     date: chat.date,
   }));
+
+  return {
+    chats: paginatedChats,
+    hasMore: endIndex < chats.length,
+    total: chats.length
+  };
 }
 
 /**

@@ -7,14 +7,18 @@ import {
 import { v4 as uuidv4 } from 'uuid';
 
 /**
- * Retrieves all chat sessions.
+ * Retrieves all chat sessions with pagination support.
+ * Accepts `page` and `limit` as query parameters.
  * @param {express.Request} req - The request object.
  * @param {express.Response} res - The response object.
  */
 export async function getChats(req, res) {
   try {
-    const chatSummaries = await getChatSummaries();
-    res.status(200).json(chatSummaries);
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 8;
+    
+    const result = await getChatSummaries(page, limit);
+    res.status(200).json(result);
   } catch (error) {
     console.error('History Controller Error (getChats):', error);
     res.status(500).json({ message: 'Failed to retrieve chats.' });
