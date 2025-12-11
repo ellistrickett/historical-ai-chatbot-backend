@@ -20,7 +20,7 @@ const { generateGeminiPersonaResponse } = await import(
   '../../../services/aiService.js'
 );
 const { generateBotReply } = await import(
-  '../../../services/responseService.js'
+  '../../../services/chatResponseService.js'
 );
 
 describe('Response Service', () => {

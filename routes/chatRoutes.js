@@ -1,5 +1,5 @@
 import express from 'express';
-import { handleChatRequest } from '../controllers/responseController.js';
+import { handleChatRequest } from '../controllers/chatResponseController.js';
 import {
   getChats,
   getSingleChat,

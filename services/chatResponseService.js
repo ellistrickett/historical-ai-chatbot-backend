@@ -8,6 +8,7 @@ import { generateGeminiPersonaResponse } from './aiService.js';
 
 /**
  * Generates a reply for the user based on the persona, dialogue tree, or AI.
+ * Prioritizes dialogue trees, then topic detection, then AI generation.
  *
  * @param {string} userMessage - The user's message.
  * @param {Object} personaData - The full data for the persona.
@@ -21,10 +22,12 @@ export async function generateBotReply(
   currentTreeState,
   history
 ) {
+  // 1. Priority: Handle existing Dialogue Tree
   if (currentTreeState) {
     return handleTreeState(userMessage, currentTreeState, personaData);
   }
 
+  // 2. Check for New Dialogue Tree Trigger
   const newTree = detectDialogueTree(userMessage, personaData.dialogueTrees);
   if (newTree) {
     const firstStep = personaData.dialogueTrees[newTree.name].steps.start;
@@ -37,8 +40,8 @@ export async function generateBotReply(
     };
   }
 
+  // 3. Check for Topic Keyword Match
   const detectedTopic = detectTopic(userMessage, personaData.topics);
-
   if (detectedTopic) {
     const possibleResponses = personaData.responses[detectedTopic];
     const selected = chooseWeighted(possibleResponses);
@@ -53,6 +56,7 @@ export async function generateBotReply(
     }
   }
 
+  // 4. Fallback: AI Generation (Graceful Degradation)
   try {
     const aiReply = await generateGeminiPersonaResponse(
       personaData.persona,
@@ -84,6 +88,7 @@ export async function generateBotReply(
 
 /**
  * Handles the state of a dialogue tree.
+ * Includes safety checks to prevent crashes if state is invalid.
  * @param {string} userText - The user's input text.
  * @param {Object} currentTreeState - The current state of the dialogue tree.
  * @param {Object} personaData - The full data for the persona.
@@ -91,12 +96,27 @@ export async function generateBotReply(
  */
 function handleTreeState(userText, currentTreeState, personaData) {
   const { name, step } = currentTreeState;
-  const tree = personaData.dialogueTrees[name];
-  const currentStepData = tree.steps[step];
-  const lowerInput = userText.toLowerCase();
 
+  // SAFETY CHECK: Ensure the tree and step actually exist.
+  // This prevents crashes if the client sends a stale state.
+  const tree = personaData.dialogueTrees?.[name];
+  const currentStepData = tree?.steps?.[step];
+
+  if (!tree || !currentStepData) {
+    console.warn(`Invalid tree state received: ${name}/${step}. Resetting tree.`);
+    return {
+      reply: "I seem to have lost my train of thought. What were we talking about?",
+      options: null,
+      treeState: null, // Reset state to exit tree mode
+      mode: 'tree_broken_state',
+      timestamp: getCurrentTime(),
+    };
+  }
+
+  const lowerInput = userText.toLowerCase();
   let nextStepKey = null;
 
+  // Check if input matches any options
   if (currentStepData.options) {
     const match = Object.keys(currentStepData.options).find((opt) =>
       lowerInput.includes(opt)
@@ -106,12 +126,26 @@ function handleTreeState(userText, currentTreeState, personaData) {
     }
   }
 
+  // Use default next step if no option matched
   if (!nextStepKey && currentStepData.defaultNext) {
     nextStepKey = currentStepData.defaultNext;
   }
 
+  // Move to next step
   if (nextStepKey) {
     const nextStepData = tree.steps[nextStepKey];
+
+    // Safety check for next step existence
+    if (!nextStepData) {
+        console.error(`Missing next step definition: ${nextStepKey}`);
+        return {
+            reply: "...",
+            options: null,
+            treeState: null,
+            mode: 'tree_error',
+            timestamp: getCurrentTime()
+        }
+    }
 
     if (nextStepData.end) {
       return {
@@ -132,6 +166,7 @@ function handleTreeState(userText, currentTreeState, personaData) {
     };
   }
 
+  // Retry logic (stay on current step)
   return {
     reply: 'I did not understand. ' + currentStepData.bot,
     options: capitaliseOptions(currentStepData.options),
