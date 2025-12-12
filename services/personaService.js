@@ -22,8 +22,11 @@ const personaCache = {};
  * Loads all persona data from JSON files into memory.
  * Validates each loaded persona against the Persona model.
  * Caches the data in the `personaCache` object.
+ * * @throws {Error} If one or more personas failed to load or validate.
  */
 export const loadPersonas = () => {
+  let hadCriticalFailure = false; // Flag to track if any file failed
+
   TARGET_FILES.forEach((file) => {
     try {
       const fullPath = path.join(rootPath, file.filename);
@@ -38,19 +41,26 @@ export const loadPersonas = () => {
 
         if (validationError) {
           console.error(`❌ Validation failed for ${file.name}:`, validationError.message);
-          // We intentionally skip adding invalid personas to the cache
-          return;
+          hadCriticalFailure = true; // Mark as failed
+          return; // Skip adding the invalid persona
         }
 
         personaCache[file.name] = parsedData;
         console.log(`✅ Loaded: ${file.name}`);
       } else {
         console.warn(`⚠️ File not found: ${fullPath}`);
+        hadCriticalFailure = true; // Treat missing file as a failure to prevent incomplete data
       }
     } catch (error) {
       console.error(`❌ Error loading ${file.name}:`, error);
+      hadCriticalFailure = true; // Mark as failed (JSON parse error, etc.)
     }
   });
+
+  // CRITICAL: Check the flag and throw an error after the loop completes.
+  if (hadCriticalFailure) {
+    throw new Error("One or more personas failed to load or validate. Server startup halted.");
+  }
 };
 
 /**

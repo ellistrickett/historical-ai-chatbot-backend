@@ -43,9 +43,11 @@ app.use('/api', limiter);
 // 2. INITIALIZATION
 // ==========================================
 try {
-  loadPersonas();
+  loadPersonas(); // This will now throw the error if a persona failed.
 } catch (error) {
-  console.error("Critical Error: Failed to load personas.", error);
+  // This outer catch block will now execute!
+  console.error("🚨 Critical Error: Failed to load personas and start server.", error);
+  process.exit(1); // Explicitly stop the server
 }
 
 // ==========================================
