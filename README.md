@@ -1,21 +1,25 @@
 # Historical AI Chatbot (Backend)
 
-The backend service for the Historical AI Chatbot, providing AI-powered responses, dialogue tree management, and static asset serving.
+The backend service for the Historical AI Chatbot, providing AI-powered responses, dialogue tree management, and robust chat history management.
 
 ## Features
 
--   **AI Integration**: Uses Google's Gemini API to generate persona-based responses.
+-   **AI Integration**: Uses Google's Gemini API with **safety settings** and **prompt injection protection**.
 -   **Dialogue Trees**: Manages structured conversation flows with branching logic.
--   **Persona Management**: Loads and serves persona definitions and specific topic responses.
--   **Static Assets**: Serves avatar images for the frontend.
--   **History Management**: Tracks conversation context for better AI responses.
+-   **Persona Management**: Loads and validates persona definitions (JSON) using **Mongoose schemas**.
+-   **Chat History**: Saves and retrieves chat sessions, supporting title generation and pagination.
+-   **Rate Limiting**: Protects the AI endpoint (`/api/chat`) with a configurable rate limiter (30 requests/hour).
+-   **Validation**: Strict input validation using Mongoose models (`Chat`, `Persona`, `Message`).
+-   **Error Handling**: Centralized error handling middleware.
 
 ## Tech Stack
 
 -   **Runtime**: Node.js
 -   **Framework**: Express.js
 -   **AI SDK**: Google Generative AI
--   **Testing**: Jest
+-   **Validation**: Mongoose
+-   **Security**: Helmet, Share-based Rate Limiter
+-   **Testing**: Jest, Supertest
 
 ## Getting Started
 
@@ -39,11 +43,12 @@ The backend service for the Historical AI Chatbot, providing AI-powered response
 
 ### Configuration
 
-Create a `.env` file in the root directory and add your Gemini API key:
+Create a `.env` file in the root directory:
 
 ```env
 GEMINI_API_KEY=your_api_key_here
 PORT=3000
+NODE_ENV=development
 ```
 
 ### Running the Server
@@ -51,42 +56,44 @@ PORT=3000
 Start the server:
 
 ```bash
-node server.js
+npm run dev # or node server.js
 ```
 
 The server will run on `http://localhost:3000`.
 
 ## API Endpoints
 
-### `POST /api/chat`
-
-Sends a message to the chatbot.
-
+### 1. Chat Interaction
+**POST** `/api/chat`
+-   **Rate Limit**: 30 requests / hour
 -   **Body**:
     ```json
     {
       "message": "Hello",
-      "persona": "cleopatra"
-    }
-    ```
--   **Response**:
-    ```json
-    {
-      "reply": "Greetings...",
-      "timestamp": "10 Dec 20:55",
-      "mode": "ai_fallback" // or "topic_match", "tree_active"
+      "personaName": "Cleopatra",
+      "history": [], // Optional: Array of previous messages for context
+      "treeState": null // Optional: Current dialogue tree state
     }
     ```
 
-### `GET /api/chat/history`
+### 2. Chat History
+**GET** `/api/chat/history`
+-   **Query**: `?page=1&limit=8`
+-   **Response**: Paginated list of chat summaries.
 
-Retrieves the chat history for a specific persona.
+**POST** `/api/chat/history`
+-   Creates or updates a chat session.
+-   **Body**: Full chat object (messages, mode, personaName).
 
--   **Query Params**: `?persona=cleopatra`
+**GET** `/api/chat/history/:chatId`
+-   Retrieves a full specific chat session.
+
+**DELETE** `/api/chat/history/:chatId`
+-   Deletes a chat session.
 
 ## Testing
 
-Run unit tests with Jest:
+Run unit and integration tests:
 
 ```bash
 npm test
