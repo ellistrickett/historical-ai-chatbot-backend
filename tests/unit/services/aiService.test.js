@@ -27,13 +27,17 @@ describe('AI Service', () => {
       expect(title).toBe('Ancient Chat');
     });
 
-    it('handles errors gracefully', async () => {
+        it('returns a smart fallback title if AI generation fails', async () => {
+      // 1. Setup: Mock the AI to fail
       generateAIContent.mockRejectedValue(new Error('AI Error'));
+      
+      // 2. Setup: Provide a user message (fallback relies on this)
       const messages = [{ role: 'user', text: 'Hello' }];
 
       const title = await generateSummaryTitle(messages);
 
-      expect(title).toBeNull();
+      // 3. Assert: We expect the fallback string, NOT null
+      expect(title).toBe('Conversation');
     });
   });
 
