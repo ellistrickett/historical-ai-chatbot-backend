@@ -2,14 +2,16 @@ import request from 'supertest';
 import { jest } from '@jest/globals';
 
 // Mock the repository before importing the app
-jest.unstable_mockModule('../repositories/chatHistoryRepository.js', () => ({
+jest.unstable_mockModule('../../repositories/chatHistoryRepository.js', () => ({
   readChatsFile: jest.fn(),
   writeChatsFile: jest.fn(),
 }));
 
 // Dynamic import to ensure mocks are applied
-const { app } = await import('../app.js');
-const { readChatsFile } = await import('../repositories/chatHistoryRepository.js');
+const { app } = await import('../../app.js'); // Assuming app.js is at the root
+const { readChatsFile } = await import(
+    '../../repositories/chatHistoryRepository.js' // Assuming repositories is at the root
+);
 
 describe('Pagination API', () => {
   beforeEach(() => {

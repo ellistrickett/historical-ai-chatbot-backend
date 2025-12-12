@@ -7,14 +7,12 @@ import { generateAIContent } from '../config/geminiClient.js';
  */
 export async function generateSummaryTitle(messages) {
   try {
-    // 1. If chat is short (under 6 messages), just use everything.
-    let relevantMessages = messages;
-
-    // 2. If chat is long, pick the "Bookends" to capture the full context.
+    // For long conversations, use the "Bookends" strategy (First 3 + Last 2)
+    // to capture the introduction and conclusion without exceeding token limits.
     if (messages.length > 5) {
       relevantMessages = [
-        ...messages.slice(0, 3), // First 3 (Captures the topic/intro)
-        ...messages.slice(-2)    // Last 2 (Captures the conclusion)
+        ...messages.slice(0, 3),
+        ...messages.slice(-2)
       ];
     }
 
@@ -39,8 +37,6 @@ export async function generateSummaryTitle(messages) {
     return text.trim().replace(/^"|"$/g, '');
 
   } catch (error) {
-    console.warn('AI Title generation failed, using smart fallback.');
-    // 3. Fallback: Generate a smart title without AI
     return generateSmartFallback(messages);
   }
 }

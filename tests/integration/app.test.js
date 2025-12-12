@@ -22,11 +22,16 @@ describe('App Integration Check', () => {
   });
 
   // 3. Test that Rate Limiting is active
-  it('should have Rate Limit headers', async () => {
-    const res = await request(app).get('/api/chat/history');
-    
-    // CHANGED: Removed 'x-' prefix to match modern standard
-    expect(res.headers).toHaveProperty('ratelimit-limit');
-    expect(res.headers).toHaveProperty('ratelimit-remaining');
+  it('should have Rate Limit headers (on the restricted endpoint)', async () => {
+      // CRITICAL: We must hit the POST /api/chat route and send a body, 
+      // as this is the only route where you applied the limiter.
+      const res = await request(app)
+          .post('/api/chat')
+          // Send minimum required body to hit the endpoint successfully
+          .send({ userMessage: 'test', personaName: 'Cleopatra' }); 
+      
+      // The rate limit middleware adds these headers on the first request.
+      expect(res.headers).toHaveProperty('ratelimit-limit');
+      expect(res.headers).toHaveProperty('ratelimit-remaining');
   });
 });

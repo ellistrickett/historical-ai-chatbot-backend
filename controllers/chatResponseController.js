@@ -18,7 +18,7 @@ export async function handleChatRequest(req, res, next) {
   try {
     const { message, personaName, treeState, history } = req.body;
 
-    // 1. Validation (Fail Fast)
+    // Validation (Fail Fast)
     if (!personaName || typeof personaName !== 'string') {
       const error = new Error('Persona name is required and must be a string.');
       error.statusCode = 400;
@@ -46,7 +46,7 @@ export async function handleChatRequest(req, res, next) {
       throw error;
     }
 
-    // 2. Check Persona Existence
+    // Check Persona Existence
     const currentPersonaData = getPersona(personaName);
     if (!currentPersonaData) {
       const error = new Error(`Persona '${personaName}' not found.`);
@@ -54,7 +54,7 @@ export async function handleChatRequest(req, res, next) {
       throw error;
     }
 
-    // 3. Generate Response
+    // Generate Response
     const botResult = await generateBotReply(
       message,
       currentPersonaData,
@@ -62,7 +62,7 @@ export async function handleChatRequest(req, res, next) {
       history
     );
 
-    // 4. Send Response
+    // Send Response
     res.json({
       reply: botResult.reply,
       treeState: botResult.treeState,

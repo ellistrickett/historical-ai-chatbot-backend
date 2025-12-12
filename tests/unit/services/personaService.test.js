@@ -1,74 +1,85 @@
 import { jest, describe, it, expect, beforeEach, afterEach } from '@jest/globals';
-import { Persona } from '../../../models/Persona.js'; // Import the original model for typing/mocking
+import { Persona } from '../../../models/Persona.js'; 
 
 // --- MOCK SETUP ---
-// 1. Mock fs and path (Use vi.mock if you were using Vitest)
-jest.unstable_mockModule('fs', () => ({
-  // Note: Must match how your production code imports/accesses fs (likely default)
+// 1. Mock fs and path
+const mockFs = {
   default: {
     existsSync: jest.fn(),
     readFileSync: jest.fn(),
   },
-  existsSync: jest.fn(), // Exported functions for direct import if needed
+  existsSync: jest.fn(),
   readFileSync: jest.fn(),
-}));
+};
+
+jest.unstable_mockModule('fs', () => mockFs);
 
 jest.unstable_mockModule('path', () => ({
   default: {
-    join: jest.fn((_, filename) => `/path/to/${filename}`), // Simplified join for easier assertion
+    join: jest.fn((_, filename) => `/path/to/${filename}`),
   },
   join: jest.fn((_, filename) => `/path/to/${filename}`),
 }));
 
-// 2. Mock the Mongoose Model (We must control its behavior per test)
+// 2. Mock the Mongoose Model
 const mockValidateSync = jest.fn();
 const mockPersonaModel = jest.fn().mockImplementation((data) => ({
-    ...data,
-    validateSync: mockValidateSync, // Our controllable spy
+  ...data,
+  validateSync: mockValidateSync, 
 }));
 
 jest.unstable_mockModule('../../../models/Persona.js', () => ({
   Persona: mockPersonaModel,
 }));
 
-// 3. Dynamic imports (Must be AFTER the mocks)
+// 3. Dynamic imports
 const fs = await import('fs');
-const { loadPersonas, getPersona } = await import(
+// NOTE: Ensure you have exported clearPersonaCache from your service file!
+const { loadPersonas, getPersona, clearPersonaCache } = await import(
   '../../../services/personaService.js'
 );
 
-// Define the file structure used in your service (to simplify mocking TARGET_FILES)
-const TARGET_FILES = [
-  { name: 'Cleopatra', filename: 'persona-responses/cleopatra_advanced.json' },
-];
+const TARGET_FILE_COUNT = 3; 
+
+// Helper to generate valid mock data for specific personas
+const createMockData = (name) => ({
+  name, 
+  role: 'Pharaoh',
+  persona: { name, tone: 'Regal' },
+  topics: {}, 
+  responses: {} 
+});
 
 describe('Persona Service: loadPersonas', () => {
     let consoleErrorSpy;
 
-    // --- SETUP FIXES ---
     beforeEach(() => {
         jest.clearAllMocks();
         
-        // Ensure all files exist by default
+        // CRITICAL: Clear the persistent cache before every test to prevent state pollution
+        if (typeof clearPersonaCache === 'function') {
+            clearPersonaCache();
+        }
+
+        // Default: All files exist
         fs.default.existsSync.mockReturnValue(true);
         
-        // Silence console logs during tests
+        // Default: readFileSync returns unique data based on the filename requested
+        // This ensures Cleopatra, Tutankhamun, and Ramesses don't overwrite each other
+        fs.default.readFileSync.mockImplementation((file) => {
+            if (file.includes('cleopatra')) return JSON.stringify(createMockData('Cleopatra'));
+            if (file.includes('tutankhamun')) return JSON.stringify(createMockData('Tutankhamun'));
+            if (file.includes('ramesses')) return JSON.stringify(createMockData('Ramesses II'));
+            return JSON.stringify(createMockData('Generic'));
+        });
+        
+        // Default: Validation always passes
+        mockValidateSync.mockReturnValue(null);
+        
+        // Silence console
         consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
         jest.spyOn(console, 'log').mockImplementation(() => {});
         jest.spyOn(console, 'warn').mockImplementation(() => {});
-        
-        // Default Mock Read: A valid persona structure (matching the final schema)
-        const mockValidData = { 
-            name: 'Cleopatra', 
-            role: 'Queen',
-            persona: { name: 'Cleopatra VII', tone: 'Regal' },
-            topics: {}, 
-            responses: {} 
-        };
-        fs.default.readFileSync.mockReturnValue(JSON.stringify(mockValidData));
-        
-        // Default Mock Validation: Always passes
-        mockValidateSync.mockReturnValue(null);
     });
 
     afterEach(() => {
@@ -77,56 +88,78 @@ describe('Persona Service: loadPersonas', () => {
 
     // --- TESTS ---
 
-    it('loads and caches a valid persona successfully', () => {
+    it('loads and caches all 3 valid personas successfully', () => {
         loadPersonas();
-        const persona = getPersona('Cleopatra');
-
-        expect(persona.name).toBe('Cleopatra');
-        expect(getPersona('Cleopatra')).toBeDefined();
-        expect(mockValidateSync).toHaveBeenCalledTimes(TARGET_FILES.length); // Should call validation
-        expect(consoleErrorSpy).not.toHaveBeenCalled();
-    });
-
-    it('handles missing files gracefully', () => {
-        fs.default.existsSync.mockReturnValue(false); // Make file appear missing
         
-        loadPersonas();
-
-        expect(getPersona('Cleopatra')).toBeUndefined(); // Should not be loaded
-        expect(fs.default.readFileSync).not.toHaveBeenCalled();
+        // Verify all files were processed
+        expect(mockValidateSync).toHaveBeenCalledTimes(TARGET_FILE_COUNT);
+        
+        // Verify all 3 were cached correctly
+        expect(getPersona('Cleopatra')).toBeDefined();
+        expect(getPersona('Tutankhamun')).toBeDefined();
+        expect(getPersona('Ramesses II')).toBeDefined();
+        
         expect(consoleErrorSpy).not.toHaveBeenCalled();
     });
 
-    it('skips loading if Mongoose validation fails (Catching JSON structure errors)', () => {
-        // 1. Setup: Make validation fail for the required 'name' field
-        mockValidateSync.mockReturnValue({
-            message: 'Persona validation failed: name: Path `name` is required.',
-            errors: { name: { message: 'Path `name` is required.' } }
+    it('handles missing files gracefully and THROWS final error', () => {
+        // Setup: Cleopatra exists, but the others are missing
+        fs.default.existsSync.mockImplementation((path) => {
+            return path.includes('cleopatra'); // Only true for Cleopatra
+        }); 
+
+        // Act & Assert: Should throw critical error
+        expect(() => loadPersonas()).toThrow(
+            "One or more personas failed to load or validate. Server startup halted."
+        );
+        
+        // Assert: Cleopatra should have loaded before the loop finished
+        expect(getPersona('Cleopatra')).toBeDefined();
+        // Tutankhamun should NOT be loaded
+        expect(getPersona('Tutankhamun')).toBeUndefined();
+    });
+
+    it('skips loading if Mongoose validation fails and THROWS final error', () => {
+        // Setup: Fail validation ONLY for the first file (Cleopatra)
+        mockValidateSync
+            .mockReturnValueOnce({ message: 'Validation failed', errors: {} }) // 1st call fails
+            .mockReturnValue(null); // 2nd and 3rd calls pass
+        
+        // Act & Assert
+        expect(() => loadPersonas()).toThrow("One or more personas failed to load or validate");
+        
+        // Assert: Error logged
+        expect(consoleErrorSpy).toHaveBeenCalledWith(
+            expect.stringContaining('Validation failed for Cleopatra'),
+            expect.any(String)
+        );
+        
+        // Assert Cache State:
+        // Cleopatra failed, so she should NOT be in cache.
+        expect(getPersona('Cleopatra')).toBeUndefined(); 
+        // The loop continued, so Tutankhamun SHOULD be in cache.
+        expect(getPersona('Tutankhamun')).toBeDefined();
+    });
+
+    it('logs an error if file content is invalid JSON and THROWS final error', () => {
+        // Setup: Return broken JSON for Cleopatra only
+        fs.default.readFileSync.mockImplementation((path) => {
+            if (path.includes('cleopatra')) return '{{ BROKEN JSON ';
+            if (path.includes('tutankhamun')) return JSON.stringify(createMockData('Tutankhamun'));
+            return JSON.stringify(createMockData('Ramesses II'));
         });
 
-        loadPersonas();
+        // Act & Assert
+        expect(() => loadPersonas()).toThrow("One or more personas failed to load or validate");
 
-        // 2. Assert: Cache Check (Crucial: Should NOT load)
-        expect(getPersona('Cleopatra')).toBeUndefined(); 
-        
-        // 3. Assert: Error Logging Check (Should log the failure)
+        // Assert: SyntaxError logged
         expect(consoleErrorSpy).toHaveBeenCalledWith(
-            expect.stringContaining('❌ Validation failed for Cleopatra'),
-            expect.any(Object)
-        );
-    });
-
-    it('logs an error if file content is invalid JSON', () => {
-        // Setup: Return broken JSON string
-        fs.default.readFileSync.mockReturnValue('{"name": "Broken"'); 
-
-        loadPersonas();
-
-        // Assert: The try/catch block should catch the JSON.parse error
-        expect(getPersona('Cleopatra')).toBeUndefined();
-        expect(consoleErrorSpy).toHaveBeenCalledWith(
-            expect.stringContaining('❌ Error loading Cleopatra'),
+            expect.stringContaining('Error loading Cleopatra'),
             expect.any(SyntaxError)
         );
+        
+        // Assert Cache State
+        expect(getPersona('Cleopatra')).toBeUndefined(); 
+        expect(getPersona('Tutankhamun')).toBeDefined();
     });
 });

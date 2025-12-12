@@ -16,12 +16,12 @@ export const readChatsFile = async () => {
     const data = await fs.readFile(chatsFilePath, 'utf-8');
     return JSON.parse(data);
   } catch (error) {
-    // 1. File doesn't exist yet (Normal first-run behavior)
+    // File doesn't exist yet (Normal first-run behavior)
     if (error.code === 'ENOENT') {
       return [];
     }
     
-    // 2. File exists but JSON is corrupt
+    // File exists but JSON is corrupt
     if (error instanceof SyntaxError) {
       console.error('CRITICAL: previous-chats.json is corrupt. Backing up and resetting.');
       // Backup the corrupt file
@@ -29,7 +29,7 @@ export const readChatsFile = async () => {
       return [];
     }
 
-    // 3. Actual disk/permission error
+    // Actual disk/permission error
     throw new Error(`Failed to read chat history: ${error.message}`);
   }
 };
@@ -47,7 +47,7 @@ export const writeChatsFile = async (chats) => {
   const tempPath = `${chatsFilePath}.tmp`;
 
   try {
-    // 1. Validate all chats against Schema
+    // Validate all chats against Schema
     chats.forEach((chatData, index) => {
       const chat = new Chat(chatData);
       const validationError = chat.validateSync();
@@ -56,10 +56,10 @@ export const writeChatsFile = async (chats) => {
       }
     });
 
-    // 2. Write to a temporary file first
+    // Write to a temporary file first
     await fs.writeFile(tempPath, JSON.stringify(chats, null, 2), 'utf-8');
 
-    // 3. Rename temp file to actual file (Atomic operation)
+    // Rename temp file to actual file (Atomic operation)
     await fs.rename(tempPath, chatsFilePath);
     
     return true;

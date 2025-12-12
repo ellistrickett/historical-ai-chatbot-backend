@@ -1,20 +1,18 @@
 import request from 'supertest';
-import { app } from '../app.js'; 
+import { app } from '../../app.js';
 
 describe('Message Validation', () => {
   it('should reject messages longer than 2000 characters', async () => {
     const longMessage = 'a'.repeat(2001);
-    const res = await request(app)
-      .post('/api/chat') 
-      .send({
-        message: longMessage,
-        personaName: 'cleopatra', 
-      });
+    const res = await request(app).post('/api/chat').send({
+      message: longMessage,
+      personaName: 'cleopatra',
+    });
 
     expect(res.statusCode).toEqual(400);
     expect(res.body).toHaveProperty('message');
     expect(res.body.message).toContain('Message exceeds 2000 characters');
-    
+
     // FIXED: Now checks for 'message' instead of 'error'
     // The server returns: { "message": "Message exceeds 2000 characters." }
     expect(res.body).toHaveProperty('message');
@@ -23,19 +21,16 @@ describe('Message Validation', () => {
 
   it('should accept messages within the limit', async () => {
     const validMessage = 'Hello';
-    const res = await request(app)
-      .post('/api/chat')
-      .send({
-        message: validMessage,
-        personaName: 'cleopatra',
-      });
-      
+    const res = await request(app).post('/api/chat').send({
+      message: validMessage,
+      personaName: 'cleopatra',
+    });
 
     // If it fails with 400, ensure it is NOT because of length
     if (res.statusCode === 400) {
-        expect(res.body.message).not.toContain('exceeds 2000 characters');
+      expect(res.body.message).not.toContain('exceeds 2000 characters');
     } else {
-        expect(res.statusCode).not.toEqual(400);
+      expect(res.statusCode).not.toEqual(400);
     }
   });
 });

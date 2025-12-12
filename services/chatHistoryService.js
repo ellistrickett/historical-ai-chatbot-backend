@@ -60,23 +60,20 @@ export async function getChatById(chatId) {
 export async function saveChat(chatData) {
   const chats = await readChatsFile();
   
-  // 1. Logic: Handle ID and Date for NEW chats
+  // Handle ID and Date for new chats
   if (!chatData.id) {
     chatData.id = uuidv4();
     chatData.date = new Date().toISOString();
   }
 
-  // 2. Logic: AI Title Generation
+  // Generate AI Title if missing
   if (chatData.messages?.length > 0 && !chatData.title) {
     const aiTitle = await generateSummaryTitle(chatData.messages);
     chatData.title = aiTitle || 'Server Error: Could not generate AI title';
   }
 
-  // 3. Logic: Find and Update/Insert
-  const existingIndex = chats.findIndex((c) => c.id === chatData.id);
-
+  // Merge new data into old data to preserve fields
   if (existingIndex >= 0) {
-    // CRITICAL: Merge new data into old data to preserve fields (like date)
     chats[existingIndex] = { 
       ...chats[existingIndex], 
       ...chatData 

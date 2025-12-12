@@ -22,12 +22,12 @@ export async function generateBotReply(
   currentTreeState,
   history
 ) {
-  // 1. Priority: Handle existing Dialogue Tree
+  // Handle existing Dialogue Tree
   if (currentTreeState) {
     return handleTreeState(userMessage, currentTreeState, personaData);
   }
 
-  // 2. Check for New Dialogue Tree Trigger
+  // Check for New Dialogue Tree Trigger
   const newTree = detectDialogueTree(userMessage, personaData.dialogueTrees);
   if (newTree) {
     const firstStep = personaData.dialogueTrees[newTree.name].steps.start;
@@ -40,7 +40,7 @@ export async function generateBotReply(
     };
   }
 
-  // 3. Check for Topic Keyword Match
+  // Check for Topic Keyword Match
   const detectedTopic = detectTopic(userMessage, personaData.topics);
   if (detectedTopic) {
     const possibleResponses = personaData.responses[detectedTopic];
@@ -56,7 +56,7 @@ export async function generateBotReply(
     }
   }
 
-  // 4. Fallback: AI Generation (Graceful Degradation)
+  // Fallback: AI Generation
   try {
     const aiReply = await generateGeminiPersonaResponse(
       personaData.persona,

@@ -29,24 +29,17 @@ if (process.env.NODE_ENV !== 'test') {
   app.use(morgan('dev'));
 }
 
-// Rate Limiter
-const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000, 
-  limit: 100,
-  standardHeaders: true,
-  legacyHeaders: false, 
-  message: { message: 'Too many requests, please try again later.' }
-});
-app.use('/api', limiter);
-
 // ==========================================
 // 2. INITIALIZATION
 // ==========================================
 try {
-  loadPersonas(); // This will now throw the error if a persona failed.
+  loadPersonas();
 } catch (error) {
-  // This outer catch block will now execute!
-  console.error("🚨 Critical Error: Failed to load personas and start server.", error);
+  // This outer catch block will execute if personas fail to load
+  console.error(
+    '🚨 Critical Error: Failed to load personas and start server.',
+    error
+  );
   process.exit(1); // Explicitly stop the server
 }
 
