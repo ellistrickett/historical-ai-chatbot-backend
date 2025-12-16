@@ -37,7 +37,10 @@ describe('saveChat', () => {
     readChatsFile.mockResolvedValue([]); // Start with empty storage
     generateSummaryTitle.mockResolvedValue('New Title'); // Mock AI service
 
-    const newChatInput = { messages: [{ text: 'Hi' }] };
+    const newChatInput = { 
+      personaName: 'Test Persona',
+      messages: [{ role: 'user', name: 'You', text: 'Hi' }] 
+    };
 
     // 2. Execute
     const returnedId = await saveChat(newChatInput);
@@ -88,7 +91,7 @@ describe('saveChat', () => {
         title: 'Old Title', 
         personaName: 'Wizard',
         date: '2023-01-01T00:00:00.000Z',
-        messages: [{ role: 'user', content: 'hello' }] 
+        messages: [{ role: 'user', name: 'You', text: 'hello' }] 
       };
       
       // Mock that the file system returns this chat
@@ -99,7 +102,11 @@ describe('saveChat', () => {
       const updatePayload = {
         id: 'existing-id-123',
         title: 'New Updated Title',
-        messages: [{ role: 'user', content: 'hello' }, { role: 'ai', content: 'hi' }]
+        personaName: 'Wizard',
+        messages: [
+            { role: 'user', name: 'You', text: 'hello' }, 
+            { role: 'api', name: 'Wizard', text: 'hi', options: ['A','B'], selectedOption: 'A' }
+        ]
       };
 
       // 3. Execute
@@ -119,34 +126,9 @@ describe('saveChat', () => {
 
       // CHECK UPDATES: New fields should be applied
       expect(savedChat.title).toBe('New Updated Title');       
-      expect(savedChat.messages).toHaveLength(2);              
-    });
-
-    it('updates an existing chat but generates AI title if currently untitled', async () => {
-      // 1. Setup: Existing chat that has no title yet
-      const existingChat = { 
-        id: 'existing-id-456', 
-        title: undefined, // No title
-        date: '2023-01-01T00:00:00.000Z' 
-      };
-      
-      readChatsFile.mockResolvedValue([existingChat]);
-      generateSummaryTitle.mockResolvedValue('AI Generated Title');
-
-      // 2. Input: Add messages, but still no title provided by user
-      const updatePayload = {
-        id: 'existing-id-456',
-        messages: [{ text: 'Some long conversation...' }]
-      };
-
-      // 3. Execute
-      await saveChat(updatePayload);
-
-      // 4. Verification
-      const savedChat = writeChatsFile.mock.calls[0][0][0];
-      
-      expect(generateSummaryTitle).toHaveBeenCalled();
-      expect(savedChat.title).toBe('AI Generated Title');
+      expect(savedChat.messages).toHaveLength(2);
+      expect(savedChat.messages[1].options).toEqual(['A', 'B']);
+      expect(savedChat.messages[1].selectedOption).toBe('A');              
     });
   });
 

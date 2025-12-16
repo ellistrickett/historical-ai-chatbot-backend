@@ -18,8 +18,15 @@ describe('AI Service', () => {
 
   describe('generateSummaryTitle', () => {
     it('generates a title successfully', async () => {
-      generateAIContent.mockResolvedValue('"Ancient Chat"');
-      const messages = [{ role: 'user', text: 'Hello' }];
+      generateAIContent.mockResolvedValue("Ancient Chat");
+      const messages = [
+        { role: 'user', name: 'You', text: 'Hello' }, 
+        { role: 'user', name: 'You', text: 'Hello' }, 
+        { role: 'user', name: 'You', text: 'Hello' },
+        { role: 'user', name: 'You', text: 'Hello' }, 
+        { role: 'user', name: 'You', text: 'Hello' },
+        { role: 'user', name: 'You', text: 'Hello' },
+      ];
 
       const title = await generateSummaryTitle(messages);
 
@@ -32,12 +39,12 @@ describe('AI Service', () => {
       generateAIContent.mockRejectedValue(new Error('AI Error'));
       
       // 2. Setup: Provide a user message (fallback relies on this)
-      const messages = [{ role: 'user', text: 'Hello' }];
+      const messages = [{ role: 'user', name: 'You', text: 'Hello' }];
 
       const title = await generateSummaryTitle(messages);
 
-      // 3. Assert: We expect the fallback string, NOT null
-      expect(title).toBe('Conversation');
+      // 3. Assert: We expect the only User Message, NOT null
+      expect(title).toBe('Hello');
     });
   });
 

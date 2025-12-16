@@ -6,7 +6,6 @@ import {
   createChat,
   deleteChat,
 } from '../controllers/chatHistoryController.js';
-import { chatApiLimiter } from '../middleware/rateLimiter.js';
 
 /**
  * Express router for chat-related endpoints.
@@ -20,7 +19,7 @@ const router = express.Router();
  * POST /api/chat
  * Handles a new chat message from the user.
  */
-router.post('/chat', chatApiLimiter, handleChatRequest);
+router.post('/chat', handleChatRequest);
 
 // --- HISTORY ENDPOINTS ---
 

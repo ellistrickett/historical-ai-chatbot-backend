@@ -9,11 +9,15 @@ export async function generateSummaryTitle(messages) {
   try {
     // For long conversations, use the "Bookends" strategy (First 3 + Last 2)
     // to capture the introduction and conclusion without exceeding token limits.
+    let relevantMessages;
     if (messages.length > 5) {
       relevantMessages = [
         ...messages.slice(0, 3),
         ...messages.slice(-2)
       ];
+    }
+    else {
+      return generateSmartFallback(messages);
     }
 
     const conversationText = relevantMessages
@@ -56,22 +60,6 @@ function generateSmartFallback(messages) {
 
   // Clean text (remove newlines and excessive spaces)
   const cleanText = firstUserMsg.text.replace(/\s+/g, ' ').trim();
-
-  // Return specific hardcoded titles for very short greetings
-  const lower = cleanText.toLowerCase();
-  const genericGreetings = [
-    "hello",
-    "hi",
-    "greetings",
-    "hail",
-    "good day",
-    "speak",
-    "presence"
-  ];
-
-  if (genericGreetings.includes(lower)) {
-    return 'Conversation';
-  }
 
   // Truncate logic: Take first 30 chars or first 5 words
   if (cleanText.length <= 30) return cleanText;

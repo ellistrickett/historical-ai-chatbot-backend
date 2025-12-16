@@ -3,6 +3,7 @@ import {
   writeChatsFile,
 } from '../repositories/chatHistoryRepository.js';
 import { generateSummaryTitle } from './aiService.js';
+import { Chat } from '../models/Chat.js';
 import { v4 as uuidv4 } from 'uuid';
 
 /**
@@ -72,7 +73,18 @@ export async function saveChat(chatData) {
     chatData.title = aiTitle || 'Server Error: Could not generate AI title';
   }
 
+    // Validate using Mongoose Model
+  const chatInstance = new Chat({ ...chatData });
+  const validationError = chatInstance.validateSync();
+  if (validationError) {
+    const error = new Error(validationError.message);
+    error.statusCode = 400;
+    throw error;
+  }
+
   // Merge new data into old data to preserve fields
+  const existingIndex = chats.findIndex((c) => c.id === chatData.id);
+  
   if (existingIndex >= 0) {
     chats[existingIndex] = { 
       ...chats[existingIndex], 

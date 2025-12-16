@@ -10,15 +10,27 @@ import mongoose from 'mongoose';
  * @type {mongoose.Schema}
  */
 const messageSchema = new mongoose.Schema({
-  sender: {
+  role: {
     type: String,
-    enum: ['user', 'ai'],
+    enum: ['user', 'api', 'system', 'error'],
+    required: true,
+  },
+  name: {
+    type: String,
     required: true,
   },
   text: {
     type: String,
     required: true,
     maxlength: [2000, 'Message exceeds 2000 characters'],
+  },
+  options: {
+    type: [String],
+    default: undefined,
+  },
+  selectedOption: {
+    type: String,
+    default: undefined,
   },
   timestamp: {
     type: Date,

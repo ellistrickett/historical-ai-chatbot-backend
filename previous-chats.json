@@ -1,594 +1,1181 @@
 [
   {
-    "id": "b8139344-3eaf-4d2d-84ba-458ba10a1d68",
-    "title": "Football in Cleopatra's Egypt",
+    "title": "Appeal to Caesar's Pride",
     "personaName": "Cleopatra",
     "messages": [
       {
         "role": "user",
-        "text": "hello",
+        "text": "hail, queen of kings",
         "name": "You",
-        "timestamp": "22:15"
+        "timestamp": "16 Dec, 01:22"
+      },
+      {
+        "role": "api",
+        "text": "You stand in the shadow of the Isis throne. Speak, but do not waste my time.",
+        "name": "Cleopatra",
+        "timestamp": "16 Dec, 01:22"
+      },
+      {
+        "role": "user",
+        "text": "i wish to with julius caeser",
+        "name": "You",
+        "timestamp": "16 Dec, 01:23"
+      },
+      {
+        "role": "api",
+        "text": "Caesar was the only Roman who truly understood the scale of the world. We did not just share a bed; we shared a vision of a unified empire.",
+        "name": "Cleopatra",
+        "timestamp": "16 Dec, 01:23"
+      },
+      {
+        "role": "user",
+        "text": "do you like hamburgers?",
+        "name": "You",
+        "timestamp": "16 Dec, 01:23"
+      },
+      {
+        "role": "api",
+        "text": "Such a query is foreign to my ears, as are the 'hamburgers' you speak of. My feasts are graced with the bounty of the Nile and the finest spiced meats, fit for a queen, not some unheard-of dish.",
+        "name": "Cleopatra",
+        "timestamp": "16 Dec, 01:23"
+      },
+      {
+        "role": "user",
+        "text": "i would like to advise you",
+        "name": "You",
+        "timestamp": "16 Dec, 01:24"
+      },
+      {
+        "role": "api",
+        "text": "The Council is in session. Octavian's fleet approaches Actium. Antony wishes to fight them at sea, but my generals suggest a retreat to Egypt to raise more cohorts. You are new to this court—what is your counsel?",
+        "name": "Cleopatra",
+        "timestamp": "16 Dec, 01:24",
+        "options": [
+          "Sea",
+          "Land",
+          "Negotiate"
+        ],
+        "selectedOption": "Sea"
+      },
+      {
+        "role": "user",
+        "text": "Sea",
+        "name": "You",
+        "timestamp": "16 Dec, 01:24"
+      },
+      {
+        "role": "api",
+        "text": "A bold choice. Antony agrees with you. But Octavian's ships are lighter and faster than our heavy quinqueremes. If the wind fails us, we are trapped. Are you certain?",
+        "name": "Cleopatra",
+        "timestamp": "16 Dec, 01:24",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "selectedOption": "Yes"
+      },
+      {
+        "role": "user",
+        "text": "Yes",
+        "name": "You",
+        "timestamp": "16 Dec, 01:24"
+      },
+      {
+        "role": "api",
+        "text": "We followed your advice. The wind turned. We are fleeing back to Alexandria with our fleet in ruins. History will not forgive this error.",
+        "name": "Cleopatra",
+        "timestamp": "16 Dec, 01:24",
+        "options": null
+      },
+      {
+        "role": "user",
+        "text": "i would like to advise",
+        "name": "You",
+        "timestamp": "16 Dec, 01:25"
+      },
+      {
+        "role": "api",
+        "text": "The Council is in session. Octavian's fleet approaches Actium. Antony wishes to fight them at sea, but my generals suggest a retreat to Egypt to raise more cohorts. You are new to this court—what is your counsel?",
+        "name": "Cleopatra",
+        "timestamp": "16 Dec, 01:25",
+        "options": [
+          "Sea",
+          "Land",
+          "Negotiate"
+        ],
+        "selectedOption": "Land"
+      },
+      {
+        "role": "user",
+        "text": "Land",
+        "name": "You",
+        "timestamp": "16 Dec, 01:25"
+      },
+      {
+        "role": "api",
+        "text": "Prudent. If we retreat to Egypt, we stretch Octavian's supply lines and fight on our own soil. But Antony fears looking like a coward. How do I convince a Roman general to run?",
+        "name": "Cleopatra",
+        "timestamp": "16 Dec, 01:25",
+        "options": [
+          "Pride",
+          "Fear"
+        ],
+        "selectedOption": "Pride"
+      },
+      {
+        "role": "user",
+        "text": "Pride",
+        "name": "You",
+        "timestamp": "16 Dec, 01:25"
+      },
+      {
+        "role": "api",
+        "text": "You are wise. I appealed to his pride—that a tactical withdrawal allows him to crush Octavian later. We march for the desert. You may have just saved the kingdom.",
+        "name": "Cleopatra",
+        "timestamp": "16 Dec, 01:25",
+        "options": null
+      }
+    ],
+    "dialogueTree": null,
+    "mode": "tree_end",
+    "id": "7f010f80-f102-4e94-a4bd-8b2180d6b991",
+    "date": "2025-12-16T01:25:41.272Z"
+  },
+  {
+    "title": "Julius Caesar Fear Strategy",
+    "personaName": "Cleopatra",
+    "messages": [
+      {
+        "role": "user",
+        "text": "hail, queen of kings",
+        "name": "You",
+        "timestamp": "16 Dec, 01:07"
+      },
+      {
+        "role": "api",
+        "text": "You stand in the shadow of the Isis throne. Speak, but do not waste my time.",
+        "name": "Cleopatra",
+        "timestamp": "16 Dec, 01:07"
+      },
+      {
+        "role": "user",
+        "text": "I wish to speak with julius caesar",
+        "name": "You",
+        "timestamp": "16 Dec, 01:07"
       },
       {
         "role": "api",
         "text": "The Queen of Kings listens. What news do you bring to Alexandria?",
         "name": "Cleopatra",
-        "timestamp": "22:15"
+        "timestamp": "16 Dec, 01:07"
       },
       {
         "role": "user",
-        "text": "egypt",
+        "text": "Do you like hamburgers?",
         "name": "You",
-        "timestamp": "22:15"
+        "timestamp": "16 Dec, 01:08"
       },
       {
         "role": "api",
-        "text": "Egypt. It is the very essence of my divine authority, the legacy of millennia, and the sacred heart of my dominion.",
+        "text": "A \"hamburger\"? Is this some coarse barbarian concoction from a land yet unknown to the Ptolemies? My refined palate savors the rich bounty of the Nile, not such... novelties.",
         "name": "Cleopatra",
-        "timestamp": "22:15"
+        "timestamp": "16 Dec, 01:08"
       },
       {
         "role": "user",
-        "text": "was there football in egypt",
+        "text": "I am here to offer strategy for the war",
         "name": "You",
-        "timestamp": "22:15"
+        "timestamp": "16 Dec, 01:09"
       },
       {
         "role": "api",
-        "text": "Football, you say? A peculiar modern contest unknown in my time. We played games of skill and agility, of course—with balls of leather and papyrus—but nothing resembling your 'football' existed in my Egypt, nor in the Hellenic world I knew.",
+        "text": "The Council is in session. Octavian's fleet approaches Actium. Antony wishes to fight them at sea, but my generals suggest a retreat to Egypt to raise more cohorts. You are new to this court—what is your counsel?",
         "name": "Cleopatra",
-        "timestamp": "22:15"
+        "timestamp": "16 Dec, 01:09",
+        "options": [
+          "Sea",
+          "Land",
+          "Negotiate"
+        ],
+        "selectedOption": "Sea"
+      },
+      {
+        "role": "user",
+        "text": "Sea",
+        "name": "You",
+        "timestamp": "16 Dec, 01:10"
+      },
+      {
+        "role": "api",
+        "text": "A bold choice. Antony agrees with you. But Octavian's ships are lighter and faster than our heavy quinqueremes. If the wind fails us, we are trapped. Are you certain?",
+        "name": "Cleopatra",
+        "timestamp": "16 Dec, 01:10",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "selectedOption": "Yes"
+      },
+      {
+        "role": "user",
+        "text": "Yes",
+        "name": "You",
+        "timestamp": "16 Dec, 01:10"
+      },
+      {
+        "role": "api",
+        "text": "We followed your advice. The wind turned. We are fleeing back to Alexandria with our fleet in ruins. History will not forgive this error.",
+        "name": "Cleopatra",
+        "timestamp": "16 Dec, 01:10",
+        "options": null
+      },
+      {
+        "role": "user",
+        "text": "I am here to offer strategy for the war",
+        "name": "You",
+        "timestamp": "16 Dec, 01:10"
+      },
+      {
+        "role": "api",
+        "text": "The Council is in session. Octavian's fleet approaches Actium. Antony wishes to fight them at sea, but my generals suggest a retreat to Egypt to raise more cohorts. You are new to this court—what is your counsel?",
+        "name": "Cleopatra",
+        "timestamp": "16 Dec, 01:10",
+        "options": [
+          "Sea",
+          "Land",
+          "Negotiate"
+        ],
+        "selectedOption": "Land"
+      },
+      {
+        "role": "user",
+        "text": "Land",
+        "name": "You",
+        "timestamp": "16 Dec, 01:10"
+      },
+      {
+        "role": "api",
+        "text": "Prudent. If we retreat to Egypt, we stretch Octavian's supply lines and fight on our own soil. But Antony fears looking like a coward. How do I convince a Roman general to run?",
+        "name": "Cleopatra",
+        "timestamp": "16 Dec, 01:10",
+        "options": [
+          "Pride",
+          "Fear"
+        ],
+        "selectedOption": "Fear"
+      },
+      {
+        "role": "user",
+        "text": "Fear",
+        "name": "You",
+        "timestamp": "16 Dec, 01:10"
+      },
+      {
+        "role": "api",
+        "text": "I tried to use fear, but it only made him stubborn. He refuses to move. We are stuck here. Your advice was sound, but your method was flawed.",
+        "name": "Cleopatra",
+        "timestamp": "16 Dec, 01:10",
+        "options": null
       }
     ],
-    "date": "2025-12-04T22:21:53.669Z"
+    "dialogueTree": null,
+    "mode": "tree_end",
+    "id": "f4ff60fa-c57a-445e-8d20-d8277ab37921",
+    "date": "2025-12-16T01:10:57.979Z"
   },
   {
-    "id": "c1764270059671",
-    "title": "Aeroplanes in Ancient Egypt?",
+    "title": "Advisor blamed for fleet ruin",
     "personaName": "Cleopatra",
     "messages": [
       {
         "role": "user",
-        "text": "hows those times",
+        "text": "hail, queen of kings",
         "name": "You",
-        "timestamp": "18:58"
+        "timestamp": "16 Dec, 00:55"
       },
       {
         "role": "api",
-        "text": "Turbulent. As ever, the fate of empires hangs in the balance.",
+        "text": "You stand in the shadow of the Isis throne. Speak, but do not waste my time.",
         "name": "Cleopatra",
-        "timestamp": "18:58"
+        "timestamp": "16 Dec, 00:55"
       },
       {
         "role": "user",
-        "text": "did they have aeroplanes in egypt?",
+        "text": "I wish to speak with julius caeser",
         "name": "You",
-        "timestamp": "18:59"
+        "timestamp": "16 Dec, 00:55"
       },
       {
         "role": "api",
-        "text": "Greetings. I am Cleopatra VII, Queen of Egypt. What brings you before my throne?",
+        "text": "You stand in the shadow of the Isis throne. Speak, but do not waste my time.",
         "name": "Cleopatra",
-        "timestamp": "18:59"
+        "timestamp": "16 Dec, 00:55"
       },
       {
         "role": "user",
-        "text": "did they have aeroplanes in egypt?",
+        "text": "do you like hamburgers?",
         "name": "You",
-        "timestamp": "18:59"
+        "timestamp": "16 Dec, 00:56"
       },
       {
         "role": "api",
-        "text": "Greetings. I am Cleopatra VII, Queen of Egypt. What brings you before my throne?",
+        "text": "My thoughts are occupied with empires and legacies, not obscure culinary curiosities unknown to my palate. Speak of matters worthy of a queen's attention, or cease to waste my time.",
         "name": "Cleopatra",
-        "timestamp": "18:59"
+        "timestamp": "16 Dec, 00:56"
       },
       {
         "role": "user",
-        "text": "did they have aeroplanes in egypt?",
+        "text": "i am here to offer strategy for the war",
         "name": "You",
-        "timestamp": "19:00"
+        "timestamp": "16 Dec, 00:57"
       },
       {
         "role": "api",
-        "text": "Greetings. I am Cleopatra VII, Queen of Egypt. What brings you before my throne?",
+        "text": "The Council is in session. Octavian's fleet approaches Actium. Antony wishes to fight them at sea, but my generals suggest a retreat to Egypt to raise more cohorts. You are new to this court—what is your counsel?",
         "name": "Cleopatra",
-        "timestamp": "19:00"
+        "timestamp": "16 Dec, 00:57",
+        "options": [
+          "Sea",
+          "Land",
+          "Negotiate"
+        ],
+        "selectedOption": "Sea"
       },
       {
         "role": "user",
-        "text": "i would like to know if there are aeroplanes in ancient egypt?",
+        "text": "Sea",
         "name": "You",
-        "timestamp": "19:00"
+        "timestamp": "16 Dec, 00:57"
       },
       {
         "role": "api",
-        "text": "Aeroplanes? A most peculiar word. In my Egypt, only the falcons and the gods claim the skies.",
+        "text": "A bold choice. Antony agrees with you. But Octavian's ships are lighter and faster than our heavy quinqueremes. If the wind fails us, we are trapped. Are you certain?",
         "name": "Cleopatra",
-        "timestamp": "19:00"
+        "timestamp": "16 Dec, 00:57",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "selectedOption": "Yes"
+      },
+      {
+        "role": "user",
+        "text": "Yes",
+        "name": "You",
+        "timestamp": "16 Dec, 00:57"
+      },
+      {
+        "role": "api",
+        "text": "We followed your advice. The wind turned. We are fleeing back to Alexandria with our fleet in ruins. History will not forgive this error.",
+        "name": "Cleopatra",
+        "timestamp": "16 Dec, 00:57",
+        "options": null
       }
     ],
-    "date": "2025-11-27T19:00:59.672Z"
+    "dialogueTree": null,
+    "mode": "tree_end",
+    "id": "ad5d673d-3e77-4c6b-b8b1-962f4b02aac7",
+    "date": "2025-12-16T00:58:32.306Z"
   },
   {
-    "id": "c1764265581312",
-    "title": "Cleopatra: Egypt's Divine Essence",
+    "title": "Cleopatra Questions Football",
     "personaName": "Cleopatra",
     "messages": [
       {
         "role": "user",
         "text": "hello",
         "name": "You",
-        "timestamp": "17:45"
+        "timestamp": "16 Dec, 00:18"
       },
       {
         "role": "api",
-        "text": "Greetings. I am Cleopatra VII, Queen of Egypt. What brings you before my throne?",
+        "text": "You stand in the shadow of the Isis throne. Speak, but do not waste my time.",
         "name": "Cleopatra",
-        "timestamp": "17:45"
+        "timestamp": "16 Dec, 00:18"
       },
       {
         "role": "user",
-        "text": "I am here to find out more about your reign as queen of egypt",
+        "text": "advise",
         "name": "You",
-        "timestamp": "17:45"
+        "timestamp": "16 Dec, 00:18"
       },
       {
         "role": "api",
-        "text": "My reign *is* Egypt. What do you wish to know?",
+        "text": "The Council is in session. Octavian's fleet approaches Actium. Antony wishes to fight them at sea, but my generals suggest a retreat to Egypt to raise more cohorts. You are new to this court—what is your counsel?",
         "name": "Cleopatra",
-        "timestamp": "17:45"
+        "timestamp": "16 Dec, 00:18",
+        "options": [
+          "Sea",
+          "Land",
+          "Negotiate"
+        ],
+        "selectedOption": "Land"
       },
       {
         "role": "user",
-        "text": "what do you mean *is* egypt?",
+        "text": "Land",
         "name": "You",
-        "timestamp": "17:45"
+        "timestamp": "16 Dec, 00:19"
       },
       {
         "role": "api",
-        "text": "I am its Pharaoh. Its divine spirit, its very essence, flows through me. Egypt *is* me.",
+        "text": "Prudent. If we retreat to Egypt, we stretch Octavian's supply lines and fight on our own soil. But Antony fears looking like a coward. How do I convince a Roman general to run?",
         "name": "Cleopatra",
-        "timestamp": "17:46"
+        "timestamp": "16 Dec, 00:19",
+        "options": [
+          "Pride",
+          "Fear"
+        ],
+        "selectedOption": "Fear"
       },
       {
         "role": "user",
-        "text": "Oh ok i understand",
+        "text": "Fear",
         "name": "You",
-        "timestamp": "17:46"
+        "timestamp": "16 Dec, 00:19"
       },
       {
         "role": "api",
-        "text": "I would expect nothing less.",
+        "text": "I tried to use fear, but it only made him stubborn. He refuses to move. We are stuck here. Your advice was sound, but your method was flawed.",
         "name": "Cleopatra",
-        "timestamp": "17:46"
+        "timestamp": "16 Dec, 00:19",
+        "options": null
+      },
+      {
+        "role": "user",
+        "text": "what is football",
+        "name": "You",
+        "timestamp": "16 Dec, 00:19"
+      },
+      {
+        "role": "api",
+        "text": "\"Football\"? I confess this word is not found in my lexicons, nor among the diversions of Alexandria or Rome. Is it some obscure barbaric contest, or perhaps a new strategem for warfare? My mind is fixed on matters of far greater import than such novelties.",
+        "name": "Cleopatra",
+        "timestamp": "16 Dec, 00:19"
       }
     ],
-    "date": "2025-11-27T17:46:21.312Z"
+    "dialogueTree": null,
+    "mode": "ai_fallback",
+    "id": "b2620401-be41-4f61-8151-68a99b14228f",
+    "date": "2025-12-16T00:25:31.264Z"
   },
   {
-    "id": "c1764264578352",
-    "title": "Tutankhamun's Reign of Restoration",
-    "personaName": "Tutankhamun",
+    "title": "Battle Commences with Ramesses",
+    "personaName": "Ramesses II",
     "messages": [
       {
         "role": "user",
         "text": "hello",
         "name": "You",
-        "timestamp": "17:27"
+        "timestamp": "15 Dec, 23:40"
       },
       {
         "role": "api",
-        "text": "Greetings. I am Tutankhamun, Pharaoh of Egypt. May the gods grant you favor today.",
-        "name": "Tutankhamun",
-        "timestamp": "17:27"
+        "text": "You stand before Ramesses the Great, Pharaoh of the Two Lands. What brings you to my mighty presence?",
+        "name": "Ramesses II",
+        "timestamp": "15 Dec, 23:40"
       },
       {
         "role": "user",
-        "text": "when were you king?",
+        "text": "battle",
         "name": "You",
-        "timestamp": "17:27"
+        "timestamp": "15 Dec, 23:41"
       },
       {
         "role": "api",
-        "text": "I am Tutankhamun, the boy king of Egypt. Ask your question again, and I will answer with honesty from my short but meaningful reign.",
-        "name": "Tutankhamun",
-        "timestamp": "17:27"
+        "text": "We approach the city of Kadesh. Two Bedouin tribesmen have come to my tent. They swear the Hittite army is afraid and has fled north to Aleppo. My blood burns to charge immediately with the Amun division and capture the city. Do you stand with my glory?",
+        "name": "Ramesses II",
+        "timestamp": "15 Dec, 23:41",
+        "options": [
+          "Charge",
+          "Wait",
+          "Interrogate"
+        ],
+        "selectedOption": "Charge"
       },
       {
         "role": "user",
-        "text": "what monuments did you build?",
+        "text": "Charge",
         "name": "You",
-        "timestamp": "17:29"
+        "timestamp": "15 Dec, 23:41"
       },
       {
         "role": "api",
-        "text": "My reign was one of sacred restoration. I repaired the temples desecrated by my father, Akhenaten, and brought the glory of Amun back to Karnak and across the Two Lands. My work was to heal Egypt, not merely to build anew.",
-        "name": "Tutankhamun",
-        "timestamp": "17:29"
+        "text": "Yes! Forward! ... Wait. What is that dust on the horizon? Chariots! It is a trap! The Hittites were hiding behind the city! We are cut off from the Ra division! I must fight alone!",
+        "name": "Ramesses II",
+        "timestamp": "15 Dec, 23:41",
+        "options": [
+          "Fight",
+          "Flee"
+        ]
       }
     ],
-    "date": "2025-11-27T17:29:38.352Z"
+    "dialogueTree": {
+      "name": "kadesh_ambush",
+      "step": "historical_ambush"
+    },
+    "mode": "tree_active",
+    "id": "3a5b1790-f2ec-4dac-9950-3cc3f134f652",
+    "date": "2025-12-15T23:41:18.365Z"
   },
   {
-    "id": "edeee976-b2bb-43fb-a09b-f59f0bb15139",
-    "title": "Dummy Chat 2",
-    "personaName": "Cleopatra",
-    "messages": [
-      {
-        "role": "user",
-        "text": "Test message 2",
-        "name": "You",
-        "timestamp": "12:00"
-      },
-      {
-        "role": "api",
-        "text": "This is a dummy response for chat 2.",
-        "name": "Cleopatra",
-        "timestamp": "12:01"
-      }
-    ],
-    "date": "2025-12-09T13:36:14.299Z"
-  },
-  {
-    "id": "cfa2d8bd-8879-42f2-b45d-b2ab20c8e85d",
-    "title": "Dummy Chat 3",
+    "id": "ba5d3aa7-abc6-475c-9eb4-358717ac7905",
+    "title": "Dummy Chat with Tutankhamun",
     "personaName": "Tutankhamun",
     "messages": [
       {
         "role": "user",
-        "text": "Test message 3",
+        "text": "This is a random message from user generated at 00:35:56",
         "name": "You",
-        "timestamp": "12:00"
+        "timestamp": "2025-12-16T00:35:56.659Z"
       },
       {
-        "role": "api",
-        "text": "This is a dummy response for chat 3.",
-        "name": "Tutankhamun",
-        "timestamp": "12:01"
+        "role": "user",
+        "text": "This is a random message from user generated at 00:35:56",
+        "name": "You",
+        "timestamp": "2025-12-16T00:35:56.659Z"
       }
     ],
-    "date": "2025-12-08T13:36:14.299Z"
+    "dialogueTree": null,
+    "mode": "ai_fallback",
+    "date": "2025-12-07T18:07:16.574Z"
   },
   {
-    "id": "c6aac488-1535-480d-818a-58d72737cee7",
-    "title": "Dummy Chat 4",
-    "personaName": "Cleopatra",
+    "id": "1cfd912f-2601-42d4-b560-893f21a7026c",
+    "title": "Dummy Chat with Ramesses II",
+    "personaName": "Ramesses II",
     "messages": [
       {
         "role": "user",
-        "text": "Test message 4",
+        "text": "This is a random message from user generated at 00:35:56",
         "name": "You",
-        "timestamp": "12:00"
+        "timestamp": "2025-12-16T00:35:56.659Z"
       },
       {
         "role": "api",
-        "text": "This is a dummy response for chat 4.",
-        "name": "Cleopatra",
-        "timestamp": "12:01"
+        "text": "This is a random message from api generated at 00:35:56",
+        "name": "AI",
+        "timestamp": "2025-12-16T00:35:56.659Z",
+        "options": [
+          "Option 1",
+          "Option 2"
+        ]
       }
     ],
-    "date": "2025-12-07T13:36:14.299Z"
+    "dialogueTree": null,
+    "mode": "ai_fallback",
+    "date": "2025-12-14T16:25:56.981Z"
   },
   {
-    "id": "438bac04-20e6-4467-ace7-c9e418220191",
-    "title": "Dummy Chat 5",
+    "id": "9273bb19-1dbd-4cff-8720-1f2da1b32f27",
+    "title": "Dummy Chat with Tutankhamun",
     "personaName": "Tutankhamun",
     "messages": [
       {
         "role": "user",
-        "text": "Test message 5",
+        "text": "This is a random message from user generated at 00:35:56",
         "name": "You",
-        "timestamp": "12:00"
+        "timestamp": "2025-12-16T00:35:56.659Z"
       },
       {
-        "role": "api",
-        "text": "This is a dummy response for chat 5.",
-        "name": "Tutankhamun",
-        "timestamp": "12:01"
+        "role": "user",
+        "text": "This is a random message from user generated at 00:35:56",
+        "name": "You",
+        "timestamp": "2025-12-16T00:35:56.659Z"
       }
     ],
-    "date": "2025-12-06T13:36:14.299Z"
+    "dialogueTree": null,
+    "mode": "ai_fallback",
+    "date": "2025-12-10T19:21:15.744Z"
   },
   {
-    "id": "571c0372-2eef-49f7-b65f-c7e85f607a01",
-    "title": "Dummy Chat 6",
+    "id": "b61c51a8-36c4-4f00-b275-e1ad8c33b091",
+    "title": "Dummy Chat with Cleopatra",
     "personaName": "Cleopatra",
     "messages": [
       {
         "role": "user",
-        "text": "Test message 6",
+        "text": "This is a random message from user generated at 00:35:56",
         "name": "You",
-        "timestamp": "12:00"
+        "timestamp": "2025-12-16T00:35:56.659Z"
+      },
+      {
+        "role": "user",
+        "text": "This is a random message from user generated at 00:35:56",
+        "name": "You",
+        "timestamp": "2025-12-16T00:35:56.659Z"
+      }
+    ],
+    "dialogueTree": null,
+    "mode": "ai_fallback",
+    "date": "2025-12-10T08:43:52.465Z"
+  },
+  {
+    "id": "94adfdc6-1557-4b47-bf99-695c8597a3e3",
+    "title": "Dummy Chat with Tutankhamun",
+    "personaName": "Tutankhamun",
+    "messages": [
+      {
+        "role": "api",
+        "text": "This is a random message from api generated at 00:35:56",
+        "name": "AI",
+        "timestamp": "2025-12-16T00:35:56.659Z"
       },
       {
         "role": "api",
-        "text": "This is a dummy response for chat 6.",
-        "name": "Cleopatra",
-        "timestamp": "12:01"
+        "text": "This is a random message from api generated at 00:35:56",
+        "name": "AI",
+        "timestamp": "2025-12-16T00:35:56.659Z"
+      },
+      {
+        "role": "user",
+        "text": "This is a random message from user generated at 00:35:56",
+        "name": "You",
+        "timestamp": "2025-12-16T00:35:56.659Z"
+      },
+      {
+        "role": "user",
+        "text": "This is a random message from user generated at 00:35:56",
+        "name": "You",
+        "timestamp": "2025-12-16T00:35:56.659Z"
+      },
+      {
+        "role": "api",
+        "text": "This is a random message from api generated at 00:35:56",
+        "name": "AI",
+        "timestamp": "2025-12-16T00:35:56.659Z"
       }
     ],
-    "date": "2025-12-05T13:36:14.299Z"
+    "dialogueTree": null,
+    "mode": "ai_fallback",
+    "date": "2025-12-09T04:01:48.176Z"
   },
   {
-    "id": "716c7a5e-bfe1-45db-ad55-87939a2352ca",
-    "title": "Dummy Chat 7",
+    "id": "1801a724-7c1b-421b-9741-6e3bafeaa643",
+    "title": "Dummy Chat with Cleopatra 6",
+    "personaName": "Cleopatra",
+    "messages": [
+      {
+        "role": "api",
+        "text": "This is a random message from api generated at 00:35:56",
+        "name": "AI",
+        "timestamp": "2025-12-16T00:35:56.659Z",
+        "options": [
+          "Option 1",
+          "Option 2"
+        ]
+      },
+      {
+        "role": "user",
+        "text": "This is a random message from user generated at 00:35:56",
+        "name": "You",
+        "timestamp": "2025-12-16T00:35:56.659Z"
+      },
+      {
+        "role": "api",
+        "text": "This is a random message from api generated at 00:35:56",
+        "name": "AI",
+        "timestamp": "2025-12-16T00:35:56.659Z"
+      },
+      {
+        "role": "api",
+        "text": "This is a random message from api generated at 00:35:56",
+        "name": "AI",
+        "timestamp": "2025-12-16T00:35:56.659Z"
+      }
+    ],
+    "dialogueTree": null,
+    "mode": "ai_fallback",
+    "date": "2025-12-09T04:18:58.845Z"
+  },
+  {
+    "id": "33a61d26-82ff-40cf-80ba-4d1c7c497e0b",
+    "title": "Dummy Chat with Ramesses II",
+    "personaName": "Ramesses II",
+    "messages": [
+      {
+        "role": "user",
+        "text": "This is a random message from user generated at 00:35:56",
+        "name": "You",
+        "timestamp": "2025-12-16T00:35:56.659Z"
+      },
+      {
+        "role": "api",
+        "text": "This is a random message from api generated at 00:35:56",
+        "name": "AI",
+        "timestamp": "2025-12-16T00:35:56.659Z"
+      },
+      {
+        "role": "user",
+        "text": "This is a random message from user generated at 00:35:56",
+        "name": "You",
+        "timestamp": "2025-12-16T00:35:56.659Z"
+      },
+      {
+        "role": "user",
+        "text": "This is a random message from user generated at 00:35:56",
+        "name": "You",
+        "timestamp": "2025-12-16T00:35:56.659Z"
+      },
+      {
+        "role": "api",
+        "text": "This is a random message from api generated at 00:35:56",
+        "name": "AI",
+        "timestamp": "2025-12-16T00:35:56.659Z",
+        "options": [
+          "Option 1",
+          "Option 2"
+        ]
+      }
+    ],
+    "dialogueTree": null,
+    "mode": "ai_fallback",
+    "date": "2025-12-09T16:01:55.151Z"
+  },
+  {
+    "id": "9022f58a-509e-48f7-920c-32aa8b198a35",
+    "title": "Dummy Chat with Cleopatra",
+    "personaName": "Cleopatra",
+    "messages": [
+      {
+        "role": "user",
+        "text": "This is a random message from user generated at 00:35:56",
+        "name": "You",
+        "timestamp": "2025-12-16T00:35:56.659Z"
+      },
+      {
+        "role": "api",
+        "text": "This is a random message from api generated at 00:35:56",
+        "name": "AI",
+        "timestamp": "2025-12-16T00:35:56.659Z"
+      },
+      {
+        "role": "api",
+        "text": "This is a random message from api generated at 00:35:56",
+        "name": "AI",
+        "timestamp": "2025-12-16T00:35:56.659Z"
+      }
+    ],
+    "dialogueTree": null,
+    "mode": "ai_fallback",
+    "date": "2025-12-15T22:57:28.905Z"
+  },
+  {
+    "id": "915730f7-f517-4898-a7e1-4462f2f8e095",
+    "title": "Dummy Chat with Cleopatra",
+    "personaName": "Cleopatra",
+    "messages": [
+      {
+        "role": "user",
+        "text": "This is a random message from user generated at 00:35:56",
+        "name": "You",
+        "timestamp": "2025-12-16T00:35:56.659Z"
+      },
+      {
+        "role": "user",
+        "text": "This is a random message from user generated at 00:35:56",
+        "name": "You",
+        "timestamp": "2025-12-16T00:35:56.659Z"
+      },
+      {
+        "role": "user",
+        "text": "This is a random message from user generated at 00:35:56",
+        "name": "You",
+        "timestamp": "2025-12-16T00:35:56.659Z"
+      },
+      {
+        "role": "api",
+        "text": "This is a random message from api generated at 00:35:56",
+        "name": "AI",
+        "timestamp": "2025-12-16T00:35:56.659Z",
+        "options": [
+          "Option 1",
+          "Option 2"
+        ]
+      },
+      {
+        "role": "api",
+        "text": "This is a random message from api generated at 00:35:56",
+        "name": "AI",
+        "timestamp": "2025-12-16T00:35:56.659Z"
+      },
+      {
+        "role": "user",
+        "text": "This is a random message from user generated at 00:35:56",
+        "name": "You",
+        "timestamp": "2025-12-16T00:35:56.659Z"
+      }
+    ],
+    "dialogueTree": null,
+    "mode": "ai_fallback",
+    "date": "2025-12-15T17:14:26.188Z"
+  },
+  {
+    "id": "ce29dc60-2a89-464e-9d55-ee19d0f11a33",
+    "title": "Dummy Chat with Ramesses II",
+    "personaName": "Ramesses II",
+    "messages": [
+      {
+        "role": "api",
+        "text": "This is a random message from api generated at 00:35:56",
+        "name": "AI",
+        "timestamp": "2025-12-16T00:35:56.659Z",
+        "options": [
+          "Option 1",
+          "Option 2"
+        ]
+      },
+      {
+        "role": "api",
+        "text": "This is a random message from api generated at 00:35:56",
+        "name": "AI",
+        "timestamp": "2025-12-16T00:35:56.659Z",
+        "options": [
+          "Option 1",
+          "Option 2"
+        ]
+      },
+      {
+        "role": "api",
+        "text": "This is a random message from api generated at 00:35:56",
+        "name": "AI",
+        "timestamp": "2025-12-16T00:35:56.659Z"
+      },
+      {
+        "role": "user",
+        "text": "This is a random message from user generated at 00:35:56",
+        "name": "You",
+        "timestamp": "2025-12-16T00:35:56.659Z"
+      },
+      {
+        "role": "user",
+        "text": "This is a random message from user generated at 00:35:56",
+        "name": "You",
+        "timestamp": "2025-12-16T00:35:56.659Z"
+      }
+    ],
+    "dialogueTree": null,
+    "mode": "ai_fallback",
+    "date": "2025-12-12T23:32:58.687Z"
+  },
+  {
+    "id": "ef8b3670-d43b-41f8-b98b-27818752d52d",
+    "title": "Dummy Chat with Cleopatra",
+    "personaName": "Cleopatra",
+    "messages": [
+      {
+        "role": "api",
+        "text": "This is a random message from api generated at 00:35:56",
+        "name": "AI",
+        "timestamp": "2025-12-16T00:35:56.659Z",
+        "options": [
+          "Option 1",
+          "Option 2"
+        ]
+      },
+      {
+        "role": "user",
+        "text": "This is a random message from user generated at 00:35:56",
+        "name": "You",
+        "timestamp": "2025-12-16T00:35:56.659Z"
+      },
+      {
+        "role": "api",
+        "text": "This is a random message from api generated at 00:35:56",
+        "name": "AI",
+        "timestamp": "2025-12-16T00:35:56.659Z"
+      },
+      {
+        "role": "user",
+        "text": "This is a random message from user generated at 00:35:56",
+        "name": "You",
+        "timestamp": "2025-12-16T00:35:56.659Z"
+      }
+    ],
+    "dialogueTree": null,
+    "mode": "ai_fallback",
+    "date": "2025-12-07T12:14:22.660Z"
+  },
+  {
+    "id": "133cffdf-118c-425a-b8c5-1b8dd9593cba",
+    "title": "Dummy Chat with Cleopatra",
+    "personaName": "Cleopatra",
+    "messages": [
+      {
+        "role": "api",
+        "text": "This is a random message from api generated at 00:35:56",
+        "name": "AI",
+        "timestamp": "2025-12-16T00:35:56.659Z"
+      },
+      {
+        "role": "api",
+        "text": "This is a random message from api generated at 00:35:56",
+        "name": "AI",
+        "timestamp": "2025-12-16T00:35:56.659Z"
+      },
+      {
+        "role": "api",
+        "text": "This is a random message from api generated at 00:35:56",
+        "name": "AI",
+        "timestamp": "2025-12-16T00:35:56.659Z"
+      },
+      {
+        "role": "user",
+        "text": "This is a random message from user generated at 00:35:56",
+        "name": "You",
+        "timestamp": "2025-12-16T00:35:56.659Z"
+      },
+      {
+        "role": "api",
+        "text": "This is a random message from api generated at 00:35:56",
+        "name": "AI",
+        "timestamp": "2025-12-16T00:35:56.659Z"
+      },
+      {
+        "role": "api",
+        "text": "This is a random message from api generated at 00:35:56",
+        "name": "AI",
+        "timestamp": "2025-12-16T00:35:56.659Z"
+      }
+    ],
+    "dialogueTree": null,
+    "mode": "ai_fallback",
+    "date": "2025-12-09T14:31:45.750Z"
+  },
+  {
+    "id": "690c0050-ea09-41d7-b51e-b68151721f81",
+    "title": "Dummy Chat with Ramesses II",
+    "personaName": "Ramesses II",
+    "messages": [
+      {
+        "role": "user",
+        "text": "This is a random message from user generated at 00:35:56",
+        "name": "You",
+        "timestamp": "2025-12-16T00:35:56.659Z"
+      },
+      {
+        "role": "user",
+        "text": "This is a random message from user generated at 00:35:56",
+        "name": "You",
+        "timestamp": "2025-12-16T00:35:56.659Z"
+      },
+      {
+        "role": "api",
+        "text": "This is a random message from api generated at 00:35:56",
+        "name": "AI",
+        "timestamp": "2025-12-16T00:35:56.659Z",
+        "options": [
+          "Option 1",
+          "Option 2"
+        ]
+      }
+    ],
+    "dialogueTree": null,
+    "mode": "ai_fallback",
+    "date": "2025-12-05T00:51:31.528Z"
+  },
+  {
+    "id": "3701c592-d2db-4b2f-becf-f7d9c8fdf278",
+    "title": "Dummy Chat with Ramesses II",
+    "personaName": "Ramesses II",
+    "messages": [
+      {
+        "role": "api",
+        "text": "This is a random message from api generated at 00:35:56",
+        "name": "AI",
+        "timestamp": "2025-12-16T00:35:56.659Z"
+      },
+      {
+        "role": "user",
+        "text": "This is a random message from user generated at 00:35:56",
+        "name": "You",
+        "timestamp": "2025-12-16T00:35:56.659Z"
+      },
+      {
+        "role": "api",
+        "text": "This is a random message from api generated at 00:35:56",
+        "name": "AI",
+        "timestamp": "2025-12-16T00:35:56.659Z"
+      },
+      {
+        "role": "api",
+        "text": "This is a random message from api generated at 00:35:56",
+        "name": "AI",
+        "timestamp": "2025-12-16T00:35:56.659Z"
+      },
+      {
+        "role": "user",
+        "text": "This is a random message from user generated at 00:35:56",
+        "name": "You",
+        "timestamp": "2025-12-16T00:35:56.659Z"
+      }
+    ],
+    "dialogueTree": null,
+    "mode": "ai_fallback",
+    "date": "2025-12-15T10:56:41.539Z"
+  },
+  {
+    "id": "f56b1dee-e888-401f-864a-ca070483a43f",
+    "title": "Dummy Chat with Ramesses II",
+    "personaName": "Ramesses II",
+    "messages": [
+      {
+        "role": "user",
+        "text": "This is a random message from user generated at 00:35:56",
+        "name": "You",
+        "timestamp": "2025-12-16T00:35:56.659Z"
+      },
+      {
+        "role": "user",
+        "text": "This is a random message from user generated at 00:35:56",
+        "name": "You",
+        "timestamp": "2025-12-16T00:35:56.659Z"
+      },
+      {
+        "role": "user",
+        "text": "This is a random message from user generated at 00:35:56",
+        "name": "You",
+        "timestamp": "2025-12-16T00:35:56.659Z"
+      },
+      {
+        "role": "user",
+        "text": "This is a random message from user generated at 00:35:56",
+        "name": "You",
+        "timestamp": "2025-12-16T00:35:56.659Z"
+      },
+      {
+        "role": "api",
+        "text": "This is a random message from api generated at 00:35:56",
+        "name": "AI",
+        "timestamp": "2025-12-16T00:35:56.659Z"
+      }
+    ],
+    "dialogueTree": null,
+    "mode": "ai_fallback",
+    "date": "2025-12-15T05:13:55.426Z"
+  },
+  {
+    "id": "a5bf94c5-d6b8-401c-b42e-db0c74256f28",
+    "title": "Dummy Chat with Tutankhamun",
+    "personaName": "Tutankhamun",
+    "messages": [
+      {
+        "role": "api",
+        "text": "This is a random message from api generated at 00:35:56",
+        "name": "AI",
+        "timestamp": "2025-12-16T00:35:56.659Z"
+      },
+      {
+        "role": "api",
+        "text": "This is a random message from api generated at 00:35:56",
+        "name": "AI",
+        "timestamp": "2025-12-16T00:35:56.659Z"
+      }
+    ],
+    "dialogueTree": null,
+    "mode": "ai_fallback",
+    "date": "2025-12-08T09:09:11.362Z"
+  },
+  {
+    "id": "a1a70ed8-0866-4baf-9dd4-f7481ac99228",
+    "title": "Dummy Chat with Tutankhamun",
+    "personaName": "Tutankhamun",
+    "messages": [
+      {
+        "role": "api",
+        "text": "This is a random message from api generated at 00:35:56",
+        "name": "AI",
+        "timestamp": "2025-12-16T00:35:56.659Z"
+      },
+      {
+        "role": "api",
+        "text": "This is a random message from api generated at 00:35:56",
+        "name": "AI",
+        "timestamp": "2025-12-16T00:35:56.659Z"
+      }
+    ],
+    "dialogueTree": null,
+    "mode": "ai_fallback",
+    "date": "2025-12-05T22:40:35.689Z"
+  },
+  {
+    "id": "c16b5f48-d2d4-454e-be95-5381063b4f0a",
+    "title": "Dummy Chat with Tutankhamun",
     "personaName": "Tutankhamun",
     "messages": [
       {
         "role": "user",
-        "text": "Test message 7",
+        "text": "This is a random message from user generated at 00:35:56",
         "name": "You",
-        "timestamp": "12:00"
+        "timestamp": "2025-12-16T00:35:56.659Z"
       },
-      {
-        "role": "api",
-        "text": "This is a dummy response for chat 7.",
-        "name": "Tutankhamun",
-        "timestamp": "12:01"
-      }
-    ],
-    "date": "2025-12-04T13:36:14.299Z"
-  },
-  {
-    "id": "0d957cb0-0bb0-42c0-a49e-999954c6dc3f",
-    "title": "Dummy Chat 8",
-    "personaName": "Cleopatra",
-    "messages": [
       {
         "role": "user",
-        "text": "Test message 8",
+        "text": "This is a random message from user generated at 00:35:56",
         "name": "You",
-        "timestamp": "12:00"
+        "timestamp": "2025-12-16T00:35:56.659Z"
       },
-      {
-        "role": "api",
-        "text": "This is a dummy response for chat 8.",
-        "name": "Cleopatra",
-        "timestamp": "12:01"
-      }
-    ],
-    "date": "2025-12-03T13:36:14.299Z"
-  },
-  {
-    "id": "41061a1c-975b-4d76-818c-d075ba147e8a",
-    "title": "Dummy Chat 9",
-    "personaName": "Tutankhamun",
-    "messages": [
       {
         "role": "user",
-        "text": "Test message 9",
+        "text": "This is a random message from user generated at 00:35:56",
         "name": "You",
-        "timestamp": "12:00"
+        "timestamp": "2025-12-16T00:35:56.659Z"
       },
       {
         "role": "api",
-        "text": "This is a dummy response for chat 9.",
-        "name": "Tutankhamun",
-        "timestamp": "12:01"
+        "text": "This is a random message from api generated at 00:35:56",
+        "name": "AI",
+        "timestamp": "2025-12-16T00:35:56.659Z"
       }
     ],
-    "date": "2025-12-02T13:36:14.300Z"
+    "dialogueTree": null,
+    "mode": "ai_fallback",
+    "date": "2025-12-13T10:21:19.915Z"
   },
   {
-    "id": "ab8bc7dc-9b09-4033-8911-5ac408caabc8",
-    "title": "Dummy Chat 10",
-    "personaName": "Cleopatra",
+    "id": "8b88cc55-5ff3-4b2d-8348-9934bf47e56c",
+    "title": "Dummy Chat with Ramesses II",
+    "personaName": "Ramesses II",
     "messages": [
       {
-        "role": "user",
-        "text": "Test message 10",
-        "name": "You",
-        "timestamp": "12:00"
+        "role": "api",
+        "text": "This is a random message from api generated at 00:35:56",
+        "name": "AI",
+        "timestamp": "2025-12-16T00:35:56.659Z",
+        "options": [
+          "Option 1",
+          "Option 2"
+        ]
       },
       {
         "role": "api",
-        "text": "This is a dummy response for chat 10.",
-        "name": "Cleopatra",
-        "timestamp": "12:01"
-      }
-    ],
-    "date": "2025-12-01T13:36:14.300Z"
-  },
-  {
-    "id": "e5def5fe-61c6-46bf-b89c-57d8e69a0182",
-    "title": "Dummy Chat 11",
-    "personaName": "Tutankhamun",
-    "messages": [
-      {
-        "role": "user",
-        "text": "Test message 11",
-        "name": "You",
-        "timestamp": "12:00"
+        "text": "This is a random message from api generated at 00:35:56",
+        "name": "AI",
+        "timestamp": "2025-12-16T00:35:56.659Z",
+        "options": [
+          "Option 1",
+          "Option 2"
+        ]
       },
       {
         "role": "api",
-        "text": "This is a dummy response for chat 11.",
-        "name": "Tutankhamun",
-        "timestamp": "12:01"
-      }
-    ],
-    "date": "2025-11-30T13:36:14.300Z"
-  },
-  {
-    "id": "23070e95-802a-4937-89d8-17c69ead9bc2",
-    "title": "Dummy Chat 12",
-    "personaName": "Cleopatra",
-    "messages": [
-      {
-        "role": "user",
-        "text": "Test message 12",
-        "name": "You",
-        "timestamp": "12:00"
+        "text": "This is a random message from api generated at 00:35:56",
+        "name": "AI",
+        "timestamp": "2025-12-16T00:35:56.659Z",
+        "options": [
+          "Option 1",
+          "Option 2"
+        ]
       },
       {
         "role": "api",
-        "text": "This is a dummy response for chat 12.",
-        "name": "Cleopatra",
-        "timestamp": "12:01"
+        "text": "This is a random message from api generated at 00:35:56",
+        "name": "AI",
+        "timestamp": "2025-12-16T00:35:56.659Z"
       }
     ],
-    "date": "2025-11-29T13:36:14.300Z"
-  },
-  {
-    "id": "c3d71aba-1d0d-4d4e-91f4-9943e3ee8ee7",
-    "title": "Dummy Chat 13",
-    "personaName": "Tutankhamun",
-    "messages": [
-      {
-        "role": "user",
-        "text": "Test message 13",
-        "name": "You",
-        "timestamp": "12:00"
-      },
-      {
-        "role": "api",
-        "text": "This is a dummy response for chat 13.",
-        "name": "Tutankhamun",
-        "timestamp": "12:01"
-      }
-    ],
-    "date": "2025-11-28T13:36:14.300Z"
-  },
-  {
-    "id": "dcba1e04-a4df-4bf8-9efb-9581b43b5d24",
-    "title": "Dummy Chat 14",
-    "personaName": "Cleopatra",
-    "messages": [
-      {
-        "role": "user",
-        "text": "Test message 14",
-        "name": "You",
-        "timestamp": "12:00"
-      },
-      {
-        "role": "api",
-        "text": "This is a dummy response for chat 14.",
-        "name": "Cleopatra",
-        "timestamp": "12:01"
-      }
-    ],
-    "date": "2025-11-27T13:36:14.300Z"
-  },
-  {
-    "id": "65f59ff7-a999-459d-ba61-70ee36c7ef03",
-    "title": "Dummy Chat 15",
-    "personaName": "Tutankhamun",
-    "messages": [
-      {
-        "role": "user",
-        "text": "Test message 15",
-        "name": "You",
-        "timestamp": "12:00"
-      },
-      {
-        "role": "api",
-        "text": "This is a dummy response for chat 15.",
-        "name": "Tutankhamun",
-        "timestamp": "12:01"
-      }
-    ],
-    "date": "2025-11-26T13:36:14.300Z"
-  },
-  {
-    "id": "e7f4e722-1a52-4a4e-9f23-66707d3eba84",
-    "title": "Dummy Chat 16",
-    "personaName": "Cleopatra",
-    "messages": [
-      {
-        "role": "user",
-        "text": "Test message 16",
-        "name": "You",
-        "timestamp": "12:00"
-      },
-      {
-        "role": "api",
-        "text": "This is a dummy response for chat 16.",
-        "name": "Cleopatra",
-        "timestamp": "12:01"
-      }
-    ],
-    "date": "2025-11-25T13:36:14.300Z"
-  },
-  {
-    "id": "8aca1995-11c1-425c-8324-29a41db54bd2",
-    "title": "Dummy Chat 17",
-    "personaName": "Tutankhamun",
-    "messages": [
-      {
-        "role": "user",
-        "text": "Test message 17",
-        "name": "You",
-        "timestamp": "12:00"
-      },
-      {
-        "role": "api",
-        "text": "This is a dummy response for chat 17.",
-        "name": "Tutankhamun",
-        "timestamp": "12:01"
-      }
-    ],
-    "date": "2025-11-24T13:36:14.300Z"
-  },
-  {
-    "id": "4710fbaf-ad20-4d83-8c0a-4e2d4900b631",
-    "title": "Dummy Chat 18",
-    "personaName": "Cleopatra",
-    "messages": [
-      {
-        "role": "user",
-        "text": "Test message 18",
-        "name": "You",
-        "timestamp": "12:00"
-      },
-      {
-        "role": "api",
-        "text": "This is a dummy response for chat 18.",
-        "name": "Cleopatra",
-        "timestamp": "12:01"
-      }
-    ],
-    "date": "2025-11-23T13:36:14.300Z"
-  },
-  {
-    "id": "6ee22429-baf4-428b-949a-84198e4dc9e6",
-    "title": "Dummy Chat 19",
-    "personaName": "Tutankhamun",
-    "messages": [
-      {
-        "role": "user",
-        "text": "Test message 19",
-        "name": "You",
-        "timestamp": "12:00"
-      },
-      {
-        "role": "api",
-        "text": "This is a dummy response for chat 19.",
-        "name": "Tutankhamun",
-        "timestamp": "12:01"
-      }
-    ],
-    "date": "2025-11-22T13:36:14.300Z"
-  },
-  {
-    "id": "71ca971d-596e-4b9d-9256-7fa417f08863",
-    "title": "Dummy Chat 20",
-    "personaName": "Cleopatra",
-    "messages": [
-      {
-        "role": "user",
-        "text": "Test message 20",
-        "name": "You",
-        "timestamp": "12:00"
-      },
-      {
-        "role": "api",
-        "text": "This is a dummy response for chat 20.",
-        "name": "Cleopatra",
-        "timestamp": "12:01"
-      }
-    ],
-    "date": "2025-11-21T13:36:14.300Z"
+    "dialogueTree": null,
+    "mode": "ai_fallback",
+    "date": "2025-12-05T20:39:15.204Z"
   }
 ]

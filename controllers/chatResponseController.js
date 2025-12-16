@@ -31,17 +31,17 @@ export async function handleChatRequest(req, res, next) {
       throw error;
     }
 
-    // Validate using Mongoose Model
-    const msgInstance = new Message({ sender: 'user', text: message });
-    const validationError = msgInstance.validateSync();
-    if (validationError) {
-      const error = new Error(validationError.message);
+    if (history && !Array.isArray(history)) {
+      const error = new Error('History must be an array.');
       error.statusCode = 400;
       throw error;
     }
 
-    if (history && !Array.isArray(history)) {
-      const error = new Error('History must be an array.');
+    // Validate using Mongoose Model
+    const msgInstance = new Message({ role: 'user', name: 'You', text: message });
+    const validationError = msgInstance.validateSync();
+    if (validationError) {
+      const error = new Error(validationError.message);
       error.statusCode = 400;
       throw error;
     }
